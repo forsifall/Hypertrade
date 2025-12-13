@@ -1,0 +1,540 @@
+{
+  "nav": {
+    "about": "About Us",
+    "blog": "Blog",
+    "advantages": "Advantages",
+    "integrations": "Integrations",
+    "faq": "FAQ",
+    "contacts": "Contacts",
+    "connectWallet": "Connect Wallet",
+    "menu": "Menu"
+  },
+  "hero": {
+    "badge": "Powered by Hyperliquid L1",
+    "titlePrefix": "Hypertrade: ",
+    "titleHighlight": "#1 DEX Aggregator",
+    "titleSuffix": " for Hyperliquid",
+    "description": "Hypertrade is a leading DEX aggregator for the Hyperliquid blockchain, helping traders find the best cryptocurrency exchange rates. The Hypertrade platform unifies HyperEVM and HyperCore liquidity by automatically scanning all available decentralized exchanges for optimal swap conditions.",
+    "features": [
+      "Zero platform fees for aggregation",
+      "Invisium technology for pre-swap simulation",
+      "Execution of complex routes in a single transaction",
+      "Support for over XXX tokens on Hyperliquid"
+    ],
+    "ctaPrimary": "Start Using Hypertrade",
+    "ctaSecondary": "Learn How Hypertrade Works",
+    "stats": {
+      "fees": "Platform Fee",
+      "accuracy": "Invisium Accuracy",
+      "swaps": "Atomic Swaps",
+      "security": "L1 Security"
+    }
+  },
+  "whatIs": {
+    "title": "What is Hypertrade and How the DEX Aggregator Works",
+    "description": "Hypertrade is a specialized decentralized exchange (DEX) aggregator designed specifically for the Hyperliquid ecosystem. Unlike regular DEXs where you are limited to one platform's liquidity, Hypertrade scans all available liquidity sources on Hyperliquid and finds the optimal route for your swap.",
+    "steps": [
+      {
+        "title": "1. Global Liquidity Scanning",
+        "desc": "The Hypertrade router analyzes all DEXs on Hyperliquid, including HyperCore Spot with its on-chain order books, Hyperswap and Kittenswap AMM protocols, as well as other integrated platforms."
+      },
+      {
+        "title": "2. Smart Order Splitting",
+        "desc": "When Hypertrade detects that splitting your order across multiple DEXs will result in a better outcome, it automatically executes split-routing, minimizing price impact."
+      },
+      {
+        "title": "3. Using Intermediate Tokens",
+        "desc": "Hypertrade can use intermediate tokens in the route (e.g., Token A → USDC → Token B) if this reduces slippage or fees compared to a direct swap."
+      },
+      {
+        "title": "4. Pre-execution Simulation",
+        "desc": "Hypertrade's Invisium Swap Simulations technology pre-calculates the result of complex routes, showing the exact expected output before the transaction is confirmed."
+      }
+    ]
+  },
+  "advantages": {
+    "title": "Why Traders Choose Hypertrade",
+    "subtitle": "Maximum benefit from every swap and advanced technology.",
+    "items": [
+      {
+        "title": "Max Value",
+        "desc": "Using Hypertrade, you automatically access the entire Hyperliquid ecosystem liquidity (HyperCore Spot, Hyperswap, Kittenswap, Prjx). The router finds the best price even if it needs to split the order across 3-4 venues."
+      },
+      {
+        "title": "Invisium Simulation",
+        "desc": "You see the result before confirmation. Invisium calculates exact output, price impact, and slippage. Simulation accuracy is 99.5–99.9%."
+      },
+      {
+        "title": "Single Transaction",
+        "desc": "Even if the optimal route involves 3-4 hops, everything is executed in a single transaction. Fewer points of failure, gas savings, higher speed."
+      },
+      {
+        "title": "Zero Platform Fees",
+        "desc": "Hypertrade does not charge an aggregation fee. You pay only standard HYPE gas and the underlying DEX fees."
+      }
+    ]
+  },
+  "comparison": {
+    "title": "Hypertrade vs Other DEX Aggregators",
+    "subtitle": "The only aggregator with full HyperCore Spot support.",
+    "headers": ["Feature", "Hypertrade", "Ordinary DEX", "Other Aggregators"],
+    "rows": [
+      {
+        "feature": "HyperCore Spot Support",
+        "hypertrade": true,
+        "dex": false,
+        "others": false
+      },
+      {
+        "feature": "Platform Fee",
+        "hypertrade": "0%",
+        "dex": "Varies",
+        "others": "0.1-0.3%"
+      },
+      {
+        "feature": "Invisium Simulations",
+        "hypertrade": true,
+        "dex": false,
+        "others": "Partial"
+      },
+      {
+        "feature": "Single Transaction",
+        "hypertrade": true,
+        "dex": true,
+        "others": "Not always"
+      },
+      {
+        "feature": "Order Splitting",
+        "hypertrade": true,
+        "dex": false,
+        "others": true
+      }
+    ],
+    "conclusion": "Conclusion: Hypertrade is the only aggregator on Hyperliquid with HyperCore Spot support and simulations, ensuring the best liquidity and quote accuracy."
+  },
+  "howTo": {
+    "title": "How to Start Trading via Hypertrade",
+    "subtitle": "Step-by-step guide to using the platform.",
+    "steps": [
+      {
+        "title": "Step 1. Prepare Wallet",
+        "desc": "Use an EVM-compatible wallet (MetaMask, WalletConnect). Ensure Hyperliquid network is selected and you have HYPE tokens (5-10) for gas."
+      },
+      {
+        "title": "Step 2. Select Tokens",
+        "desc": "Go to the official site ht.xyz and connect your wallet. Select the token to swap and the token you want to receive."
+      },
+      {
+        "title": "Step 3. Check Route",
+        "desc": "Hypertrade will show the proposed route, expected result, and price impact. Adjust slippage if necessary."
+      },
+      {
+        "title": "Step 4. Execute Swap",
+        "desc": "Click 'Swap' and confirm the transaction in your wallet. Tokens will automatically appear in seconds."
+      }
+    ]
+  },
+  "integrations": {
+    "title": "Integration with Hyperliquid Ecosystem",
+    "subtitle": "We unite the best protocols to create the deepest liquidity.",
+    "items": [
+      {
+        "title": "HyperCore Spot",
+        "desc": "High-performance on-chain order book system (up to 200,000 TPS). The foundation of liquidity for large trades."
+      },
+      {
+        "title": "Hyperswap & Kittenswap",
+        "desc": "AMM protocols for a wide range of trading pairs and long-tail assets."
+      },
+      {
+        "title": "Expanding Network",
+        "desc": "New DEXs (Prjx, etc.) and lending protocols are automatically added to the R1 router."
+      }
+    ]
+  },
+  "security": {
+    "title": "Security",
+    "nonCustodial": "Non-custodial Model",
+    "nonCustodialDesc": "Hypertrade never accesses your funds. All swaps are executed directly from your wallet.",
+    "consensus": "HyperBFT Consensus",
+    "consensusDesc": "All transactions are protected by the Hyperliquid L1 consensus mechanism. Finality in seconds.",
+    "transparency": "Route Transparency",
+    "transparencyDesc": "Before confirmation, you see full details: every DEX, intermediate tokens, and fees.",
+    "referralTitle": "Referral Program",
+    "referralDesc": "Get a unique link, share with friends, and accumulate points. Use Hypertrade for swaps and invite active traders.",
+    "tokenStatus": "IMPORTANT TOKEN INFO",
+    "tokenStatusDesc": "The Hypertrade team has not announced a token launch or airdrop at this time. However, activity may be considered in the future.",
+    "referralBtn": "Start Earning with Referrals"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions about Hypertrade",
+    "items": [
+      {
+        "question": "What is Hypertrade?",
+        "answer": "Hypertrade is a DEX aggregator for the Hyperliquid blockchain that automatically finds the best exchange rates by scanning all available liquidity sources on HyperEVM and HyperCore."
+      },
+      {
+        "question": "Does Hypertrade charge an exchange fee?",
+        "answer": "No, Hypertrade does not charge a liquidity aggregation fee. You only pay standard Hyperliquid network gas (in HYPE tokens) and the DEX fees themselves."
+      },
+      {
+        "question": "Which tokens does Hypertrade support?",
+        "answer": "Hypertrade supports all tokens available on integrated DEXs (HyperCore Spot, Hyperswap, Kittenswap), including major pairs and new listings."
+      },
+      {
+        "question": "Is Hypertrade safe to use?",
+        "answer": "Yes. Hypertrade uses a non-custodial model (you keep control of keys), verified liquidity sources, and is protected by HyperBFT consensus."
+      },
+      {
+        "question": "How does Hypertrade differ from a regular DEX?",
+        "answer": "A regular DEX is limited to its own liquidity. Hypertrade scans all DEXs simultaneously, finds the best price, splits orders, and executes complex swaps in a single transaction."
+      },
+      {
+        "question": "Do I need HYPE tokens?",
+        "answer": "Yes, HYPE tokens are required to pay for gas on the Hyperliquid network."
+      },
+      {
+        "question": "What is Invisium simulation?",
+        "answer": "It's a pre-swap calculation technology. It shows exact expected output and slippage before transaction confirmation with 99.5-99.9% accuracy."
+      },
+      {
+        "question": "Is there a Hypertrade token?",
+        "answer": "No token launch has been announced yet. However, a referral program is active, and activity might be considered in the future."
+      },
+      {
+        "question": "How to start using Hypertrade?",
+        "answer": "Prepare an EVM wallet, add the Hyperliquid network, top up HYPE balance, and go to ht.xyz."
+      }
+    ]
+  },
+  "contacts": {
+    "title": "Contacts - USA",
+    "office": "New York Office",
+    "address": [
+      "Hypertrade Inc.",
+      "350 Fifth Avenue, Suite 4820",
+      "Empire State Building",
+      "New York, NY 10118",
+      "USA"
+    ],
+    "hours": "Working Hours",
+    "hoursVal": "Mon — Fri: 9:00 AM — 6:00 PM (ET)",
+    "weekend": "Sat — Sun: closed",
+    "howToGet": "How to get there",
+    "directions": [
+      "🚇 34 St — Herald Sq (B, D, F, M, N, Q, R, W) - 5 min walk",
+      "🚇 33 St (Line 6) - 5 min walk",
+      "🚗 Parking: Empire State Building Garage (11 W 33rd St)"
+    ],
+    "contactUs": "Contact Us",
+    "phones": "Phones",
+    "phoneList": [
+      {
+        "label": "General",
+        "number": "+1 (212) 547-8932",
+        "href": "tel:+12125478932"
+      },
+      {
+        "label": "Tech Support",
+        "number": "+1 (212) 547-8933",
+        "href": "tel:+12125478933"
+      },
+      {
+        "label": "Partnership",
+        "number": "+1 (212) 547-8934",
+        "href": "tel:+12125478934"
+      }
+    ],
+    "messengers": "Messengers",
+    "messengerLink": {
+      "label": "WhatsApp / Telegram: +1 (929) 384-7156",
+      "href": "#"
+    },
+    "emailList": [
+      {
+        "label": "Info",
+        "email": "info@hypertrade.io"
+      },
+      {
+        "label": "Support",
+        "email": "support@hypertrade.io"
+      },
+      {
+        "label": "Partners",
+        "email": "partners@hypertrade.io"
+      },
+      {
+        "label": "Press",
+        "email": "press@hypertrade.io"
+      }
+    ],
+    "emergency": {
+      "title": "Emergency Support 24/7",
+      "desc": "Response time for critical issues: up to 1 hour.",
+      "telegram": "@HypertradeSOS_bot",
+      "email": "urgent@hypertrade.io"
+    },
+    "community": "Community",
+    "socials": [
+      {
+        "label": "Telegram",
+        "handle": "@HypertradeOfficial",
+        "href": "#"
+      },
+      {
+        "label": "Discord",
+        "handle": "hypertrade",
+        "href": "#"
+      },
+      {
+        "label": "Twitter/X",
+        "handle": "@Hypertrade_xyz",
+        "href": "#"
+      },
+      {
+        "label": "LinkedIn",
+        "handle": "hypertrade-inc",
+        "href": "#"
+      }
+    ],
+    "meetings": {
+      "title": "Regular Meetings",
+      "desc": "Every second Thursday of the month",
+      "time": "6:00 PM — 8:00 PM (ET)",
+      "location": "Location announced in Telegram"
+    },
+    "coworking": {
+      "title": "Meeting Coworking",
+      "address": ["Manhattan, WeWork", "1460 Broadway, New York, NY 10036"],
+      "note": "(by appointment only)"
+    },
+    "keyContacts": [
+      {
+        "name": "Michael Anderson",
+        "role": "Head of Business Development (US)",
+        "email": "m.anderson@hypertrade.io",
+        "phone": "+1 (929) 384-7160"
+      },
+      {
+        "name": "Sarah Chen",
+        "role": "CTO",
+        "email": "s.chen@hypertrade.io",
+        "phone": "+1 (929) 384-7161"
+      },
+      {
+        "name": "David Roberts",
+        "role": "Partnership Manager",
+        "email": "d.roberts@hypertrade.io",
+        "phone": "+1 (929) 384-7162"
+      }
+    ],
+    "companyInfo": {
+      "title": "Company Information",
+      "entity": "Hypertrade Inc.",
+      "ein": "85-2749163",
+      "status": "Delaware C-Corp",
+      "regNumber": "7249851"
+    },
+    "banking": {
+      "title": "Banking Details",
+      "bankName": "JPMorgan Chase Bank, N.A.",
+      "address": "270 Park Avenue, New York, NY 10017",
+      "beneficiary": "Hypertrade Inc.",
+      "account": "4582 7391 6428",
+      "routing": "021000021",
+      "swift": "CHAS33"
+    },
+    "regional": {
+      "title": "Regional Offices",
+      "items": [
+        {
+          "region": "Europe (Zug, Switzerland)",
+          "email": "crypto-valley@hypertrade.io"
+        },
+        {
+          "region": "APAC (Singapore)",
+          "email": "apac@hypertrade.io"
+        },
+        {
+          "region": "LatAm",
+          "email": "latam@hypertrade.io"
+        },
+        {
+          "region": "West Coast (SF)",
+          "email": "575 Market St, Suite 2950, SF, CA 94105"
+        }
+      ]
+    },
+    "legalSupport": {
+      "title": "Legal & Compliance",
+      "agent": "Corporation Service Company, 251 Little Falls Dr, Wilmington, DE 19808",
+      "privacy": "hypertrade.io/privacy",
+      "terms": "hypertrade.io/terms",
+      "compliance": "compliance@hypertrade.io"
+    },
+    "supportChannels": {
+      "title": "Customer Support Channels",
+      "items": [
+        {
+          "name": "Live Chat",
+          "desc": "Available on ht.xyz (Mon-Fri 9am-9pm ET)"
+        },
+        {
+          "name": "Help Center",
+          "desc": "help.hypertrade.io"
+        },
+        {
+          "name": "Community Forum",
+          "desc": "forum.hypertrade.io"
+        },
+        {
+          "name": "GitHub Issues",
+          "desc": "github.com/hypertrade/support"
+        }
+      ]
+    },
+    "education": {
+      "title": "Educational Resources",
+      "items": [
+        {
+          "name": "Documentation",
+          "desc": "docs.hypertrade.io"
+        },
+        {
+          "name": "Video Tutorials",
+          "desc": "youtube.com/@Hypertrade"
+        },
+        {
+          "name": "Webinars",
+          "desc": "webinars@hypertrade.io (Monthly, registration required)"
+        },
+        {
+          "name": "Developer Portal",
+          "desc": "developers.hypertrade.io"
+        }
+      ]
+    },
+    "warning": "Important: Use only official communication channels. Beware of scammers. We NEVER ask for private keys."
+  },
+  "cta": {
+    "title": "Start Saving on Swaps with Hypertrade Today",
+    "subtitle": "The most efficient way to trade on Hyperliquid. Best rates, zero fees, and Invisium simulation.",
+    "btn": "Try Hypertrade Now",
+    "footer": "Connect your wallet on the official site"
+  },
+  "footer": {
+    "desc": "Hypertrade is the #1 DEX Aggregator for Hyperliquid. Find optimal exchange rates via HyperEVM and HyperCore.",
+    "platform": "Platform",
+    "community": "Community",
+    "rights": "© 2025 Hypertrade. All rights reserved."
+  },
+  "about": {
+    "title": "About Platform",
+    "subtitle": "We are building the most efficient infrastructure for Hyperliquid trading.",
+    "techTitle": "Aggregation Technology",
+    "techDesc": "Hypertrade is a specialized DEX aggregator.",
+    "scan": "Global Scanning",
+    "scanDesc": "Router analyzes HyperCore Spot, Hyperswap, Kittenswap.",
+    "split": "Smart Splitting",
+    "splitDesc": "Splits orders for better prices.",
+    "invisium": "Invisium Technology",
+    "invisiumDesc": "Pre-swap simulation.",
+    "teamTitle": "Our Team",
+    "team": {
+      "m1": {
+        "name": "Alexander Morozov",
+        "role": "Head of Development",
+        "bio": "Responsible for strategic development of Hypertrade in CIS."
+      },
+      "m2": {
+        "name": "Dmitry Sokolov",
+        "role": "Lead Tech Specialist",
+        "bio": "Architect of Router R1 and Invisium technology."
+      },
+      "m3": {
+        "name": "Ekaterina Volkova",
+        "role": "Partnership Manager",
+        "bio": "Works with new Hyperliquid ecosystem projects."
+      }
+    }
+  },
+  "blog": {
+    "title": "Hypertrade Blog",
+    "subtitle": "Latest news, platform updates, and Hyperliquid ecosystem guides.",
+    "latest": "Latest News",
+    "latestDesc": "Useful articles and ecosystem updates",
+    "viewAll": "All Articles",
+    "readMore": "Read More",
+    "back": "Back to Blog",
+    "underConstruction": "Article Under Construction",
+    "underConstructionDesc": "This content is coming soon. Meanwhile, read our main article."
+  },
+  "articleDex": {
+    "metaCategory": "Education",
+    "metaTime": "8 min",
+    "back": "Back to Blog",
+    "title": "What is a DEX Aggregator and Why Traders Need It",
+    "intro": "Imagine you want to buy a new smartphone. You can go to one store and buy it for $1000, or spend an hour visiting ten different stores to find the same phone for $850. The $150 difference is the price of your time and effort. Now imagine an app that checks all stores in a second and automatically finds the best price. That's how DEX aggregators work.",
+    "whatIsTitle": "What is a DEX Aggregator: Simply Put",
+    "whatIsDesc": "A DEX aggregator is a service that automatically scans multiple decentralized exchanges (DEXs) simultaneously to find the most profitable exchange rate.",
+    "analogyTitle": "Analogy:",
+    "analogyDesc": "If a regular DEX is a single shop with fixed prices, a DEX aggregator is a smart assistant that checks prices in all shops in town instantly, finding the best deal for you.",
+    "problemTitle": "Problem: Why One DEX is Expensive",
+    "scenario1": "Scenario 1: Regular DEX",
+    "scenario2": "Scenario 2: Aggregator (Hypertrade)",
+    "liquidity": "Liquidity",
+    "yourOrder": "Your Order",
+    "priceImpact": "Price impact",
+    "receive": "You Receive",
+    "loss": "Loss",
+    "savings": "Savings",
+    "howWorksTitle": "How a DEX Aggregator Works",
+    "step1": "1. Scanning All Liquidity Sources",
+    "step2": "2. Calculating Optimal Route",
+    "step3": "3. Transaction Simulation",
+    "step4": "4. Single Transaction Execution",
+    "reasonsTitle": "Why Traders Need It: 7 Reasons",
+    "reasons": [
+      {
+        "title": "Reason 1: Cost Savings",
+        "content": "Math is simple: average savings of 0.5–2% per transaction."
+      },
+      {
+        "title": "Reason 2: Access to All Liquidity",
+        "content": "Instead of one pool, you get liquidity from all AMMs and order books."
+      },
+      {
+        "title": "Reason 3: Minimizing Slippage",
+        "content": "Aggregators reduce slippage by splitting orders across pools."
+      },
+      {
+        "title": "Reason 4: Saving Time",
+        "content": "With aggregator: 30 seconds. Enter tokens, amount, and confirm."
+      },
+      {
+        "title": "Reason 5: MEV Protection",
+        "content": "Using private mempools so bots can't profit from your transaction."
+      },
+      {
+        "title": "Reason 6: Gas Optimization",
+        "content": "Gas savings: 20–40% compared to manual swaps."
+      },
+      {
+        "title": "Reason 7: Intermediate Routes",
+        "content": "Aggregator automatically finds complex paths (A → B → C) that are more profitable."
+      }
+    ],
+    "typesTitle": "Types of DEX Aggregators",
+    "mathTitle": "How Much Can You Really Save?",
+    "traderType": "Trader Type",
+    "turnover": "Volume / month",
+    "losses": "Losses without aggregator",
+    "savingsYear": "Savings with Hypertrade (year)",
+    "chooseTitle": "How to Choose the Right Aggregator",
+    "exampleTitle": "Practical Example: First Swap",
+    "faqTitle": "FAQ about DEX Aggregators",
+    "conclusionTitle": "Conclusion",
+    "conclusionText": "If you trade crypto in 2025–2026 and don't use a DEX aggregator, you are literally throwing money away.",
+    "startSavingTitle": "Start Saving Now"
+  }
+}

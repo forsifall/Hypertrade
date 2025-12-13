@@ -1,0 +1,549 @@
+{
+  "nav": {
+    "about": "私たちについて",
+    "blog": "ブログ",
+    "advantages": "利点",
+    "integrations": "統合",
+    "faq": "よくある質問",
+    "contacts": "連絡先",
+    "connectWallet": "ウォレット接続",
+    "menu": "メニュー"
+  },
+  "hero": {
+    "badge": "Hyperliquid L1で動作",
+    "titlePrefix": "Hypertrade: ",
+    "titleHighlight": "No.1 DEXアグリゲーター",
+    "titleSuffix": " for Hyperliquid",
+    "description": "HypertradeはHyperliquidブロックチェーンの主要なDEXアグリゲーターであり、トレーダーが最高の仮想通貨交換レートを見つけるのを助けます。Hypertradeプラットフォームは、HyperEVMとHyperCoreの流動性を統合し、最適なスワップ条件のために利用可能なすべての分散型取引所を自動的にスキャンします。",
+    "features": [
+      "集約のためのプラットフォーム手数料ゼロ",
+      "スワップ前シミュレーションのためのInvisium技術",
+      "単一トランザクションでの複雑なルートの実行",
+      "Hyperliquid上のXXX以上のトークンをサポート"
+    ],
+    "ctaPrimary": "Hypertradeを使い始める",
+    "ctaSecondary": "Hypertradeの仕組み",
+    "stats": {
+      "fees": "プラットフォーム手数料",
+      "accuracy": "Invisiumの精度",
+      "swaps": "アトミックスワップ",
+      "security": "L1セキュリティ"
+    }
+  },
+  "whatIs": {
+    "title": "Hypertradeとは何か、そしてDEXアグリゲーターの仕組み",
+    "description": "Hypertradeは、Hyperliquidエコシステム専用に設計された分散型取引所（DEX）アグリゲーターです。",
+    "steps": [
+      {
+        "title": "1. グローバル流動性スキャン",
+        "desc": "Hypertradeルーターは、オンチェーンオーダーブックを持つHyperCore Spot、HyperswapおよびKittenswap AMMプロトコルを含むすべてのDEXを分析します。"
+      },
+      {
+        "title": "2. スマートオーダー分割",
+        "desc": "注文を複数のDEXに分割することでより良い結果が得られる場合、自動的に分割ルーティングを実行し、価格インパクトを最小限に抑えます。"
+      },
+      {
+        "title": "3. 中間トークンの使用",
+        "desc": "直接スワップと比較してスリッページや手数料を削減できる場合、ルート内で中間トークン（例：トークンA → USDC → トークンB）を使用します。"
+      },
+      {
+        "title": "4. 実行前シミュレーション",
+        "desc": "Invisiumスワップシミュレーション技術は、複雑なルートの結果を事前に計算し、トランザクション確認前に正確な予想出力を表示します。"
+      }
+    ]
+  },
+  "advantages": {
+    "title": "トレーダーがHypertradeを選ぶ理由",
+    "subtitle": "すべてのスワップからの最大利益と高度な技術。",
+    "items": [
+      {
+        "title": "最大利益",
+        "desc": "Hypertradeを使用すると、Hyperliquidエコシステム全体の流動性（HyperCore Spot、Hyperswap、Kittenswap、Prjx）に自動的にアクセスできます。"
+      },
+      {
+        "title": "Invisiumシミュレーション",
+        "desc": "確認前に結果を確認できます。シミュレーション精度は99.5-99.9%です。"
+      },
+      {
+        "title": "単一トランザクション",
+        "desc": "最適なルートが3-4ホップを含む場合でも、すべてが1つのトランザクションで実行されます。"
+      },
+      {
+        "title": "プラットフォーム手数料ゼロ",
+        "desc": "Hypertradeは集約手数料を請求しません。支払うのは標準的なHYPEガスとDEX手数料のみです。"
+      }
+    ]
+  },
+  "comparison": {
+    "title": "Hypertradeと他のDEXアグリゲーターの比較",
+    "subtitle": "HyperCore Spotを完全にサポートする唯一のアグリゲーター。",
+    "headers": ["機能", "Hypertrade", "通常のDEX", "他のアグリゲーター"],
+    "rows": [
+      {
+        "feature": "HyperCore Spot サポート",
+        "hypertrade": true,
+        "dex": false,
+        "others": false
+      },
+      {
+        "feature": "プラットフォーム手数料",
+        "hypertrade": "0%",
+        "dex": "変動",
+        "others": "0.1-0.3%"
+      },
+      {
+        "feature": "Invisium シミュレーション",
+        "hypertrade": true,
+        "dex": false,
+        "others": "部分的"
+      },
+      {
+        "feature": "単一トランザクション",
+        "hypertrade": true,
+        "dex": true,
+        "others": "常にではない"
+      },
+      {
+        "feature": "オーダー分割",
+        "hypertrade": true,
+        "dex": false,
+        "others": true
+      }
+    ],
+    "conclusion": "結論：Hypertradeは、最高の流動性と価格精度を保証するHyperCore Spotサポートを備えたHyperliquid上の唯一のアグリゲーターです。"
+  },
+  "howTo": {
+    "title": "Hypertradeで取引を始める方法",
+    "subtitle": "プラットフォーム使用のステップバイステップガイド。",
+    "steps": [
+      {
+        "title": "ステップ 1. ウォレットの準備",
+        "desc": "EVM互換ウォレット（MetaMaskなど）を使用し、Hyperliquidネットワークを選択してHYPEトークンを用意します。"
+      },
+      {
+        "title": "ステップ 2. トークンの選択",
+        "desc": "公式サイトht.xyzでウォレットを接続し、交換するトークンと受け取りたいトークンを選択します。"
+      },
+      {
+        "title": "ステップ 3. ルートの確認",
+        "desc": "Hypertradeが提案されたルート、予想結果、価格インパクトを表示します。"
+      },
+      {
+        "title": "ステップ 4. スワップの実行",
+        "desc": "「交換」をクリックしてウォレットで確認します。数秒でトークンが反映されます。"
+      }
+    ]
+  },
+  "integrations": {
+    "title": "Hyperliquidエコシステムとの統合",
+    "subtitle": "最高のプロトコルを統合し、最も深い流動性を作成します。",
+    "items": [
+      {
+        "title": "HyperCore Spot",
+        "desc": "高性能オンチェーンオーダーブックシステム（最大200,000 TPS）。"
+      },
+      {
+        "title": "Hyperswap & Kittenswap",
+        "desc": "幅広い取引ペアのためのAMMプロトコル。"
+      },
+      {
+        "title": "拡大するネットワーク",
+        "desc": "新しいDEX（Prjxなど）やレンディングプロトコルが自動的に追加されます。"
+      }
+    ]
+  },
+  "security": {
+    "title": "セキュリティ",
+    "nonCustodial": "ノンカストディアルモデル",
+    "nonCustodialDesc": "Hypertradeがあなたの資金にアクセスすることはありません。",
+    "consensus": "HyperBFTコンセンサス",
+    "consensusDesc": "すべてのトランザクションはHyperliquid L1コンセンサスメカニズムによって保護されています。",
+    "transparency": "ルートの透明性",
+    "transparencyDesc": "確認前に完全な詳細（各DEX、中間トークン、手数料）を確認できます。",
+    "referralTitle": "紹介プログラム",
+    "referralDesc": "リンクを共有してポイントを獲得しましょう。",
+    "tokenStatus": "トークンに関する重要情報",
+    "tokenStatusDesc": "現在、トークンのローンチは発表されていませんが、将来的に活動が考慮される可能性があります。",
+    "referralBtn": "紹介で稼ぎ始める"
+  },
+  "faq": {
+    "title": "Hypertradeに関するよくある質問",
+    "items": [
+      {
+        "question": "Hypertradeとは何ですか？",
+        "answer": "HypertradeはHyperliquidブロックチェーン用のDEXアグリゲーターであり、すべての利用可能な流動性源をスキャンして最適なレートを見つけます。"
+      },
+      {
+        "question": "手数料はかかりますか？",
+        "answer": "いいえ、Hypertradeは集約手数料を徴収しません。"
+      },
+      {
+        "question": "どのトークンをサポートしていますか？",
+        "answer": "統合されたDEX（HyperCore Spot、Hyperswapなど）で利用可能なすべてのトークンをサポートしています。"
+      },
+      {
+        "question": "安全ですか？",
+        "answer": "はい、ノンカストディアルモデルを使用し、HyperBFTコンセンサスによって保護されています。"
+      },
+      {
+        "question": "通常のDEXとの違いは？",
+        "answer": "すべてのDEXを同時にスキャンし、最良価格を見つけ、注文を分割します。"
+      },
+      {
+        "question": "HYPEトークンは必要ですか？",
+        "answer": "はい、ガス代の支払いに必要です。"
+      },
+      {
+        "question": "Invisiumシミュレーションとは？",
+        "answer": "確認前に正確な予想収益とスリッページを表示する技術です。"
+      },
+      {
+        "question": "Hypertradeトークンはありますか？",
+        "answer": "まだ発表されていませんが、紹介プログラムがあります。"
+      },
+      {
+        "question": "使い始めるには？",
+        "answer": "EVMウォレットを用意し、ht.xyzにアクセスしてください。"
+      }
+    ]
+  },
+  "contacts": {
+    "title": "お問い合わせ - 日本",
+    "office": "東京オフィス",
+    "address": [
+      "Hypertrade株式会社",
+      "〒100-0005",
+      "東京都千代田区丸の内1-6-5",
+      "丸の内北口ビルディング 12階",
+      "日本"
+    ],
+    "hours": "営業時間",
+    "hoursVal": "月曜日 - 金曜日: 9:00 - 18:00 (JST)",
+    "weekend": "土曜日 - 日曜日: 定休日",
+    "howToGet": "アクセス方法",
+    "directions": [
+      "🚇 東京駅 (JR各線、丸ノ内線) - 徒歩3分",
+      "🚇 大手町駅 (東西線、千代田線、半蔵門線、三田線) - 徒歩5分",
+      "🚗 丸の内北口ビルディング駐車場 (最初の2時間無料)"
+    ],
+    "contactUs": "お問い合わせ",
+    "phones": "電話番号",
+    "phoneList": [
+      {
+        "label": "一般お問い合わせ",
+        "number": "03-6824-5731",
+        "href": "tel:0368245731"
+      },
+      {
+        "label": "テクニカルサポート",
+        "number": "03-6824-5732",
+        "href": "tel:0368245732"
+      },
+      {
+        "label": "パートナーシップ",
+        "number": "03-6824-5733",
+        "href": "tel:0368245733"
+      }
+    ],
+    "messengers": "メッセンジャー",
+    "messengerLink": {
+      "label": "WhatsApp / Telegram: +81 90-4728-3156",
+      "href": "#"
+    },
+    "emailList": [
+      {
+        "label": "一般",
+        "email": "info@hypertrade.jp"
+      },
+      {
+        "label": "サポート",
+        "email": "support@hypertrade.jp"
+      },
+      {
+        "label": "パートナー",
+        "email": "partners@hypertrade.jp"
+      },
+      {
+        "label": "メディア",
+        "email": "press@hypertrade.jp"
+      }
+    ],
+    "emergency": {
+      "title": "緊急サポート 24/7",
+      "desc": "重大な問題への応答時間: 1時間以内",
+      "telegram": "@HypertradeSOS_JP_bot",
+      "email": "urgent@hypertrade.jp"
+    },
+    "community": "コミュニティ",
+    "socials": [
+      {
+        "label": "Telegram Channel",
+        "handle": "@HypertradeJapan",
+        "href": "#"
+      },
+      {
+        "label": "Telegram Chat",
+        "handle": "@HypertradeSupport_JP_bot",
+        "href": "#"
+      },
+      {
+        "label": "Discord",
+        "handle": "discord.gg/hypertrade-jp",
+        "href": "#"
+      },
+      {
+        "label": "Twitter/X",
+        "handle": "@Hypertrade_JP",
+        "href": "#"
+      },
+      {
+        "label": "LINE",
+        "handle": "@hypertrade_official",
+        "href": "#"
+      }
+    ],
+    "meetings": {
+      "title": "定例ミートアップ",
+      "desc": "毎月第2木曜日",
+      "time": "19:00 - 21:00 JST",
+      "location": "開催場所はTelegramチャンネルでお知らせ"
+    },
+    "coworking": {
+      "title": "ミーティング用コワーキング",
+      "address": ["WeWork 丸の内", "東京都千代田区丸の内2-6-1"],
+      "note": "(要予約)"
+    },
+    "keyContacts": [
+      {
+        "name": "田中 健太郎",
+        "role": "日本・APAC事業開発責任者",
+        "email": "k.tanaka@hypertrade.jp",
+        "phone": "+81 90-4728-3160"
+      },
+      {
+        "name": "佐藤 美咲",
+        "role": "CTO",
+        "email": "m.sato@hypertrade.jp",
+        "phone": "+81 90-4728-3161"
+      },
+      {
+        "name": "鈴木 大輔",
+        "role": "パートナーシップマネージャー",
+        "email": "d.suzuki@hypertrade.jp",
+        "phone": "+81 90-4728-3162"
+      }
+    ],
+    "companyInfo": {
+      "title": "会社情報",
+      "entity": "Hypertrade株式会社",
+      "ein": "2010001234567 (法人番号)",
+      "status": "設立: 2024年6月15日 | 資本金: 5億円",
+      "regNumber": "代表取締役: 山田 太郎"
+    },
+    "banking": {
+      "title": "銀行口座情報",
+      "bankName": "三菱UFJ銀行 (丸の内支店)",
+      "address": "東京都千代田区丸の内",
+      "beneficiary": "ハイパートレードカブシキガイシャ",
+      "account": "普通 1234567",
+      "routing": "001 (支店番号)",
+      "swift": "BOTKJPJT"
+    },
+    "regional": {
+      "title": "拠点一覧",
+      "items": [
+        {
+          "region": "大阪サテライト",
+          "email": "梅田2-4-9 ブリーゼタワー 15F"
+        },
+        {
+          "region": "福岡サテライト",
+          "email": "天神1-1-1 アクロス福岡 8F"
+        },
+        {
+          "region": "米国オフィス",
+          "email": "us@hypertrade.io"
+        },
+        {
+          "region": "欧州オフィス",
+          "email": "eu@hypertrade.io"
+        },
+        {
+          "region": "シンガポール",
+          "email": "apac@hypertrade.io"
+        }
+      ]
+    },
+    "legalSupport": {
+      "title": "法務・コンプライアンス",
+      "agent": "東京都千代田区丸の内1-6-5",
+      "privacy": "hypertrade.jp/privacy",
+      "terms": "hypertrade.jp/terms",
+      "compliance": "compliance@hypertrade.jp"
+    },
+    "supportChannels": {
+      "title": "カスタマーサポート",
+      "items": [
+        {
+          "name": "ライブチャット",
+          "desc": "月-金 9:00 - 21:00 JST"
+        },
+        {
+          "name": "ヘルプセンター",
+          "desc": "help.hypertrade.jp"
+        },
+        {
+          "name": "コミュニティフォーラム",
+          "desc": "forum.hypertrade.jp"
+        },
+        {
+          "name": "GitHub",
+          "desc": "github.com/hypertrade/support"
+        }
+      ]
+    },
+    "education": {
+      "title": "教育リソース",
+      "items": [
+        {
+          "name": "ドキュメント",
+          "desc": "docs.hypertrade.jp"
+        },
+        {
+          "name": "動画チュートリアル",
+          "desc": "youtube.com/@HypertradeJP"
+        },
+        {
+          "name": "ウェビナー",
+          "desc": "webinars@hypertrade.jp (要登録)"
+        },
+        {
+          "name": "開発者ポータル",
+          "desc": "developers.hypertrade.jp"
+        }
+      ]
+    },
+    "warning": "重要な注意事項: 公式の連絡先のみをご利用ください。Hypertradeを装った詐欺にご注意ください。私たちは秘密鍵やシードフレーズを絶対に要求しません。"
+  },
+  "cta": {
+    "title": "今日からHypertradeで節約を始めましょう",
+    "subtitle": "Hyperliquidで最も効率的な取引方法。",
+    "btn": "今すぐHypertradeを試す",
+    "footer": "公式サイトでウォレットを接続"
+  },
+  "footer": {
+    "desc": "HypertradeはHyperliquidのためのNo.1 DEXアグリゲーターです。",
+    "platform": "プラットフォーム",
+    "community": "コミュニティ",
+    "rights": "© 2025 Hypertrade. All rights reserved."
+  },
+  "about": {
+    "title": "プラットフォームについて",
+    "subtitle": "最も効率的なインフラを構築しています。",
+    "techTitle": "集約技術",
+    "techDesc": "Hypertradeは特化したDEXアグリゲーターです。",
+    "scan": "グローバルスキャン",
+    "scanDesc": "ルーターはHyperCore Spotなどを分析します。",
+    "split": "スマート分割",
+    "splitDesc": "価格改善のために注文を分割。",
+    "invisium": "Invisium技術",
+    "invisiumDesc": "スワップ前シミュレーション。",
+    "teamTitle": "チーム",
+    "team": {
+      "m1": {
+        "name": "Alexander Morozov",
+        "role": "開発責任者",
+        "bio": "CIS地域での戦略的開発を担当。"
+      },
+      "m2": {
+        "name": "Dmitry Sokolov",
+        "role": "リードテック",
+        "bio": "R1ルーターのアーキテクト。"
+      },
+      "m3": {
+        "name": "Ekaterina Volkova",
+        "role": "パートナーシップ",
+        "bio": "エコシステムプロジェクトとの連携。"
+      }
+    }
+  },
+  "blog": {
+    "title": "Hypertradeブログ",
+    "subtitle": "最新ニュースとガイド。",
+    "latest": "最新ニュース",
+    "latestDesc": "有用な記事と更新情報",
+    "viewAll": "すべての記事",
+    "readMore": "続きを読む",
+    "back": "ブログに戻る",
+    "underConstruction": "記事作成中",
+    "underConstructionDesc": "このコンテンツは近日公開予定です。"
+  },
+  "articleDex": {
+    "metaCategory": "教育",
+    "metaTime": "8分",
+    "back": "ブログに戻る",
+    "title": "DEXアグリゲーターとは何か、なぜ必要なのか",
+    "intro": "DEXアグリゲーターは、複数の分散型取引所を同時にスキャンして最適な価格を見つけるサービスです。",
+    "whatIsTitle": "DEXアグリゲーターとは",
+    "whatIsDesc": "自動的に最適なレートを見つけるサービスです。",
+    "analogyTitle": "例え:",
+    "analogyDesc": "街中のすべての店の価格を一瞬でチェックするスマートアシスタントのようなものです。",
+    "problemTitle": "問題点",
+    "scenario1": "シナリオ1: 通常のDEX",
+    "scenario2": "シナリオ2: アグリゲーター",
+    "liquidity": "流動性",
+    "yourOrder": "注文",
+    "priceImpact": "価格インパクト",
+    "receive": "受取額",
+    "loss": "損失",
+    "savings": "節約",
+    "howWorksTitle": "仕組み",
+    "step1": "1. 全流動性源のスキャン",
+    "step2": "2. 最適ルート計算",
+    "step3": "3. トランザクションシミュレーション",
+    "step4": "4. 単一トランザクション実行",
+    "reasonsTitle": "7つの理由",
+    "reasons": [
+      {
+        "title": "理由1: コスト削減",
+        "content": "取引あたり平均0.5-2%の節約。"
+      },
+      {
+        "title": "理由2: 全流動性へのアクセス",
+        "content": "すべてのAMMとオーダーブック。"
+      },
+      {
+        "title": "理由3: スリッページ最小化",
+        "content": "プール間での注文分割。"
+      },
+      {
+        "title": "理由4: 時間短縮",
+        "content": "30秒で完了。"
+      },
+      {
+        "title": "理由5: MEV保護",
+        "content": "プライベートメンプール。"
+      },
+      {
+        "title": "理由6: ガス最適化",
+        "content": "20-40%のガス節約。"
+      },
+      {
+        "title": "理由7: 中間ルート",
+        "content": "複雑なパスの自動発見。"
+      }
+    ],
+    "typesTitle": "アグリゲーターの種類",
+    "mathTitle": "どれくらい節約できるか",
+    "traderType": "トレーダータイプ",
+    "turnover": "月間取引高",
+    "losses": "損失",
+    "savingsYear": "年間節約額",
+    "chooseTitle": "選び方",
+    "exampleTitle": "実践例",
+    "faqTitle": "FAQ",
+    "conclusionTitle": "結論",
+    "conclusionText": "DEXアグリゲーターを使用しないのはお金を捨てているのと同じです。",
+    "startSavingTitle": "今すぐ節約を開始"
+  }
+}

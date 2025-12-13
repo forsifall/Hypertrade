@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  padding-top: 65px;
+}
+
+/* СНАЧАЛА база, потом components */
+@layer base {
+  html {
+    @apply bg-hyper-900;
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply bg-hyper-900 text-white; /* ← ВОТ ЭТО ключевое! */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  
+  /* Все заголовки по умолчанию белые */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white;
+  }
+  
+  /* Параграфы по умолчанию серые */
+  p {
+    @apply text-gray-300;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(to right, #00e5ff, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Принудительно белый цвет для всего, кроме явно указанного */
+* {
+  color: inherit; /* наследует от body */
+}
