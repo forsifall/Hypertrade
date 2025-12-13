@@ -15,7 +15,8 @@ export default async function RootLayout({
   params, 
 }: {
   children: React.ReactNode;
-  params: { lang: Language }; 
+  // eslint-disable-next-line
+  params: Promise<{ lang: any  }>; 
 }) {
 
   const lang = (await params).lang;
