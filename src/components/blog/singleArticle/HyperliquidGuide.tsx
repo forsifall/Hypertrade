@@ -2,7 +2,7 @@ import BackButtonNoArticle from "@/components/ui/BackButtonNoArticle";
 import { Cpu } from "lucide-react";
 
 // eslint-disable-next-line
-export default function HyperliquidGuide({translationData}:{translationData:any}) {
+export default function InvisiumTechDeepdive({translationData}:{translationData:any}) {
   return (
     <div className="pt-40 pb-20 text-center min-h-[60vh] flex flex-col items-center justify-center animate-fade-in-up">
       <div className="w-16 h-16 bg-hyper-800 rounded-full flex items-center justify-center mb-6 border border-gray-700">

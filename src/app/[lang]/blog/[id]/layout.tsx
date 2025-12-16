@@ -10,7 +10,8 @@ export async function generateMetadata(
 
   const posts = getBlogPosts(lang);
 
-  const post = posts.find((p) => p.id === id);
+  // eslint-disable-next-line
+  const post = posts.find((p:any) => p.id === id);
 
   if (!post) {
     return {

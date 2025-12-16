@@ -22,7 +22,8 @@ export default function BlogPage ({ lang }: { lang: Language }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
+          {/* eslint-disable-next-line */}
+          {posts.map((post:any) => (
             <article
               key={post.id}
               className="glass-panel rounded-2xl overflow-hidden hover:border-hyper-accent/50 transition-all group flex flex-col h-full cursor-pointer hover:-translate-y-1 duration-300"
