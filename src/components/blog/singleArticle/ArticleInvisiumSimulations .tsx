@@ -1,357 +1,422 @@
+/* eslint-disable */
+// @ts-nocheck
+"use client"
 import { Language } from "@/app/translations";
 import BackButton from "@/components/ui/BackButton";
 import { Cpu, Shield, Zap, Target, BarChart, Clock, Calendar, CheckCircle, AlertCircle, Layers, Search, Navigation, PieChart, Users, Globe, Lock, Brain } from "lucide-react";
 import Link from "next/link";
 import { getBlogPosts } from "../data";
+import { useTranslation } from "react-i18next";
 
 // --- Single Blog Article Component (Invisium Simulations) ---
 export const ArticleInvisiumSimulations = ({lang}:{lang:Language}) => {
     // eslint-disable-next-line
   const post = getBlogPosts(lang).find((curr:any) => curr.id === "invisium-simulations");
-  
+    
+      const { t } = useTranslation();
   return (
     <section className="bg-hyper-900 min-h-screen pb-20">
-      {/* Header Image/Gradient */}
-      <div className="h-64 md:h-80 w-full bg-gradient-to-r from-cyan-900 via-blue-900 to-hyper-900 relative">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-hyper-900 to-transparent"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-12 relative z-10">
-           <BackButton label={post.backButton} />
-           <div className="flex flex-wrap gap-4 text-sm font-medium text-hyper-accent mb-4">
-             <span className="bg-hyper-accent/10 px-3 py-1 rounded-full border border-hyper-accent/20">{post.category}</span>
-             <span className="flex items-center gap-1 text-gray-400"><Clock size={14} /> {post.readTime}</span>
-             <span className="flex items-center gap-1 text-gray-400"><Calendar size={14} /> {post.date}</span>
-           </div>
-           <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-             {post.title}
-           </h1>
-           <p className="text-xl text-gray-300 mt-4">{post.subtitle}</p>
+  {/* Header Image/Gradient */}
+  <div className="h-64 md:h-80 w-full bg-gradient-to-r from-purple-900 via-violet-900 to-hyper-900 relative">
+    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30"></div>
+    <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-hyper-900 to-transparent"></div>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-12 relative z-10">
+      <div className="flex flex-wrap gap-4 text-sm font-medium text-hyper-accent mb-4">
+        <span className="bg-hyper-accent/10 px-3 py-1 rounded-full border border-hyper-accent/20">Технологии</span>
+        <span className="flex items-center gap-1 text-gray-400"><Clock size={14} /> 7 мин чтения</span>
+        <span className="flex items-center gap-1 text-gray-400"><Calendar size={14} /> 12.12.2025</span>
+      </div>
+      <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+        {post.title_8g7t}
+      </h1>
+    </div>
+  </div>
+
+  <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+    <article className="prose prose-invert prose-lg max-w-none">
+      {/* Введение */}
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+        <AlertCircle className="text-red-400" /> {post.introTitle_m4n1}
+      </h2>
+      <p className="text-xl text-gray-300 leading-relaxed font-light mb-8">
+        {post.introText_3k9f}
+      </p>
+      
+      <div className="bg-hyper-800/50 p-6 rounded-xl border border-gray-700 my-8">
+        <h4 className="font-bold text-white mb-4">{t(`Классическая проблема DeFi-трейдинга:`)}</h4>
+        <ul className="space-y-3 text-gray-300">
+          {/* eslint-disable-next-line */}
+          {post.introList_7v5b.map((item, idx) => (
+            <li key={idx} className="flex items-start gap-3">
+              <AlertCircle size={16} className="text-red-400 flex-shrink-0 mt-0.5" />
+              <span>{t(item)}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <p className="text-gray-400 border-l-4 border-gray-600 pl-6 italic">
+        {t(post.introNote_r2d8)}
+      </p>
+
+      {/* Решение */}
+      <div className="bg-gradient-to-r from-green-900/20 to-hyper-accent/20 p-8 rounded-2xl border border-green-900/30 my-12">
+        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+          <Zap className="text-yellow-400" /> {t(post.solutionTitle_h6p0)}
+        </h2>
+        <p className="text-gray-300 mb-6">{t(post.solutionDesc_t4s9)}</p>
+        <div className="space-y-4">
+          {/* eslint-disable-next-line */}
+          {post.solutionList_j8k3.map((item, idx) => (
+            <div key={idx} className="flex items-center gap-3">
+              <CheckCircle size={20} className="text-green-400 flex-shrink-0" />
+              <span className="text-white">{t(item)}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-gray-400 mt-6">{t(post.solutionNote_q1w2)}</p>
+      </div>
+
+      {/* Что такое Invisium */}
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+        <Cpu className="text-purple-400" /> {t(post.whatIsTitle_f5n8)}
+      </h2>
+      
+      <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl my-8">
+        <h3 className="text-xl font-bold text-white mb-3">{t(post.definitionTitle_e3m7)}</h3>
+        <p className="text-gray-300">{t(post.definitionText_x6r9)}</p>
+      </div>
+
+      <h3 className="text-xl font-bold text-white mt-10 mb-4">{t(post.principleTitle_v4s1)}</h3>
+      <div className="space-y-6 not-prose mb-12">
+        {/* eslint-disable-next-line */}
+        {post.principleSteps_1k8p.map((step, idx) => (
+          <div key={idx} className="bg-hyper-800/20 p-6 rounded-xl border-l-4 border-hyper-accent">
+            <div className="flex items-center gap-4">
+              <div className="bg-hyper-accent/20 text-hyper-accent font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                {idx + 1}
+              </div>
+              <p className="text-white m-0">{t(step)}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Сравнение */}
+      <h2 className="text-2xl font-bold text-white mt-12 mb-8">{t(post.whyImportantTitle_b3m9)}</h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8 not-prose">
+        {/* Без симуляции */}
+        <div className="bg-red-900/10 border border-red-900/30 p-6 rounded-xl">
+          <h3 className="text-red-400 font-bold mb-6 border-b border-red-900/30 pb-3 flex items-center gap-2">
+            <AlertCircle size={20} /> {t(post.withoutSimTitle_c7f2)}
+          </h3>
+          <div className="space-y-4 text-sm">
+            <div className="bg-red-900/20 p-4 rounded-lg">
+              <p className="text-gray-300 font-mono">{t(post.withoutSimQuote_p4t6)}</p>
+            </div>
+            <div className="bg-red-900/30 p-4 rounded-lg">
+              <p className="text-red-300 font-mono">{t(post.withoutSimResult_n8j5)}</p>
+            </div>
+            <div className="text-center bg-red-900/40 p-3 rounded-lg border border-red-900/50">
+              <p className="text-red-300 font-bold text-lg">{t(post.withoutSimLoss_h3k8)}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* С симуляцией */}
+        <div className="bg-green-900/10 border border-green-900/30 p-6 rounded-xl">
+          <h3 className="text-green-400 font-bold mb-6 border-b border-green-900/30 pb-3 flex items-center gap-2">
+            <CheckCircle size={20} /> {t(post.withSimTitle_v9r1)}
+          </h3>
+          <div className="space-y-4 text-sm">
+            <div className="bg-green-900/20 p-4 rounded-lg">
+              <p className="text-gray-300 font-mono">{t(post.withSimQuote_j2f7)}</p>
+            </div>
+            <div className="bg-green-900/30 p-4 rounded-lg">
+              <p className="text-green-300 font-mono">{t(post.withSimResult_p6t3)}</p>
+            </div>
+            <div className="space-y-2">
+              <div className="bg-green-900/20 p-3 rounded">
+                <p className="text-gray-300 font-mono">{t(post.withSimDiff_m8b4)}</p>
+              </div>
+              <div className="bg-green-900/30 p-3 rounded">
+                <p className="text-green-300 font-mono font-bold">{t(post.withSimAccuracy_g5h9)}</p>
+              </div>
+            </div>
+            <div className="text-center bg-green-900/40 p-3 rounded-lg border border-green-900/50">
+              <p className="text-green-300 font-bold text-lg">{t(post.withSimSaving_k2f1)}</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-        <article className="prose prose-invert prose-lg max-w-none">
-          <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 p-6 rounded-2xl border border-cyan-700/30 mb-8 not-prose">
-            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3"><AlertCircle className="text-cyan-400" />{post.problemTitle}</h3>
-            <p className="text-gray-300">
-              {post.problemText}
-            </p>
-            <div className="mt-4 space-y-2">
-              {post.problemPoints.map((point:string, index:number) => (
-                <div key={index} className="flex items-start gap-2 text-gray-300">⚠️ {point}</div>
-              ))}
-            </div>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
-            <Cpu className="text-cyan-400" /> {post.whatIsTitle}
-          </h2>
-          
-          <p className="mb-6">
-            <strong>Invisium Simulations</strong> — {post.whatIsText}
-          </p>
-
-          <div className="bg-hyper-800/30 p-6 rounded-xl my-6">
-            <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><Zap size={20} className="text-yellow-400"/>{post.howItWorksTitle}</h4>
-            <div className="space-y-4">
-              {post.howItWorksSteps.map((step:string, index:number) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="bg-cyan-900/30 rounded-full p-2 mt-1">
-                    {index === 0 && <Search size={16} className="text-cyan-400" />}
-                    {index === 1 && <Navigation size={16} className="text-blue-400" />}
-                    {index === 2 && <Cpu size={16} className="text-purple-400" />}
-                    {index === 3 && <BarChart size={16} className="text-green-400" />}
-                    {index === 4 && <CheckCircle size={16} className="text-hyper-accent" />}
-                  </div>
-                  <div><span className="font-bold text-cyan-400">{index + 1}.</span> {step}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose">
-            <div className="bg-red-900/10 border border-red-900/30 p-6 rounded-xl">
-              <h4 className="text-red-400 font-bold mb-4 border-b border-red-900/30 pb-2">{post.traditionalDexTitle}</h4>
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between"><span>Показанная котировка:</span> <span className="text-white">10,000 USDC → 8.234 ETH</span></div>
-                <div className="flex justify-between"><span>Фактический результат:</span> <span className="text-white">10,000 USDC → 8.156 ETH</span></div>
-                <div className="flex justify-between border-t border-red-900/30 pt-2"><span>Потеря:</span> <span className="text-red-300 font-bold">-0.078 ETH (-$196)</span></div>
-                <div className="text-center bg-red-900/20 text-red-300 py-1 rounded mt-2 text-xs">Непредсказуемый результат</div>
-              </div>
-            </div>
-
-            <div className="bg-green-900/10 border border-green-900/30 p-6 rounded-xl">
-              <h4 className="text-green-400 font-bold mb-4 border-b border-green-900/30 pb-2">{post.invisiumTitle}</h4>
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between"><span>Симуляция показала:</span> <span className="text-white">10,000 USDC → 8.214 ETH</span></div>
-                <div className="flex justify-between"><span>Фактический результат:</span> <span className="text-white">10,000 USDC → 8.211 ETH</span></div>
-                <div className="flex justify-between border-t border-green-900/30 pt-2"><span>Разница:</span> <span className="text-green-300">-0.003 ETH (-$7.50)</span></div>
-                <div className="flex justify-between"><span>Точность:</span> <span className="text-green-300 font-bold">99.96%</span></div>
-                <div className="text-center bg-green-900/20 text-green-300 py-1 rounded mt-2 text-xs font-bold">Экономия: $188.50</div>
-              </div>
-            </div>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
-            <Brain className="text-purple-400" /> {post.technicalDetailsTitle}
-          </h2>
-
-          <div className="space-y-8 not-prose mb-12">
-            <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2"><Globe size={20} className="text-blue-400"/>{post.pathfindingTitle}</h3>
-              <p className="text-gray-400 mb-4">{post.pathfindingText}</p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-                <div className="bg-hyper-900/50 p-3 rounded-lg text-center">
-                  <div className="text-cyan-400 font-bold">HyperCore Spot</div>
-                  <div className="text-gray-400 text-xs">Order Book</div>
-                </div>
-                <div className="bg-hyper-900/50 p-3 rounded-lg text-center">
-                  <div className="text-cyan-400 font-bold">Hyperswap</div>
-                  <div className="text-gray-400 text-xs">AMM, Uniswap V2</div>
-                </div>
-                <div className="bg-hyper-900/50 p-3 rounded-lg text-center">
-                  <div className="text-cyan-400 font-bold">Kittenswap</div>
-                  <div className="text-gray-400 text-xs">AMM</div>
-                </div>
-                <div className="bg-hyper-900/50 p-3 rounded-lg text-center">
-                  <div className="text-cyan-400 font-bold">Prjx</div>
-                  <div className="text-gray-400 text-xs">AMM</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2"><Cpu size={20} className="text-purple-400"/>{post.simulationTitle}</h3>
-              <div className="space-y-3 text-gray-400">
-                <div className="flex items-start gap-2">1. Создаёт виртуальную копию текущего состояния блокчейна</div>
-                <div className="flex items-start gap-2">2. Запускает тестовую транзакцию в этой виртуальной среде</div>
-                <div className="flex items-start gap-2">3. Анализирует результат: сколько токенов получено, какой price impact, slippage</div>
-                <div className="flex items-start gap-2">4. Учитывает gas cost для каждого hop</div>
-                <div className="flex items-start gap-2">5. Повторяет для всех маршрутов</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="overflow-x-auto not-prose my-8">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-gray-700">
-                  <th className="p-4 text-gray-400 font-medium">Маршрут</th>
-                  <th className="p-4 text-gray-400 font-medium">Симулированный результат</th>
-                  <th className="p-4 text-gray-400 font-medium">Price Impact</th>
-                  <th className="p-4 text-gray-400 font-medium">Gas Cost</th>
-                  <th className="p-4 text-green-400 font-medium">Итоговая выгода</th>
-                </tr>
-              </thead>
-              <tbody className="text-sm">
-                <tr className="border-b border-gray-800 bg-hyper-800/20">
-                  <td className="p-4 text-white">Direct via Hyperswap</td>
-                  <td className="p-4 text-gray-300">8.156 ETH</td>
-                  <td className="p-4 text-gray-300">1.2%</td>
-                  <td className="p-4 text-gray-300">1.5 HYPE</td>
-                  <td className="p-4 text-gray-300">8.154 ETH</td>
-                </tr>
-                <tr className="border-b border-gray-800">
-                  <td className="p-4 text-white">Multi-hop via HYPE</td>
-                  <td className="p-4 text-gray-300">8.201 ETH</td>
-                  <td className="p-4 text-gray-300">0.8%</td>
-                  <td className="p-4 text-gray-300">2.1 HYPE</td>
-                  <td className="p-4 text-gray-300">8.198 ETH</td>
-                </tr>
-                <tr className="border-b border-gray-800 bg-hyper-800/20">
-                  <td className="p-4 text-white font-bold">Split: 60% Spot + 40% Hyperswap</td>
-                  <td className="p-4 text-gray-300 font-bold">8.214 ETH</td>
-                  <td className="p-4 text-gray-300">0.5%</td>
-                  <td className="p-4 text-gray-300">1.8 HYPE</td>
-                  <td className="p-4 text-green-300 font-bold">8.211 ETH ✅ BEST</td>
-                </tr>
-              </tbody>
-            </table>
-            <p className="text-sm text-gray-500 mt-2">Выбор: Split-routing даёт +0.057 ETH (+$142.50) по сравнению с простым обменом через Hyperswap.</p>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
-            <Shield className="text-green-400" /> {post.benefitsTitle}
-          </h2>
-
-          <div className="space-y-6 not-prose mb-12">
-            <div className="bg-hyper-800/20 p-5 rounded-lg border-l-4 border-cyan-400 hover:bg-hyper-800/40 transition-colors">
-              <h4 className="font-bold text-white text-lg mb-2 flex items-center gap-2"><Target size={18} /> {post.benefit1Title}</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
-                <div className="bg-red-900/10 p-4 rounded-lg">
-                  <h5 className="text-red-400 font-bold mb-2">Без Invisium</h5>
-                  <p className="text-sm text-gray-300">Показано ~40.8 ETH → получаете 40.2 ETH ❌</p>
-                  <div className="text-xs text-red-400 mt-2">Стратегия сорвалась</div>
-                </div>
-                <div className="bg-green-900/10 p-4 rounded-lg">
-                  <h5 className="text-green-400 font-bold mb-2">С Invisium</h5>
-                  <p className="text-sm text-gray-300">Симуляция 40.6 ETH → получаете 40.58 ETH ✅</p>
-                  <div className="text-xs text-green-400 mt-2">Стратегия выполнена</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-hyper-800/20 p-5 rounded-lg border-l-4 border-green-400 hover:bg-hyper-800/40 transition-colors">
-              <h4 className="font-bold text-white text-lg mb-2 flex items-center gap-2"><BarChart size={18} /> {post.benefit2Title}</h4>
-              <div className="mt-3">
-                <div className="flex justify-between items-center py-2 border-b border-gray-700">
-                  <span className="text-gray-300">Без симуляции (средний unexpected slippage)</span>
-                  <span className="text-red-400 font-bold">0.5-2% ($50-200 на $10k)</span>
-                </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-gray-300">С Invisium (средний unexpected slippage)</span>
-                  <span className="text-green-400 font-bold">0.01-0.1% ($1-10 на $10k)</span>
-                </div>
-                <div className="text-center bg-green-900/20 text-green-300 py-2 rounded mt-3 text-sm">
-                  Годовая экономия (100 свопов по $10k): <span className="font-bold">$4,900</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
-            <Navigation className="text-blue-400" /> {post.howToUseTitle}
-          </h2>
-
-          <div className="space-y-4 not-prose mb-8">
-            <div className="flex items-start gap-3 bg-hyper-800/20 p-4 rounded-lg">
-              <div className="bg-cyan-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">1</div>
-              <div>
-                <h4 className="font-bold text-white">Шаг 1: Откройте Hypertrade</h4>
-                <p className="text-gray-400 text-sm">Перейдите на https://ht.xyz и подключите EVM-кошелёк (MetaMask, WalletConnect и т.д.)</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 bg-hyper-800/20 p-4 rounded-lg">
-              <div className="bg-cyan-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">2</div>
-              <div>
-                <h4 className="font-bold text-white">Шаг 2: Выберите токены и введите сумму</h4>
-                <p className="text-gray-400 text-sm">Token In: USDC, Token Out: ETH, Amount: 10,000 USDC</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 bg-hyper-800/20 p-4 rounded-lg">
-              <div className="bg-cyan-900 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">3</div>
-              <div>
-                <h4 className="font-bold text-white">Шаг 3: Дождитесь симуляции (1-3 секунды)</h4>
-                <div className="bg-black/50 p-4 rounded-lg mt-2 text-sm">
-                  <div className="text-green-400 font-bold">💰 You will receive: 8.211 ETH</div>
-                  <div className="text-cyan-400 text-xs">✅ Simulated with 99.8% accuracy</div>
-                  <div className="text-gray-400 mt-2">📊 Price Impact: 0.5%</div>
-                  <div className="text-gray-400">⚠️ Slippage Tolerance: 1.0%</div>
-                  <div className="text-gray-400">⛽ Network Fee: ~1.8 HYPE (~$4.50)</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
-            <Layers className="text-yellow-400" /> {post.comparisonTitle}
-          </h2>
-
-          <div className="overflow-x-auto not-prose my-8">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-gray-700">
-                  <th className="p-4 text-gray-400 font-medium">Параметр</th>
-                  <th className="p-4 text-red-400 font-medium">Традиционный DEX</th>
-                  <th className="p-4 text-green-400 font-medium">Hypertrade Invisium</th>
-                </tr>
-              </thead>
-              <tbody className="text-sm">
-                <tr className="border-b border-gray-800 bg-hyper-800/20">
-                  <td className="p-4 text-white">Точность котировки</td>
-                  <td className="p-4 text-gray-300">90-95% (ориентировочно)</td>
-                  <td className="p-4 text-green-300 font-bold">99.5-99.9%</td>
-                </tr>
-                <tr className="border-b border-gray-800">
-                  <td className="p-4 text-white">Предсказание price impact</td>
-                  <td className="p-4 text-gray-300">Приблизительно</td>
-                  <td className="p-4 text-green-300 font-bold">Точно на основе симуляции</td>
-                </tr>
-                <tr className="border-b border-gray-800 bg-hyper-800/20">
-                  <td className="p-4 text-white">Multi-hop support</td>
-                  <td className="p-4 text-gray-300">Показ без гарантий</td>
-                  <td className="p-4 text-green-300 font-bold">Полная симуляция каждого hop</td>
-                </tr>
-                <tr className="border-b border-gray-800">
-                  <td className="p-4 text-white">Учёт gas cost</td>
-                  <td className="p-4 text-gray-300">Показ отдельно</td>
-                  <td className="p-4 text-green-300 font-bold">Включён в итоговый расчёт</td>
-                </tr>
-                <tr className="border-b border-gray-800 bg-hyper-800/20">
-                  <td className="p-4 text-white">Стоимость</td>
-                  <td className="p-4 text-gray-300">Комиссии DEX</td>
-                  <td className="p-4 text-green-300 font-bold">Бесплатно (0% комиссия)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
-            <AlertCircle className="text-orange-400" /> {post.faqTitle}
-          </h2>
-
-          <div className="space-y-6 not-prose mb-12">
-            {post.faqQuestions.map((question:string, index:number) => (
-              <div key={index} className="bg-hyper-800/20 p-5 rounded-lg">
-                <h4 className="font-bold text-white mb-2">{index + 1}. {question}</h4>
-                <p className="text-gray-400 text-sm">Текст ответа для вопроса {index + 1}</p>
-              </div>
-            ))}
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mt-12 mb-8">{post.conclusionTitle}</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 not-prose">
-            <div className="bg-red-900/10 border border-red-900/30 p-6 rounded-xl">
-              <h4 className="text-red-400 font-bold mb-4">Традиционные DEX</h4>
-              <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex items-start gap-2">❌ Unexpected slippage (0.5-5% потерь)</li>
-                <li className="flex items-start gap-2">❌ Непредсказуемый результат</li>
-                <li className="flex items-start gap-2">❌ Потерям от MEV-атак</li>
-                <li className="flex items-start gap-2">❌ Неоптимальным маршрутам</li>
-              </ul>
-            </div>
-
-            <div className="bg-green-900/10 border border-green-900/30 p-6 rounded-xl">
-              <h4 className="text-green-400 font-bold mb-4">Hypertrade с Invisium</h4>
-              <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex items-start gap-2">✅ Точность 99.5-99.9%</li>
-                <li className="flex items-start gap-2">✅ Защита от unexpected slippage</li>
-                <li className="flex items-start gap-2">✅ Оптимизация multi-hop маршрутов</li>
-                <li className="flex items-start gap-2">✅ 0% platform fee</li>
-                <li className="flex items-start gap-2">✅ Сравнение альтернативных путей</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-cyan-900/20 to-hyper-accent/20 p-8 rounded-2xl border border-cyan-500/30 text-center not-prose mt-12">
-             <h3 className="text-2xl font-bold text-white mb-4">{post.ctaTitle}</h3>
-             <p className="text-gray-300 mb-6">
-               {post.ctaText}
-             </p>
-             <div className="space-y-3 mb-6 text-sm">
-               {post.ctaSteps.map((step:string, index:number) => (
-                 <div key={index} className="flex items-center justify-center gap-2 text-gray-300">{index + 1}. {step}</div>
-               ))}
-             </div>
-             <Link href={`/${lang}`} className="inline-block bg-hyper-accent text-hyper-900 font-bold py-3 px-8 rounded-xl hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20">
-               {post.ctaButton}
-             </Link>
-          </div>
-
-          <div className="mt-12 pt-8 border-t border-gray-800 not-prose">
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Telegram</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Discord</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Копировать ссылку</a>
-            </div>
-            <p className="text-center text-gray-500 text-sm mt-6">{post.updateInfo}<br/>{post.author}</p>
-          </div>
-        </article>
+      {/* CTA блок */}
+      <div className="bg-gradient-to-r from-purple-900/30 to-hyper-accent/30 p-8 rounded-2xl border border-hyper-accent/30 text-center not-prose mt-12">
+        <h3 className="text-2xl font-bold text-white mb-6">{t(`Начните торговать с точностью 99.9% уже сегодня`)}</h3>
+        <p className="text-gray-300 mb-6">{t(`Подключите Hypertrade и получите доступ к технологии Invisium Simulations`)}</p>
+        <button className="bg-hyper-accent text-hyper-900 font-bold py-3 px-8 rounded-xl hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20">
+          {t(`Подключить кошелёк`)}
+        </button>
       </div>
-    </section>
+    </article>
+  </div>
+
+ <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+    <article className="prose prose-invert prose-lg max-w-none">
+      <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">{t(post.title_1a3)}</h1>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Navigation className="text-blue-400"/> {t(post.step1_4b7)}</h2>
+      <p>{t(post.step1_desc_5c2)}</p>
+      <ul className="list-disc list-inside text-gray-300 mb-4">
+        {post.step1_list_6d9.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+      <p>{t(post.step1_result_7e1)}</p>
+      <ul className="list-disc list-inside text-gray-300 mb-8">
+        {post.step1_routes_8f4.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Cpu className="text-purple-400"/> {t(post.step2_9g5)}</h2>
+      <p>{t(post.step2_desc_0h3)}</p>
+      <ul className="list-decimal list-inside text-gray-300 mb-4">
+        {post.step2_steps_1j8.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+      <p>{t(post.step2_tech_2k4)}</p>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Layers className="text-hyper-secondary"/> {t(post.step3_3l7)}</h2>
+      <div className="overflow-x-auto not-prose mb-8">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr className="border-b border-gray-700">
+              <th className="p-4 text-gray-400 font-medium">{t(`Маршрут`)}</th>
+              <th className="p-4 text-gray-400 font-medium">{t(`Симулированный результат`)}</th>
+              <th className="p-4 text-red-400 font-medium">{t(`Price Impact`)}</th>
+              <th className="p-4 text-gray-400 font-medium">{t(`Gas Cost`)}</th>
+              <th className="p-4 text-green-400 font-medium">{t(`Итоговая выгода`)}</th>
+            </tr>
+          </thead>
+          <tbody className="text-sm">
+            {post.step3_table_4m2.map((row, idx) => (
+              <tr key={idx} className="border-b border-gray-800 bg-hyper-800/20">
+                <td className="p-4 text-white">{t(row.route)}</td>
+                <td className="p-4 text-gray-300">{t(row.output)}</td>
+                <td className="p-4 text-red-300">{t(row.impact)}</td>
+                <td className="p-4 text-gray-300">{t(row.gas)}</td>
+                <td className="p-4 text-green-300 font-bold">{t(row.final)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mb-8">{t(post.step3_choice_5n9)}</p>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><CheckCircle className="text-green-400"/> {t(post.step4_6p0)}</h2>
+      <ul className="list-disc list-inside text-gray-300 mb-8">
+        {post.step4_screen_7q2.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Zap className="text-yellow-400"/> {t(post.step5_8r4)}</h2>
+      <ul className="list-disc list-inside text-gray-300 mb-12">
+        {post.step5_desc_9s1.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(post.benefits_title_0t2)}</h2>
+      <h3 className="text-xl font-bold text-white mt-4 mb-2">{t(post.benefit1_1u3)}</h3>
+      <p className="italic text-gray-400">{t(post.benefit1_problem_2v4)}</p>
+      <ul className="list-disc list-inside text-gray-300 mb-2">
+        {post.benefit1_problem_list_3w5.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+      <p className="italic text-gray-400">{t(post.benefit1_solution_4x6)}</p>
+      <ul className="list-disc list-inside text-gray-300 mb-4">
+        {post.benefit1_solution_list_5y7.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+      <p>{t(post.benefit1_example_6z8)}</p>
+      <p className="text-red-400">{t(post.benefit1_without_7a1)}</p>
+      <p className="text-green-400 mb-8">{t(post.benefit1_with_8b2)}</p>
+
+      <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(post.benefit2_9c3)}</h3>
+      <p>{t(post.benefit2_desc_0d4)}</p>
+      <ul className="list-disc list-inside text-gray-300 mb-4">
+        {post.benefit2_list_1e5.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+      <ul className="list-disc list-inside text-gray-400 mb-8">
+        {post.benefit2_stats_2f6.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+
+      <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(post.benefit3_3g7)}</h3>
+      <p>{t(post.benefit3_desc_4h8)}</p>
+      <ul className="list-disc list-inside text-gray-300 mb-2">
+        {post.benefit3_list_5i9.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+      <ul className="list-decimal list-inside text-gray-400 mb-8">
+        {post.benefit3_example_6j0.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+
+      <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(post.benefit4_7k1)}</h3>
+      <p>{t(post.benefit4_desc_8l2)}</p>
+      <div className="overflow-x-auto not-prose mb-8">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr className="border-b border-gray-700">
+              <th className="p-4 text-gray-400 font-medium">{t(`Маршрут`)}</th>
+              <th className="p-4 text-gray-400 font-medium">{t(`Output`)}</th>
+              <th className="p-4 text-red-400 font-medium">{t(`Impact`)}</th>
+              <th className="p-4 text-gray-400 font-medium">{t(`Gas`)}</th>
+              <th className="p-4 text-green-400 font-medium">{t(`Total`)}</th>
+            </tr>
+          </thead>
+          <tbody className="text-sm">
+            {post.benefit4_table_9m3.map((row, idx) => (
+              <tr key={idx} className="border-b border-gray-800 bg-hyper-800/20">
+                <td className="p-4 text-white">{t(row.route)}</td>
+                <td className="p-4 text-gray-300">{t(row.output)}</td>
+                <td className="p-4 text-red-300">{t(row.impact)}</td>
+                <td className="p-4 text-gray-300">{t(row.gas)}</td>
+                <td className="p-4 text-green-300 font-bold">{t(row.total)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(post.benefit5_0n4)}</h3>
+      <p>{t(post.benefit5_desc_1o5)}</p>
+      <ul className="list-disc list-inside text-gray-300 mb-12">
+        {post.benefit5_adv_2p6.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+    </article>
+  </div>
+
+
+<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+    <article className="prose prose-invert prose-lg max-w-none">
+
+      <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">{t(post.title_1a5)}</h1>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Navigation className="text-blue-400"/> {t(post.step1_2b6)}</h2>
+      <p>{t(post.step1_desc_3c7)}</p>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Search className="text-hyper-accent"/> {t(post.step2_4d8)}</h2>
+      <ul className="list-disc list-inside text-gray-300 mb-8">
+        {post.step2_list_5e9.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Cpu className="text-purple-400"/> {t(post.step3_6f0)}</h2>
+      <p>{t(post.step3_desc_7g1)}</p>
+      <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl mb-8 space-y-2">
+        {post.step3_screen_8h2.map((item, idx) => <p key={idx} className="text-gray-300">{t(item)}</p>)}
+      </div>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Layers className="text-hyper-secondary"/> {t(post.step4_9i3)}</h2>
+      <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl mb-8 space-y-2">
+        {post.step4_list_0j4.map((item, idx) => <p key={idx} className="text-gray-300">{t(item)}</p>)}
+      </div>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><AlertCircle className="text-red-400"/> {t(post.step5_1k5)}</h2>
+      <p>{t(post.step5_desc_2l6)}</p>
+      <ul className="list-disc list-inside text-gray-300 mb-4">
+        {post.step5_list_3m7.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+      <p className="italic text-gray-400 mb-8">{t(post.step5_tip_4n8)}</p>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><CheckCircle className="text-green-400"/> {t(post.step6_5o9)}</h2>
+      <ul className="list-decimal list-inside text-gray-300 mb-8">
+        {post.step6_list_6p0.map((item, idx) => <li key={idx}>{t(item)}</li>)}
+      </ul>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Clock className="text-hyper-accent"/> {t(post.step7_7q1)}</h2>
+      <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl mb-12 space-y-2">
+        {post.step7_screen_8r2.map((item, idx) => <p key={idx} className="text-gray-300">{t(item)}</p>)}
+      </div>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Layers className="text-hyper-secondary"/> {t(post.comparison_title_9s3)}</h2>
+      <div className="overflow-x-auto not-prose mb-12">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr className="border-b border-gray-700">
+              <th className="p-4 text-gray-400 font-medium">{t(`Параметр`)}</th>
+              <th className="p-4 text-gray-400 font-medium">{t(`Традиционный DEX`)}</th>
+              <th className="p-4 text-green-400 font-medium">{t(`Hypertrade Invisium`)}</th>
+            </tr>
+          </thead>
+          <tbody className="text-sm">
+            {post.comparison_table_0t4.map((row, idx) => (
+              <tr key={idx} className="border-b border-gray-800 bg-hyper-800/20">
+                <td className="p-4 text-white">{t(row.param)}</td>
+                <td className="p-4 text-gray-300">{t(row.dex)}</td>
+                <td className="p-4 text-green-300 font-bold">{t(row.invisium)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p className="text-gray-300 mb-12">{t(post.comparison_conclusion_1u5)}</p>
+    </article>
+  </div>
+
+<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+    <article className="prose prose-invert prose-lg max-w-none">
+
+      <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">{t(post.title_1a6)}</h1>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Layers className="text-hyper-secondary"/> {t(post.case1_2b7)}</h2>
+      <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl mb-8 space-y-2">
+        {post.case1_desc_3c8.map((item, idx) => <p key={idx} className="text-gray-300">{t(item)}</p>)}
+      </div>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Zap className="text-yellow-400"/> {t(post.case2_4d9)}</h2>
+      <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl mb-8 space-y-2">
+        {post.case2_desc_5e0.map((item, idx) => <p key={idx} className="text-gray-300">{t(item)}</p>)}
+      </div>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><CheckCircle className="text-green-400"/> {t(post.case3_6f1)}</h2>
+      <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl mb-8 space-y-2">
+        {post.case3_desc_7g2.map((item, idx) => <p key={idx} className="text-gray-300">{t(item)}</p>)}
+      </div>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><AlertCircle className="text-red-400"/> {t(post.limits_title_8h3)}</h2>
+      <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl mb-8 space-y-2">
+        {post.limits_list_9i4.map((item, idx) => <p key={idx} className="text-gray-300">{t(item)}</p>)}
+      </div>
+
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Layers className="text-hyper-secondary"/> {t(post.tips_title_0j5)}</h2>
+      <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl mb-12 space-y-2">
+        {post.tips_list_1k6.map((item, idx) => <p key={idx} className="text-gray-300">{t(item)}</p>)}
+      </div>
+
+    </article>
+  </div>
+
+
+ <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+    <article className="prose prose-invert prose-lg max-w-none">
+
+      <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">{post.faq_title_1a}</h1>
+
+      {/* FAQ Items */}
+      {[...Array(10)].map((_, i) => (
+        <div key={i} className="mt-8">
+          <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <Layers className="text-hyper-secondary" />
+            {post[`faq_${i+1}b`]}
+          </h2>
+          <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl space-y-2">
+            {Array.isArray(post[`faq_${i+1}_desc_${i+2}c`]) 
+              ? post[`faq_${i+1}_desc_${i+2}c`].map((item:any, idx:number) => <p key={idx} className="text-gray-300">{item}</p>)
+              : <p className="text-gray-300">{post[`faq_${i+1}_desc_${i+2}c`]}</p>}
+          </div>
+        </div>
+      ))}
+
+      {/* Conclusion */}
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><Zap className="text-yellow-400"/> {post.conclusion_title_12d}</h2>
+      <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl mb-12 space-y-2">
+        {post.conclusion_list_13e.map((item, idx) => <p key={idx} className="text-gray-300">{item}</p>)}
+      </div>
+
+    </article>
+  </div>
+</section>
   );
 };

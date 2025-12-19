@@ -4,8 +4,9 @@ import { Menu, Wallet, X } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Language } from "@/app/translations";
 
-export const Navbar = () => {
+export const Navbar = ({lang}:{lang:Language}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   
@@ -114,7 +115,7 @@ export const Navbar = () => {
 
           {/* Десктопные кнопки справа */}
           <div className="hidden md:flex items-center gap-4">
-            <LanguageSwitcher />
+            <LanguageSwitcher lang={lang} />
             <button className="bg-hyper-accent/10 hover:bg-hyper-accent/20 text-hyper-accent border border-hyper-accent/50 px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2">
               <Wallet size={16} />
               {t.connectWallet}
@@ -123,7 +124,7 @@ export const Navbar = () => {
 
           {/* Мобильное меню */}
           <div className="-mr-2 flex md:hidden items-center gap-4">
-            <LanguageSwitcher />
+            <LanguageSwitcher lang={lang} />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-gray-300 hover:text-white p-2"

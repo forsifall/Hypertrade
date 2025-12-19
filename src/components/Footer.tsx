@@ -4,7 +4,7 @@ import { getDictionary, Language } from "@/app/translations";
 import Link from "next/link";
 
 // eslint-disable-next-line
-export const Footer = async ({ lang }:{ lang: Language}) => {
+export const Footer = ({ lang }:{ lang: Language}) => {
 
       const translationData = getDictionary(lang);
 

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Script from 'next/script'
 
 function getBlogMetadata(lang: string): Metadata {
   const metadataByLang = {
@@ -77,5 +78,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <>
+
+  
+
+  {children}
+  </>;
 }

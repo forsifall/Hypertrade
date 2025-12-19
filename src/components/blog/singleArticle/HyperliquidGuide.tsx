@@ -1,3 +1,4 @@
+"use client"
 import BackButtonNoArticle from "@/components/ui/BackButtonNoArticle";
 import { Cpu } from "lucide-react";
 

@@ -1,3 +1,4 @@
+"use client"
 import BackButton from "@/components/ui/BackButton";
 import { AlertCircle, ArrowLeft, Calendar, CheckCircle, Clock, Cpu, Layers, Navigation, Search, Zap } from "lucide-react";
 

@@ -1,3 +1,5 @@
+// "use client"
+
 import { getDictionary, Language } from "@/app/translations";
 import { ArticleDCAStrategy2 } from "@/components/blog/singleArticle/2ArticleDCAStrategy";
 import { ArticleSplitRouting2 } from "@/components/blog/singleArticle/Article2SplitRouting";
@@ -25,6 +27,7 @@ import { ArticleDexAggregator } from "@/components/blog/singleArticle/DexAggrega
 import HyperliquidGuide from "@/components/blog/singleArticle/HyperliquidGuide";
 import InvisiumTechDeepdive from "@/components/blog/singleArticle/InvisiumTechDeepdive";
 import ArticlePriceImpact from "@/components/blog/singleArticle/PriceImpact";
+// import "../../../../i18n";
 
 export default async function ArticleSingle({params}:{params:Promise<{id:string, lang:Language}>}) {
 

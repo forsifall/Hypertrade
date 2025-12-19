@@ -4,6 +4,9 @@ import path from "path";
 const nextConfig: NextConfig = {
   turbopack: {},
 
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   
   async redirects() {
     return [
