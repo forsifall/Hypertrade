@@ -1,6 +1,7 @@
 import { getDictionary } from "@/app/translations";
 import { Language } from "../types";
 import { Shield } from "lucide-react";
+import Link from "next/link";
 
 // --- Security & Referral ---
 export function SecurityAndReferral ({ lang }: { lang: Language }) {
@@ -45,9 +46,9 @@ export function SecurityAndReferral ({ lang }: { lang: Language }) {
               {translationData.security.tokenStatusDesc}
             </p>
           </div>
-          <button className="w-full bg-white text-hyper-900 font-bold py-4 rounded-xl hover:bg-gray-200 transition-colors shadow-lg">
+          <Link href='https://ht.xyz/' style={{textAlign: "center"}} className="w-full bg-white text-hyper-900 font-bold py-4 rounded-xl hover:bg-gray-200 transition-colors shadow-lg">
             {translationData.security.referralBtn}
-          </button>
+          </Link>
         </div>
       </div>
     </div>

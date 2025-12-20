@@ -731,49 +731,139 @@ export const ArticleDCAStrategy2 = ({ lang }: { lang: Language }) => {
   </li>
 </ul>
 
-<h3 className="text-xl font-bold text-white mt-12 mb-6">{t(`12. Чеклист перед началом DCA стратегии`)}</h3>
+<h3 className="text-xl font-bold text-white mt-12 mb-6">
+  {t(`12. Чеклист перед началом DCA стратегии`)}
+</h3>
 
-<p className="text-gray-300 font-bold">{t(`✅ Подготовка (до первой покупки):`)}</p>
-<ul className="list-disc list-inside text-gray-300 space-y-2 ml-6">
-  <li>{t(`[ ] Определили токен для DCA (HYPE / ETH / BTC / другое)`)}</li>
-  <li>{t(`[ ] Проверили ликвидность токена (TVL >$500k для mid-cap, >$5M для small-cap)`)}</li>
-  <li>{t(`[ ] Установили сумму DCA ($50-100 / $200-500 / $500+ на покупку)`)}</li>
-  <li>{t(`[ ] Выбрали частоту (ежедневно / еженедельно / раз в 2 недели / ежемесячно)`)}</li>
-  <li>{t(`[ ] Установили длительность стратегии (3 месяца / 6 месяцев / 1 год / бессрочно)`)}</li>
-  <li>{t(`[ ] Проверили, что DCA ≤10-20% от дохода`)}</li>
-  <li>{t(`[ ] Завели USDC на Hyperliquid L1`)}</li>
-  <li>{t(`[ ] Создали напоминание в календаре (день + время покупки)`)}</li>
-</ul>
+{/* ===== Подготовка ===== */}
+<p className="text-gray-300 font-bold mb-3">
+  {t(`✅ Подготовка (до первой покупки):`)}
+</p>
 
-<p className="text-gray-300 font-bold mt-4">{t(`✅ Перед каждой DCA покупкой:`)}</p>
-<ul className="list-disc list-inside text-gray-300 space-y-2 ml-6">
-  <li>{t(`[ ] Проверили ликвидность токена в текущий момент (https://app.hyperliquid.xyz/trade)`)}</li>
-  <li>{t(`[ ] Убедились, что время покупки = 12:00-16:00 UTC, вторник-четверг (если возможно)`)}</li>
-  <li>{t(`[ ] Открыли Hypertrade (https://ht.xyz)`)}</li>
-  <li>{t(`[ ] Настроили Advanced Settings:`)}</li>
-  <ul className="list-disc list-inside text-gray-300 ml-6 space-y-1">
-    <li>{t(`Slippage: Auto (Recommended) ✅`)}</li>
-    <li>{t(`Invisium Simulation: ON ✅`)}</li>
-    <li>{t(`Auto-revert: >2% ✅`)}</li>
-  </ul>
-  <li>{t(`[ ] Проверили симуляцию перед подтверждением (ожидаемая цена, price impact)`)}</li>
-  <li>{t(`[ ] Если симуляция показывает price impact >5% → отложите покупку на 1-2 часа или разделите на 2+ транзакции`)}</li>
-</ul>
+<div className="space-y-2 ml-2">
+  {[
+    `Определили токен для DCA (HYPE / ETH / BTC / другое)`,
+    `Проверили ликвидность токена (TVL >$500k для mid-cap, >$5M для small-cap)`,
+    `Установили сумму DCA ($50-100 / $200-500 / $500+ на покупку)`,
+    `Выбрали частоту (ежедневно / еженедельно / раз в 2 недели / ежемесячно)`,
+    `Установили длительность стратегии (3 месяца / 6 месяцев / 1 год / бессрочно)`,
+    `Проверили, что DCA ≤10-20% от дохода`,
+    `Завели USDC на Hyperliquid L1`,
+    `Создали напоминание в календаре (день + время покупки)`,
+  ].map((item, i) => (
+    <label key={i} className="flex items-start gap-3 text-gray-300">
+      <input
+        type="checkbox"
+        defaultChecked
+        className="mt-1 accent-green-500"
+      />
+      <span>{t(item)}</span>
+    </label>
+  ))}
+</div>
 
-<p className="text-gray-300 font-bold mt-4">{t(`✅ После покупки:`)}</p>
-<ul className="list-disc list-inside text-gray-300 space-y-2 ml-6">
-  <li>{t(`[ ] Зафиксировали данные в таблицу (дата, сумма, цена, получено токенов)` )}</li>
-  <li>{t(`[ ] Обновили среднюю цену входа`)}</li>
-  <li>{t(`[ ] Перевели купленные токены в холодный кошелек / стейкинг (если долгосрочное хранение)` )}</li>
-</ul>
+{/* ===== Перед каждой покупкой ===== */}
+<p className="text-gray-300 font-bold mt-6 mb-3">
+  {t(`✅ Перед каждой DCA покупкой:`)}
+</p>
 
-<p className="text-gray-300 font-bold mt-4">{t(`✅ Ежемесячный пересмотр:`)}</p>
-<ul className="list-disc list-inside text-gray-300 space-y-2 ml-6">
-  <li>{t(`[ ] Проанализировали результаты за месяц (средняя цена vs рыночная, price impact, slippage)` )}</li>
-  <li>{t(`[ ] Проверили фундаментальные новости по токену (обновления протокола, партнерства, проблемы)` )}</li>
-  <li>{t(`[ ] Оценили ликвидность токена (растет / стабильна / падает)` )}</li>
-  <li>{t(`[ ] Решили: продолжать DCA / изменить сумму/частоту / остановить`)}</li>
-</ul>
+<div className="space-y-2 ml-2">
+  {[
+    `Проверили ликвидность токена в текущий момент (https://app.hyperliquid.xyz/trade)`,
+    `Убедились, что время покупки = 12:00-16:00 UTC, вторник-четверг (если возможно)`,
+    `Открыли Hypertrade (https://ht.xyz)`,
+  ].map((item, i) => (
+    <label key={i} className="flex items-start gap-3 text-gray-300">
+      <input
+        type="checkbox"
+        defaultChecked
+        className="mt-1 accent-green-500"
+      />
+      <span>{t(item)}</span>
+    </label>
+  ))}
+
+  {/* Advanced settings */}
+  <div className="ml-8 mt-2 space-y-1 text-gray-400">
+    <p className="font-semibold text-gray-300">
+      {t(`Настроили Advanced Settings:`)}
+    </p>
+
+    {[
+      `Slippage: Auto (Recommended) ✅`,
+      `Invisium Simulation: ON ✅`,
+      `Auto-revert: >2% ✅`,
+    ].map((item, i) => (
+      <label key={i} className="flex items-start gap-3">
+        <input
+          type="checkbox"
+          defaultChecked
+          className="mt-1 accent-green-500"
+        />
+        <span>{t(item)}</span>
+      </label>
+    ))}
+  </div>
+
+  {[
+    `Проверили симуляцию перед подтверждением (ожидаемая цена, price impact)`,
+    `Если симуляция показывает price impact >5% → отложите покупку на 1-2 часа или разделите на 2+ транзакции`,
+  ].map((item, i) => (
+    <label key={i} className="flex items-start gap-3 text-gray-300">
+      <input
+        type="checkbox"
+        defaultChecked
+        className="mt-1 accent-green-500"
+      />
+      <span>{t(item)}</span>
+    </label>
+  ))}
+</div>
+
+{/* ===== После покупки ===== */}
+<p className="text-gray-300 font-bold mt-6 mb-3">
+  {t(`✅ После покупки:`)}
+</p>
+
+<div className="space-y-2 ml-2">
+  {[
+    `Зафиксировали данные в таблицу (дата, сумма, цена, получено токенов)`,
+    `Обновили среднюю цену входа`,
+    `Перевели купленные токены в холодный кошелек / стейкинг (если долгосрочное хранение)`,
+  ].map((item, i) => (
+    <label key={i} className="flex items-start gap-3 text-gray-300">
+      <input
+        type="checkbox"
+        defaultChecked
+        className="mt-1 accent-green-500"
+      />
+      <span>{t(item)}</span>
+    </label>
+  ))}
+</div>
+
+{/* ===== Ежемесячный пересмотр ===== */}
+<p className="text-gray-300 font-bold mt-6 mb-3">
+  {t(`✅ Ежемесячный пересмотр:`)}
+</p>
+
+<div className="space-y-2 ml-2">
+  {[
+    `Проанализировали результаты за месяц (средняя цена vs рыночная, price impact, slippage)`,
+    `Проверили фундаментальные новости по токену (обновления протокола, партнерства, проблемы)`,
+    `Оценили ликвидность токена (растет / стабильна / падает)`,
+    `Решили: продолжать DCA / изменить сумму/частоту / остановить`,
+  ].map((item, i) => (
+    <label key={i} className="flex items-start gap-3 text-gray-300">
+      <input
+        type="checkbox"
+        defaultChecked
+        className="mt-1 accent-green-500"
+      />
+      <span>{t(item)}</span>
+    </label>
+  ))}
+</div>
 
 <h3 className="text-xl font-bold text-white mt-12 mb-6">{t(`13. Итоговая экономия: Hypertrade для DCA`)}</h3>
 
@@ -833,52 +923,74 @@ export const ArticleDCAStrategy2 = ({ lang }: { lang: Language }) => {
 <p className="text-gray-300 font-bold mb-8">{t(`🎯 Общая экономия использования Hypertrade для DCA: $1,014 + $2,400 + $130 = $3,544/год минимум ✅`)}</p>
 <p className="text-gray-300 mb-12">{t(`ROI: $3,544 / $26,000 = 13.6% дополнительная доходность за счет оптимизации исполнения.`)}</p>
 
-<h3 className="text-xl font-bold text-white mt-12 mb-6">{t(`14. Полезные ссылки`)}</h3>
+<h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-  <div className="bg-hyper-800/20 p-6 rounded-xl border-l-4 border-hyper-accent hover:bg-hyper-800/40 transition-colors">
-    <h4 className="text-white font-bold mb-3">{t(`🔗 Hypertrade`)}</h4>
-    <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-      <li>{t(`Приложение: https://ht.xyz`)}</li>
-      <li>{t(`Документация: https://docs.hypertrade.io`)}</li>
-      <li>{t(`Discord: https://discord.gg/hypertrade`)}</li>
-      <li>{t(`Twitter: https://twitter.com/Hypertrade_xyz`)}</li>
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-4">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Tools:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade (optimal liquidity routing):`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://ht.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://docs.hypertrade.io`)}</a>
+      </li>
+      <li>
+        {t(`Invisium Technology:`)}{" "}
+        <a href="https://invisium.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://invisium.com`)}</a>
+      </li>
     </ul>
   </div>
 
-  <div className="bg-hyper-800/20 p-6 rounded-xl border-l-4 border-hyper-accent hover:bg-hyper-800/40 transition-colors">
-    <h4 className="text-white font-bold mb-3">{t(`🔗 Hyperliquid`)}</h4>
-    <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-      <li>{t(`Главная: https://hyperliquid.xyz`)}</li>
-      <li>{t(`Торговля: https://app.hyperliquid.xyz/trade`)}</li>
-      <li>{t(`Explorer: https://explorer.hyperliquid.xyz`)}</li>
-      <li>{t(`Документация: https://hyperliquid.gitbook.io/hyperliquid-docs`)}</li>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`HyperCore Spot (order book):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/trade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://app.hyperliquid.xyz/trade`)}</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://explorer.hyperliquid.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Docs:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperliquid.gitbook.io`)}</a>
+      </li>
     </ul>
   </div>
 
-  <div className="bg-hyper-800/20 p-6 rounded-xl border-l-4 border-hyper-accent hover:bg-hyper-800/40 transition-colors">
-    <h4 className="text-white font-bold mb-3">{t(`🔗 DCA калькуляторы`)}</h4>
-    <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-      <li>{t(`Bitcoin DCA: https://charts.bitbo.io/dca/`)}</li>
-      <li>{t(`Average Down: https://amsflow.com/tools/crypto-average-down-calculator`)}</li>
-      <li>{t(`Uphold DCA: https://uphold.com/en-us/dca-calculator`)}</li>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`DEX на Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hyperswap:`)}{" "}
+        <a href="https://hyperswap.fi" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperswap.fi`)}</a>
+      </li>
+      <li>
+        {t(`Kittenswap:`)}{" "}
+        <a href="https://kittenswap.org" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://kittenswap.org`)}</a>
+      </li>
+      <li>
+        {t(`Prjx:`)}{" "}
+        <a href="https://prjx.finance" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://prjx.finance`)}</a>
+      </li>
     </ul>
   </div>
 
-  <div className="bg-hyper-800/20 p-6 rounded-xl border-l-4 border-hyper-accent hover:bg-hyper-800/40 transition-colors">
-    <h4 className="text-white font-bold mb-3">{t(`🔗 Аналитика Hyperliquid`)}</h4>
-    <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-      <li>{t(`DexScreener: https://dexscreener.com`)}</li>
-      <li>{t(`Coinglass: https://www.coinglass.com/hyperliquid`)}</li>
-    </ul>
-  </div>
-
-  <div className="bg-hyper-800/20 p-6 rounded-xl border-l-4 border-hyper-accent hover:bg-hyper-800/40 transition-colors">
-    <h4 className="text-white font-bold mb-3">{t(`🔗 Другие DEX на Hyperliquid`)}</h4>
-    <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-      <li>{t(`Hyperswap: https://hyperswap.fi`)}</li>
-      <li>{t(`Kittenswap: https://kittenswap.org`)}</li>
-      <li>{t(`PRJX: https://prjx.finance`)}</li>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Analytics:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`CoinGlass (Hyperliquid):`)}{" "}
+        <a href="https://www.coinglass.com/hyperliquid" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://www.coinglass.com/hyperliquid`)}</a>
+      </li>
+      <li>
+        {t(`DexScreener:`)}{" "}
+        <a href="https://dexscreener.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://dexscreener.com`)}</a>
+      </li>
     </ul>
   </div>
 </div>
@@ -896,7 +1008,18 @@ export const ArticleDCAStrategy2 = ({ lang }: { lang: Language }) => {
   <li className="bg-hyper-800/20 p-4 rounded-xl border-l-4 border-green-400 text-gray-300">{t(`✅ Invisium Simulation (99.5-99.9% точность) → защита от неожиданного price impact и MEV`)}</li>
 </ul>
 
-<p className="text-gray-300 mb-6">{t(`🚀 Начните DCA прямо сейчас: https://ht.xyz`)}</p>
+<button
+  onClick={() => window.open("https://ht.xyz", "_blank", "noopener,noreferrer")}
+  className="mb-5 group relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-900 active:scale-95"
+>
+  <span className="relative flex items-center justify-center gap-2">
+    <span className="text-lg">🚀</span>
+    <span>{t(`Начните DCA прямо сейчас: https://ht.xyz`)}</span>
+  </span>
+  
+  {/* Эффект блеска при наведении */}
+  <span className="absolute inset-0 h-full w-full scale-0 rounded-xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/10"></span>
+</button>
 <p className="text-gray-300 mb-12 italic">{t(`💡 Помните: “Лучшее время для начала DCA было год назад. Второе лучшее время — сегодня.”`)}</p>
 
 

@@ -856,42 +856,52 @@ export const ArticleCommonMistakes = ({lang}:{lang:Language}) => {
 <p className="text-gray-300 mb-4">{t("Проверка: Alternative.me Fear & Greed Index")}</p>
 
     <p className="text-gray-300 mb-4 font-bold">{t("✅ Адаптируйте стратегию:")}</p>
-<table className="table-auto text-gray-300 mb-4">
-  <thead>
-    <tr>
-      <th className="px-2 py-1">{t("Фаза рынка")}</th>
-      <th className="px-2 py-1">{t("Стратегия")}</th>
-      <th className="px-2 py-1">{t("Allocation")}</th>
-      <th className="px-2 py-1">{t("Risk Level")}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td className="border px-2 py-1">{t("Bull Market")}</td>
-      <td className="border px-2 py-1">{t("Агрессивная покупка")}</td>
-      <td className="border px-2 py-1">{t("70-80% crypto, 20-30% stablecoins")}</td>
-      <td className="border px-2 py-1">{t("High")}</td>
-    </tr>
-    <tr>
-      <td className="border px-2 py-1">{t("Bear Market")}</td>
-      <td className="border px-2 py-1">{t("Защита капитала, DCA")}</td>
-      <td className="border px-2 py-1">{t("20-30% crypto, 70-80% stablecoins")}</td>
-      <td className="border px-2 py-1">{t("Low")}</td>
-    </tr>
-    <tr>
-      <td className="border px-2 py-1">{t("Sideways")}</td>
-      <td className="border px-2 py-1">{t("Swing trading, выборочные покупки")}</td>
-      <td className="border px-2 py-1">{t("40-60% crypto, 40-60% stablecoins")}</td>
-      <td className="border px-2 py-1">{t("Medium")}</td>
-    </tr>
-    <tr>
-      <td className="border px-2 py-1">{t("Неопределённость")}</td>
-      <td className="border px-2 py-1">{t("Ожидание, кэш")}</td>
-      <td className="border px-2 py-1">{t("10-20% crypto, 80-90% stablecoins")}</td>
-      <td className="border px-2 py-1">{t("Very Low")}</td>
-    </tr>
-  </tbody>
-</table>
+<div className="overflow-x-auto bg-hyper-800/30 p-4 rounded-lg my-6">
+  <table className="w-full text-left border-collapse text-sm text-gray-300">
+    <thead>
+      <tr className="border-b border-gray-700">
+        <th className="p-4 font-medium text-white">{t("Фаза рынка")}</th>
+        <th className="p-4 font-medium text-white">{t("Стратегия")}</th>
+        <th className="p-4 font-medium text-white">{t("Allocation")}</th>
+        <th className="p-4 font-medium text-white">{t("Risk Level")}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="border-b border-gray-700">
+        <td className="p-4 font-medium">{t("Bull Market")}</td>
+        <td className="p-4">{t("Агрессивная покупка")}</td>
+        <td className="p-4">{t("70-80% crypto, 20-30% stablecoins")}</td>
+        <td className="p-4">
+          <span className="text-red-400 font-medium">{t("High")}</span>
+        </td>
+      </tr>
+      <tr className="border-b border-gray-700">
+        <td className="p-4 font-medium">{t("Bear Market")}</td>
+        <td className="p-4">{t("Защита капитала, DCA")}</td>
+        <td className="p-4">{t("20-30% crypto, 70-80% stablecoins")}</td>
+        <td className="p-4">
+          <span className="text-green-400 font-medium">{t("Low")}</span>
+        </td>
+      </tr>
+      <tr className="border-b border-gray-700">
+        <td className="p-4 font-medium">{t("Sideways")}</td>
+        <td className="p-4">{t("Swing trading, выборочные покупки")}</td>
+        <td className="p-4">{t("40-60% crypto, 40-60% stablecoins")}</td>
+        <td className="p-4">
+          <span className="text-yellow-400 font-medium">{t("Medium")}</span>
+        </td>
+      </tr>
+      <tr>
+        <td className="p-4 font-medium">{t("Неопределённость")}</td>
+        <td className="p-4">{t("Ожидание, кэш")}</td>
+        <td className="p-4">{t("10-20% crypto, 80-90% stablecoins")}</td>
+        <td className="p-4">
+          <span className="text-blue-400 font-medium">{t("Very Low")}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <p className="text-gray-300 mb-4 font-bold">{t("✅ Следите за макроэкономическими событиями:")}</p>
 <ul className="list-disc list-inside text-gray-300 mb-4 space-y-2">
@@ -1009,33 +1019,77 @@ export const ArticleCommonMistakes = ({lang}:{lang:Language}) => {
       </p>
 
       {/* Ресурсы и поддержка */}
-      <h2 className="text-2xl font-bold text-white mt-12 mb-6">{t("Ресурсы и поддержка")}</h2>
-      <ul className="list-disc list-inside text-gray-300 mb-4 space-y-2">
-        <li>{t("📚 Документация и обучение:")}
-          <ul className="list-disc list-inside text-gray-400 ml-5">
-            <li>{t("Официальный сайт: https://ht.xyz")}</li>
-            <li>{t("Security guide: https://docs.hypertrade.io/security")}</li>
-            <li>{t("Technical docs: https://docs.hypertrade.io")}</li>
-          </ul>
-        </li>
-        <li>{t("🛡️ Инструменты проверки:")}
-          <ul className="list-disc list-inside text-gray-400 ml-5">
-            <li>{t("Revoke.cash, HoneyPot.is, Token Sniffer, Pocket Universe, Hyperliquid Explorer")}</li>
-          </ul>
-        </li>
-        <li>{t("💬 Сообщество и поддержка:")}
-          <ul className="list-disc list-inside text-gray-400 ml-5">
-            <li>{t("Discord, Twitter, Telegram")}</li>
-          </ul>
-        </li>
-        <li>{t("📧 Официальная поддержка:")}
-          <ul className="list-disc list-inside text-gray-400 ml-5">
-            <li>{t("support@hypertrade.io")}</li>
-            <li>{t("security@hypertrade.io")}</li>
-            <li>{t("tech@hypertrade.io")}</li>
-          </ul>
-        </li>
-      </ul>
+      <h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
+
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-4">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Tools:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade (optimal liquidity routing):`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://ht.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://docs.hypertrade.io`)}</a>
+      </li>
+      <li>
+        {t(`Invisium Technology:`)}{" "}
+        <a href="https://invisium.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://invisium.com`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`HyperCore Spot (order book):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/trade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://app.hyperliquid.xyz/trade`)}</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://explorer.hyperliquid.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Docs:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperliquid.gitbook.io`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`DEX на Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hyperswap:`)}{" "}
+        <a href="https://hyperswap.fi" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperswap.fi`)}</a>
+      </li>
+      <li>
+        {t(`Kittenswap:`)}{" "}
+        <a href="https://kittenswap.org" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://kittenswap.org`)}</a>
+      </li>
+      <li>
+        {t(`Prjx:`)}{" "}
+        <a href="https://prjx.finance" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://prjx.finance`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Analytics:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`CoinGlass (Hyperliquid):`)}{" "}
+        <a href="https://www.coinglass.com/hyperliquid" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://www.coinglass.com/hyperliquid`)}</a>
+      </li>
+      <li>
+        {t(`DexScreener:`)}{" "}
+        <a href="https://dexscreener.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://dexscreener.com`)}</a>
+      </li>
+    </ul>
+  </div>
+</div>
       <p className="text-gray-300 mb-8 font-bold">{t("⚠️ ВАЖНО: Официальная поддержка НИКОГДА не пишет первой в личные сообщения и НЕ просит seed phrase / private key!")}</p>
     </article>
   </div>

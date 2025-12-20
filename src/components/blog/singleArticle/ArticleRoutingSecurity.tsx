@@ -1,7 +1,7 @@
 "use client"
 import { Language } from "@/app/translations";
 import BackButton from "@/components/ui/BackButton";
-import { AlertTriangle, Cpu, Database, Globe, Lock, Shield, Server, ShieldAlert, Zap, CheckCircle, XCircle, BarChart3, Cctv, Users, FileText, BookOpen } from "lucide-react";
+import { AlertTriangle, Cpu, Database, Globe, Lock, Shield, Server, ShieldAlert, Zap, CheckCircle, XCircle, BarChart3, Cctv, Users, FileText, BookOpen, Settings, Clock } from "lucide-react";
 import Link from "next/link";
 import { getBlogPosts } from "../data";
 import { useTranslation } from "react-i18next";
@@ -16,20 +16,34 @@ export const ArticleRoutingSecurity = ({ lang }: { lang: Language }) => {
 
   return (
     <section className="bg-hyper-900 min-h-screen pb-20">
-      {/* Header Image/Gradient */}
-      <div className={`h-64 md:h-80 w-full bg-gradient-to-r ${post.imageColor} relative`}>
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-20"></div>
+        {/* Header Image/Gradient */}
+      <div
+        className={`min-h-64 md:min-h-80 w-full bg-gradient-to-r ${post.imageColor} relative`}
+      >
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-15"></div>
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-hyper-900 to-transparent"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-12 relative z-10">
-           <BackButton label="Назад к статьям" />
-           <div className="flex flex-wrap gap-4 text-sm font-medium text-amber-400 mb-4">
-             <span className="bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">{post.category}</span>
-             <span className="flex items-center gap-1 text-gray-400"><BookOpen size={14} /> {post.readTime}</span>
-             <span className="flex items-center gap-1 text-gray-400"><Shield size={14} /> {post.date}</span>
-           </div>
-           <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-             {post.title}
-           </h1>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+          <div className="mb-8">
+            <BackButton label="Назад к статьям" />
+          </div>
+
+          {/* Метаданные всегда сверху */}
+          <div className="flex flex-wrap gap-4 text-sm font-medium text-yellow-400 mb-4">
+            <span className="bg-yellow-400/10 px-3 py-1 rounded-full border border-yellow-400/20">
+              {post.category}
+            </span>
+            <span className="flex items-center gap-1 text-gray-400">
+              <Settings size={14} /> {post.readTime}
+            </span>
+            <span className="flex items-center gap-1 text-gray-400">
+              <Clock size={14} /> {post.date}
+            </span>
+          </div>
+
+          {/* Заголовок занимает оставшееся место */}
+          <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight break-words">
+            {post.title}
+          </h1>
         </div>
       </div>
 
@@ -1080,103 +1094,111 @@ export const ArticleRoutingSecurity = ({ lang }: { lang: Language }) => {
 </p>
 </article>
 
-<article className="prose prose-invert prose-lg max-w-none">
-<h3 className="text-xl font-bold text-white mt-12 mb-6">
-  {t(`9. Полезные ссылки и ресурсы`)}
-</h3>
+<h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
 
-<p className="mt-8 mb-4 font-semibold text-white">
-  {t(`Hypertrade:`)}
-</p>
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-6">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Официальный сайт:`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://ht.xyz</a>
+      </li>
+      <li>
+        {t(`Документация:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://docs.hypertrade.io</a>
+      </li>
+      <li>
+        {t(`Техническая архитектура:`)}{" "}
+        <a href="https://docs.hypertrade.io/architecture" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://docs.hypertrade.io/architecture</a>
+      </li>
+      <li>
+        {t(`API для разработчиков:`)}{" "}
+        <a href="https://docs.hypertrade.io/api" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://docs.hypertrade.io/api</a>
+      </li>
+    </ul>
+  </div>
 
-<ul className="list-disc pl-6 space-y-2 text-gray-300 mb-12">
-  <li>{t(`Официальный сайт: https://ht.xyz`)}</li>
-  <li>{t(`Документация: https://docs.hypertrade.io`)}</li>
-  <li>{t(`Техническая архитектура: https://docs.hypertrade.io/architecture`)}</li>
-  <li>{t(`API для разработчиков: https://docs.hypertrade.io/api`)}</li>
-</ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid (базовый блокчейн):`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Официальный сайт:`)}{" "}
+        <a href="https://hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://hyperliquid.xyz</a>
+      </li>
+      <li>
+        {t(`Документация:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io/hyperliquid-docs" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://hyperliquid.gitbook.io/hyperliquid-docs</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://explorer.hyperliquid.xyz</a>
+      </li>
+      <li>
+        {t(`Статистика:`)}{" "}
+        <a href="https://app.hyperliquid.xyz/explorer" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://app.hyperliquid.xyz/explorer</a>
+      </li>
+    </ul>
+  </div>
 
-<p className="mt-12 mb-4 font-semibold text-white">
-  {t(`Hyperliquid (базовый блокчейн):`)}
-</p>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Инструменты безопасности:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Revoke.cash (управление token approvals, Hyperliquid пока не поддерживается):`)}{" "}
+        <a href="https://revoke.cash" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://revoke.cash</a>
+      </li>
+      <li>
+        {t(`Honeypot detector (проверка токенов на scam):`)}{" "}
+        <a href="https://honeypot.is" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://honeypot.is</a>
+      </li>
+      <li>
+        {t(`Etherscan (для Ethereum, проверка контрактов):`)}{" "}
+        <a href="https://etherscan.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://etherscan.io</a>
+      </li>
+    </ul>
+  </div>
 
-<ul className="list-disc pl-6 space-y-2 text-gray-300 mb-12">
-  <li>{t(`Официальный сайт: https://hyperliquid.xyz`)}</li>
-  <li>{t(`Документация: https://hyperliquid.gitbook.io/hyperliquid-docs`)}</li>
-  <li>{t(`Explorer: https://explorer.hyperliquid.xyz`)}</li>
-  <li>{t(`Статистика: https://app.hyperliquid.xyz/explorer`)}</li>
-</ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Образовательные ресурсы:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Consensys Diligence (security audits):`)}{" "}
+        <a href="https://consensys.net/diligence/audits/" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://consensys.net/diligence/audits/</a>
+      </li>
+      <li>
+        {t(`Trail of Bits (blockchain security):`)}{" "}
+        <a href="https://www.trailofbits.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://www.trailofbits.com</a>
+      </li>
+      <li>
+        {t(`DeFi Safety (рейтинги безопасности DeFi протоколов):`)}{" "}
+        <a href="https://defisafety.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://defisafety.com</a>
+      </li>
+    </ul>
+  </div>
 
-<p className="mt-12 mb-4 font-semibold text-white">
-  {t(`Инструменты безопасности:`)}
-</p>
-
-<ul className="list-disc pl-6 space-y-2 text-gray-300 mb-12">
-  <li>{t(`Revoke.cash: https://revoke.cash (управление token approvals, Hyperliquid пока не поддерживается)`)}</li>
-  <li>{t(`Honeypot detector: https://honeypot.is (проверка токенов на scam)`)}</li>
-  <li>{t(`Etherscan (для Ethereum): https://etherscan.io (проверка контрактов)`)}</li>
-</ul>
-
-<p className="mt-12 mb-4 font-semibold text-white">
-  {t(`Образовательные ресурсы:`)}
-</p>
-
-<ul className="list-disc pl-6 space-y-2 text-gray-300 mb-12">
-  <li>{t(`Consensys Diligence (security audits): https://consensys.net/diligence/audits/`)}</li>
-  <li>{t(`Trail of Bits (blockchain security): https://www.trailofbits.com`)}</li>
-  <li>{t(`DeFi Safety: https://defisafety.com (рейтинги безопасности DeFi протоколов)`)}</li>
-</ul>
-
-<p className="mt-12 mb-4 font-semibold text-white">
-  {t(`Комьюнити Hypertrade:`)}
-</p>
-
-<ul className="list-disc pl-6 space-y-2 text-gray-300 mb-12">
-  <li>{t(`Discord: https://discord.gg/hypertrade`)}</li>
-  <li>{t(`Twitter: https://twitter.com/Hypertrade_xyz`)}</li>
-  <li>{t(`Telegram: https://t.me/hypertrade_official`)}</li>
-  <li>{t(`Support email: support@hypertrade.io`)}</li>
-</ul>
-
-<hr className="my-12 border-gray-700" />
-
-<p className="mt-12 mb-6 font-semibold text-white">
-  {t(`Следующие шаги:`)}
-</p>
-
-<ol className="list-decimal pl-6 space-y-3 text-gray-300 mb-12">
-  <li>{t(`✅ Посетите https://ht.xyz и протестируйте Hypertrade с малой суммы`)}</li>
-  <li>{t(`✅ Сравните quote с прямым swap на Hyperswap — убедитесь в преимуществе split-routing`)}</li>
-  <li>{t(`✅ Настройте limited token approvals для безопасности`)}</li>
-  <li>{t(`✅ Проверьте transaction в explorer после первого swap`)}</li>
-  <li>{t(`✅ Присоединяйтесь к Discord для вопросов и community support`)}</li>
-</ol>
-
-<p className="mt-12 mb-12 text-center font-semibold text-white">
-  {t(`Торгуйте безопасно. Торгуйте осознанно. Торгуйте на Hypertrade. 🛡️`)}
-</p>
-
-<hr className="my-12 border-gray-700" />
-
-  <p className="mt-12 mb-4">
-  {t(`Отлично! Я создал для вас подробную статью №17 на тему “Централизованная vs децентрализованная маршрутизация” с акцентом на безопасность модели Hypertrade. Статья включает:`)}
-</p>
-
-<ul className="list-disc pl-6 space-y-2 text-gray-300 mb-12">
-  <li>{t(`✅ Глубокий анализ рисков централизованной маршрутизации (5 ключевых рисков с примерами)`)}</li>
-  <li>{t(`✅ Технические детали работы децентрализованной маршрутизации`)}</li>
-  <li>{t(`✅ Детальное объяснение уникальной модели Hypertrade (5 компонентов безопасности)`)}</li>
-  <li>{t(`✅ Сравнительную таблицу трех подходов`)}</li>
-  <li>{t(`✅ Реальные сценарии применения`)}</li>
-  <li>{t(`✅ Подробное FAQ (6 вопросов)`)}</li>
-  <li>{t(`✅ Чек-лист безопасности`)}</li>
-  <li>{t(`✅ Практические рекомендации`)}</li>
-</ul>
-
-<p className="mt-8 mb-12">
-  {t(`Все ключевые слова использованы, конверсионная цель достигнута — Hypertrade представлен как максимально безопасное решение через объяснение его blockchain-native архитектуры.`)}
-</p>
-</article>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Комьюнити Hypertrade:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Discord:`)}{" "}
+        <a href="https://discord.gg/hypertrade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://discord.gg/hypertrade</a>
+      </li>
+      <li>
+        {t(`Twitter:`)}{" "}
+        <a href="https://twitter.com/Hypertrade_xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://twitter.com/Hypertrade_xyz</a>
+      </li>
+      <li>
+        {t(`Telegram:`)}{" "}
+        <a href="https://t.me/hypertrade_official" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://t.me/hypertrade_official</a>
+      </li>
+      <li>
+        {t(`Support email:`)}{" "}
+        <a href="mailto:support@hypertrade.io" className="text-hyper-accent underline">support@hypertrade.io</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 
 

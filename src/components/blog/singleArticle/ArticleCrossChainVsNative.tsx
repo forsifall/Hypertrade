@@ -1,6 +1,6 @@
 "use client"
 import BackButton from "@/components/ui/BackButton";
-import { AlertTriangle, BadgeIcon, Lock, Shield, Unlock, Zap, Cpu, Server, Key, Database, AlertCircle, Globe, ShieldCheck, Timer, Wallet } from "lucide-react";
+import { AlertTriangle, BadgeIcon, Lock, Shield, Unlock, Zap, Cpu, Server, Key, Database, AlertCircle, Globe, ShieldCheck, Timer, Wallet, Settings, Clock } from "lucide-react";
 import Link from "next/link";
 import { getBlogPosts } from "../data";
 import { Language } from "@/app/translations";
@@ -16,20 +16,34 @@ export const ArticleCrossChainVsNative = ({ lang }: { lang: Language }) => {
 
   return (
     <section className="bg-hyper-900 min-h-screen pb-20">
-      {/* Header Image/Gradient */}
-      <div className={`h-64 md:h-80 w-full bg-gradient-to-r ${post.imageColor} relative`}>
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-20"></div>
+             {/* Header Image/Gradient */}
+      <div
+        className={`min-h-64 md:min-h-80 w-full bg-gradient-to-r ${post.imageColor} relative`}
+      >
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-15"></div>
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-hyper-900 to-transparent"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-12 relative z-10">
-           <BackButton label="Назад к статьям" />
-           <div className="flex flex-wrap gap-4 text-sm font-medium text-amber-400 mb-4">
-             <span className="bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">{post.category}</span>
-             <span className="flex items-center gap-1 text-gray-400"><Shield size={14} /> {post.readTime}</span>
-             <span className="flex items-center gap-1 text-gray-400"><Globe size={14} /> {post.date}</span>
-           </div>
-           <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-             {post.title}
-           </h1>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+          <div className="mb-8">
+            <BackButton label="Назад к статьям" />
+          </div>
+
+          {/* Метаданные всегда сверху */}
+          <div className="flex flex-wrap gap-4 text-sm font-medium text-blue-400 mb-4">
+            <span className="bg-blue-400/10 px-3 py-1 rounded-full border border-blue-400/20">
+              {post.category}
+            </span>
+            <span className="flex items-center gap-1 text-gray-400">
+              <Settings size={14} /> {post.readTime}
+            </span>
+            <span className="flex items-center gap-1 text-gray-400">
+              <Clock size={14} /> {post.date}
+            </span>
+          </div>
+
+          {/* Заголовок занимает оставшееся место */}
+          <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight break-words">
+            {post.title}
+          </h1>
         </div>
       </div>
 
@@ -1029,56 +1043,103 @@ export const ArticleCrossChainVsNative = ({ lang }: { lang: Language }) => {
 
 <hr className="my-8 border-gray-700" />
 
-<h3 className="text-xl font-bold text-white mt-12 mb-4">{t(`8. Полезные ссылки`)}</h3>
+<h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
 
-<p className="mt-2">{t(`Hypertrade & Hyperliquid:`)}</p>
-<ul className="list-disc list-inside text-gray-300 space-y-2 mt-2">
-  <li>{t(`Hypertrade: https://ht.xyz`)}</li>
-  <li>{t(`Hypertrade Docs: https://docs.hypertrade.io`)}</li>
-  <li>{t(`Hyperliquid: https://hyperliquid.xyz`)}</li>
-  <li>{t(`Hyperliquid Explorer: https://explorer.hyperliquid.xyz`)}</li>
-  <li>{t(`Hyperliquid Bridge (официальный): https://app.hyperliquid.xyz/bridge`)}</li>
-</ul>
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-6">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade:`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://ht.xyz</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://docs.hypertrade.io</a>
+      </li>
+      <li>
+        {t(`Hyperliquid:`)}{" "}
+        <a href="https://hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://hyperliquid.xyz</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://explorer.hyperliquid.xyz</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Bridge (официальный):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/bridge" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://app.hyperliquid.xyz/bridge</a>
+      </li>
+    </ul>
+  </div>
 
-<p className="mt-2">{t(`Bridge Security Research:`)}</p>
-<ul className="list-disc list-inside text-gray-300 space-y-2 mt-2">
-  <li>{t(`Chainlink Bridge Vulnerabilities: https://chain.link/education-hub/cross-chain-bridge-vulnerabilities`)}</li>
-  <li>{t(`CertiK Bridge Hacks Report: https://www.certik.com`)}</li>
-  <li>{t(`DefiLlama Bridge Exploits: https://defillama.com/hacks`)}</li>
-</ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Bridge Security Research:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Chainlink Bridge Vulnerabilities:`)}{" "}
+        <a href="https://chain.link/education-hub/cross-chain-bridge-vulnerabilities" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://chain.link/education-hub/cross-chain-bridge-vulnerabilities</a>
+      </li>
+      <li>
+        {t(`CertiK Bridge Hacks Report:`)}{" "}
+        <a href="https://www.certik.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://www.certik.com</a>
+      </li>
+      <li>
+        {t(`DefiLlama Bridge Exploits:`)}{" "}
+        <a href="https://defillama.com/hacks" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://defillama.com/hacks</a>
+      </li>
+    </ul>
+  </div>
 
-<p className="mt-2">{t(`Безопасные Bridges (если необходимы):`)}</p>
-<ul className="list-disc list-inside text-gray-300 space-y-2 mt-2">
-  <li>{t(`Chainlink CCIP: https://chain.link/cross-chain`)}</li>
-  <li>{t(`Across Protocol: https://across.to`)}</li>
-  <li>{t(`Wormhole: https://wormhole.com`)}</li>
-</ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Безопасные Bridges (если необходимы):`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Chainlink CCIP:`)}{" "}
+        <a href="https://chain.link/cross-chain" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://chain.link/cross-chain</a>
+      </li>
+      <li>
+        {t(`Across Protocol:`)}{" "}
+        <a href="https://across.to" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://across.to</a>
+      </li>
+      <li>
+        {t(`Wormhole:`)}{" "}
+        <a href="https://wormhole.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://wormhole.com</a>
+      </li>
+    </ul>
+  </div>
 
-<p className="mt-2">{t(`Инструменты безопасности:`)}</p>
-<ul className="list-disc list-inside text-gray-300 space-y-2 mt-2">
-  <li>{t(`Revoke.cash: https://revoke.cash (отзыв approvals)`)}</li>
-  <li>{t(`Bridge Monitor: https://app.merkle.science/bridge-monitor`)}</li>
-</ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Инструменты безопасности:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Revoke.cash (отзыв approvals):`)}{" "}
+        <a href="https://revoke.cash" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://revoke.cash</a>
+      </li>
+      <li>
+        {t(`Bridge Monitor:`)}{" "}
+        <a href="https://app.merkle.science/bridge-monitor" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://app.merkle.science/bridge-monitor</a>
+      </li>
+    </ul>
+  </div>
 
-<p className="mt-2">{t(`Community & Support:`)}</p>
-<ul className="list-disc list-inside text-gray-300 space-y-2 mt-2">
-  <li>{t(`Hypertrade Discord: https://discord.gg/hypertrade`)}</li>
-  <li>{t(`Hypertrade Twitter: https://twitter.com/Hypertrade_xyz`)}</li>
-  <li>{t(`Email: support@hypertrade.io`)}</li>
-</ul>
-
-<hr className="my-8 border-gray-700" />
-
-<p className="mt-2">{t(`Отлично! Я создал для вас подробную статью №18 на тему “Cross-chain мосты vs нативные агрегаторы” с акцентом на риски мостов и преимущества нативной модели Hypertrade. Статья включает:`)}</p>
-<ul className="list-disc list-inside text-gray-300 space-y-2 mt-2">
-  <li>{t(`✅ Шокирующую статистику ($2.8B потерь в мостах)`)}</li>
-  <li>{t(`✅ 7 критических уязвимостей мостов с реальными примерами хаков`)}</li>
-  <li>{t(`✅ 3 специфических риска wrapped токенов (depeg, централизация, complexity)`)}</li>
-  <li>{t(`✅ Детальное объяснение нативной модели и её преимуществ`)}</li>
-  <li>{t(`✅ Case study Hypertrade как эталон native security`)}</li>
-  <li>{t(`✅ Практический чек-лист безопасности для тех, кто вынужден использовать мосты`)}</li>
-  <li>{t(`✅ Сравнительные таблицы и визуальные схемы`)}</li>
-</ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Community & Support:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade Discord:`)}{" "}
+        <a href="https://discord.gg/hypertrade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://discord.gg/hypertrade</a>
+      </li>
+      <li>
+        {t(`Hypertrade Twitter:`)}{" "}
+        <a href="https://twitter.com/Hypertrade_xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">https://twitter.com/Hypertrade_xyz</a>
+      </li>
+      <li>
+        {t(`Email:`)}{" "}
+        <a href="mailto:support@hypertrade.io" className="text-hyper-accent underline">support@hypertrade.io</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <p className="mt-2">{t(`Конверсионная цель достигнута — Hypertrade представлен как безопасное решение, которое полностью избегает рисков cross-chain bridges благодаря работе нативно на Hyperliquid.`)}</p>
 

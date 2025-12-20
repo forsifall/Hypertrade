@@ -38,10 +38,10 @@ export function Hero({lang}: {lang: Language}) {
       </ul>
       
       <div className="flex flex-col sm:flex-row justify-center gap-4">
-        <button className="bg-hyper-accent hover:bg-cyan-300 text-hyper-900 font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2">
+        <Link href='https://ht.xyz/' className="bg-hyper-accent hover:bg-cyan-300 text-hyper-900 font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2">
           {translationData.hero.ctaPrimary}
           <ArrowRightLeft size={20} />
-        </button>
+        </Link>
         <Link href={`/${lang}/about`}
           className="glass-panel hover:bg-white/5 border-gray-700 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all flex items-center justify-center gap-2"
         >

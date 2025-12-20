@@ -1333,35 +1333,77 @@ vs. AMM market swap:
   </ul>
   <p className="text-gray-300 mb-12">{t(`Начните использовать прямо сейчас: https://ht.xyz 🚀`)}</p>
 
-<h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`Ресурсы`)}</h2>
+<h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
 
-  <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(`📊 Официальные сайты:`)}</h3>
-  <ul className="pl-6 text-gray-300 space-y-2 list-disc mb-6">
-    <li>{t(`HyperCore Spot: https://hyperliquid.xyz/trade`)}</li>
-    <li>{t(`Hyperswap: https://hyperswap.xyz`)}</li>
-    <li>{t(`Kittenswap: https://kittenswap.xyz`)}</li>
-    <li>{t(`Prjx: https://prjx.xyz`)}</li>
-    <li>{t(`Hypertrade: https://ht.xyz`)}</li>
-  </ul>
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-4">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Tools:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade (optimal liquidity routing):`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://ht.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://docs.hypertrade.io`)}</a>
+      </li>
+      <li>
+        {t(`Invisium Technology:`)}{" "}
+        <a href="https://invisium.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://invisium.com`)}</a>
+      </li>
+    </ul>
+  </div>
 
-  <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(`📚 Документация:`)}</h3>
-  <ul className="pl-6 text-gray-300 space-y-2 list-disc mb-6">
-    <li>{t(`Hyperliquid Docs: https://docs.hyperliquid.xyz`)}</li>
-    <li>{t(`Hypertrade Docs: https://docs.hypertrade.io`)}</li>
-  </ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`HyperCore Spot (order book):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/trade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://app.hyperliquid.xyz/trade`)}</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://explorer.hyperliquid.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Docs:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperliquid.gitbook.io`)}</a>
+      </li>
+    </ul>
+  </div>
 
-  <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(`📈 Аналитика:`)}</h3>
-  <ul className="pl-6 text-gray-300 space-y-2 list-disc mb-6">
-    <li>{t(`DeFiLlama (TVL tracking): https://defillama.com/chain/Hyperliquid`)}</li>
-    <li>{t(`Dune Analytics: https://dune.com/hyperliquid`)}</li>
-  </ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`DEX на Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hyperswap:`)}{" "}
+        <a href="https://hyperswap.fi" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperswap.fi`)}</a>
+      </li>
+      <li>
+        {t(`Kittenswap:`)}{" "}
+        <a href="https://kittenswap.org" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://kittenswap.org`)}</a>
+      </li>
+      <li>
+        {t(`Prjx:`)}{" "}
+        <a href="https://prjx.finance" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://prjx.finance`)}</a>
+      </li>
+    </ul>
+  </div>
 
-  <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(`💬 Сообщества:`)}</h3>
-  <ul className="pl-6 text-gray-300 space-y-2 list-disc mb-12">
-    <li>{t(`Hypertrade Discord: https://discord.gg/hypertrade`)}</li>
-    <li>{t(`Hyperliquid Discord: https://discord.gg/hyperliquid`)}</li>
-    <li>{t(`Twitter: @Hypertrade_xyz`)}</li>
-  </ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Analytics:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`CoinGlass (Hyperliquid):`)}{" "}
+        <a href="https://www.coinglass.com/hyperliquid" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://www.coinglass.com/hyperliquid`)}</a>
+      </li>
+      <li>
+        {t(`DexScreener:`)}{" "}
+        <a href="https://dexscreener.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://dexscreener.com`)}</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 
 </article>

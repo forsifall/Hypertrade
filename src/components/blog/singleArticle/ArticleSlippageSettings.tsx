@@ -33,6 +33,8 @@ export const ArticleSlippageSettings = ({ lang }: { lang: Language }) => {
         </div>
       </div>
 
+    
+
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
         <article className="prose prose-invert prose-lg max-w-none">
          
@@ -214,20 +216,113 @@ export const ArticleSlippageSettings = ({ lang }: { lang: Language }) => {
 </ul>
 
 <p className="mb-2">{t("Шаг 3: Установите slippage")}</p>
-<pre className="bg-hyper-800/30 p-4 rounded-lg text-sm overflow-x-auto mb-4">
-{t(`Пример для USDC → HYPE ($10,000):
-┌─────────────────────────────────┐
-│ Slippage Tolerance              │
-│ ○ Auto (Recommended)            │ ← Hypertrade автоматически подбирает
-│ ● Custom                        │
-│   [0.8] %                       │ ← Введите значение вручную
-│                                 │
-│ ✓ Use Invisium Simulation       │ ← Включено по умолчанию
-│ ✓ Auto-revert if slippage >     │
-│   [3.0] %                       │ ← Защита от неожиданных потерь
-└─────────────────────────────────┘`)}
-</pre>
+<div className="bg-hyper-800/30 border border-gray-700 rounded-lg p-5 mb-4">
+  <div className="text-gray-300 mb-4">
+    <span className="text-blue-300">{t('Пример для USDC → HYPE')}</span>
+    <span className="ml-2 text-green-400">($10,000):</span>
+  </div>
 
+  <div className="space-y-4">
+    {/* Заголовок секции */}
+    <div className="border-b border-gray-700 pb-2">
+      <h4 className="text-gray-300 font-semibold">
+        {t('Slippage Tolerance')}
+      </h4>
+    </div>
+
+    {/* Опция Auto */}
+    <div className="flex items-start">
+      <div className="flex items-center h-5 mt-0.5">
+        <div className="w-4 h-4 rounded-full border-2 border-blue-500 flex items-center justify-center mr-3">
+          <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+        </div>
+      </div>
+      <div className="flex-1">
+        <div className="text-gray-300 font-medium">
+          {t('Auto (Recommended)')}
+        </div>
+        <div className="text-sm text-gray-400 mt-1">
+          {t('Hypertrade автоматически подбирает')}
+        </div>
+      </div>
+    </div>
+
+    {/* Опция Custom */}
+    <div className="flex items-start">
+      <div className="flex items-center h-5 mt-0.5">
+        <div className="w-4 h-4 rounded-full border-2 border-blue-500 flex items-center justify-center mr-3">
+          <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+        </div>
+      </div>
+      <div className="flex-1">
+        <div className="text-gray-300 font-medium">
+          {t('Custom')}
+        </div>
+        {/* Поле ввода */}
+        <div className="mt-2">
+          <div className="relative inline-flex items-center">
+            <input
+              type="number"
+              defaultValue="0.8"
+              className="bg-gray-900 border border-gray-700 rounded px-3 py-1.5 w-20 text-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+            <span className="ml-2 text-gray-400">%</span>
+          </div>
+        </div>
+        <div className="text-sm text-gray-400 mt-1">
+          {t('Введите значение вручную')}
+        </div>
+      </div>
+    </div>
+
+    {/* Checkbox 1 */}
+    <div className="flex items-start pt-2 border-t border-gray-800">
+      <div className="flex items-center h-5 mt-0.5">
+        <div className="w-5 h-5 rounded border border-blue-500 bg-blue-500/20 flex items-center justify-center mr-3">
+          <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+          </svg>
+        </div>
+      </div>
+      <div className="text-gray-300 font-medium">
+        {t('Use Invisium Simulation')}
+      </div>
+      <div className="text-sm text-gray-400 ml-2">
+        {t('Включено по умолчанию')}
+      </div>
+    </div>
+
+    {/* Checkbox 2 */}
+    <div className="flex items-start">
+      <div className="flex items-center h-5 mt-0.5">
+        <div className="w-5 h-5 rounded border border-blue-500 bg-blue-500/20 flex items-center justify-center mr-3">
+          <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+          </svg>
+        </div>
+      </div>
+      <div className="flex-1">
+        <div className="text-gray-300 font-medium">
+          {t('Auto-revert if slippage >')}
+        </div>
+        {/* Поле ввода для процента */}
+        <div className="mt-2">
+          <div className="relative inline-flex items-center">
+            <input
+              type="number"
+              defaultValue="3.0"
+              className="bg-gray-900 border border-gray-700 rounded px-3 py-1.5 w-20 text-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+            <span className="ml-2 text-gray-400">%</span>
+          </div>
+        </div>
+        <div className="text-sm text-gray-400 mt-1">
+          {t('Защита от неожиданных потерь')}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <p className="mb-2">{t("Шаг 4: Запустите симуляцию")}</p>
 <ul className="list-disc list-inside mb-4 text-gray-300">
   <li>{t("Нажмите “Get Quote”")}</li>
@@ -681,29 +776,77 @@ Status: Transaction will likely fail`)}
     </ul>
   </div>
 
-  <h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
-  <div className="space-y-6 text-gray-300 mb-12 not-prose">
-    <p>{t(`Hypertrade:`)}</p>
-    <ul className="list-disc list-inside mb-2">
-      <li>{t(`Официальный сайт: https://ht.xyz`)}</li>
-      <li>{t(`Документация: https://docs.hypertrade.io`)}</li>
-      <li>{t(`Discord: https://discord.gg/hypertrade`)}</li>
-      <li>{t(`Twitter: https://twitter.com/Hypertrade_xyz`)}</li>
-    </ul>
-    <p>{t(`Hyperliquid:`)}</p>
-    <ul className="list-disc list-inside mb-2">
-      <li>{t(`Официальный сайт: https://hyperliquid.xyz`)}</li>
-      <li>{t(`Explorer: https://explorer.hyperliquid.xyz`)}</li>
-      <li>{t(`Документация: https://hyperliquid.gitbook.io/hyperliquid-docs`)}</li>
-    </ul>
-    <p>{t(`DEX на Hyperliquid:`)}</p>
-    <ul className="list-disc list-inside">
-      <li>{t(`HyperCore Spot: https://app.hyperliquid.xyz/trade`)}</li>
-      <li>{t(`Hyperswap: https://hyperswap.fi`)}</li>
-      <li>{t(`Kittenswap: https://kittenswap.org`)}</li>
-      <li>{t(`Prjx: https://prjx.finance`)}</li>
+ <h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
+
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-4">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Tools:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade (optimal liquidity routing):`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://ht.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://docs.hypertrade.io`)}</a>
+      </li>
+      <li>
+        {t(`Invisium Technology:`)}{" "}
+        <a href="https://invisium.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://invisium.com`)}</a>
+      </li>
     </ul>
   </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`HyperCore Spot (order book):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/trade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://app.hyperliquid.xyz/trade`)}</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://explorer.hyperliquid.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Docs:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperliquid.gitbook.io`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`DEX на Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hyperswap:`)}{" "}
+        <a href="https://hyperswap.fi" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperswap.fi`)}</a>
+      </li>
+      <li>
+        {t(`Kittenswap:`)}{" "}
+        <a href="https://kittenswap.org" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://kittenswap.org`)}</a>
+      </li>
+      <li>
+        {t(`Prjx:`)}{" "}
+        <a href="https://prjx.finance" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://prjx.finance`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Analytics:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`CoinGlass (Hyperliquid):`)}{" "}
+        <a href="https://www.coinglass.com/hyperliquid" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://www.coinglass.com/hyperliquid`)}</a>
+      </li>
+      <li>
+        {t(`DexScreener:`)}{" "}
+        <a href="https://dexscreener.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://dexscreener.com`)}</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
   <h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🎯 Выводы`)}</h2>
   <ol className="list-decimal list-inside text-gray-300 mb-12 not-prose">

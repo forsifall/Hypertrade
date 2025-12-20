@@ -153,7 +153,7 @@ export const ArticleMEVProtection = ({ lang }: { lang: Language }) => {
 
   <div className="space-y-8 not-prose mb-12">
     {/* Sandwich Attack */}
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className=" p-6 rounded-xl">
       <h3 className="text-xl font-bold text-white mb-3">{t("1. Sandwich Attack (сэндвич-атака) — 80% всех MEV")}</h3>
       <p className="text-gray-300 mb-4">{t(`Самая распространённая и опасная атака.`)}</p>
       <p className="text-gray-300 mb-4">{t(`Как работает:`)}</p>
@@ -214,7 +214,7 @@ LOSS: -$2,380 (238 tokens потеряно)
     </div>
 
     {/* Frontrunning */}
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h3 className="text-xl font-bold text-white mb-3">{t("2. Frontrunning (фронтраннинг) — 15% MEV")}</h3>
       <p className="text-gray-300 mb-4">{t(`Опережающая покупка:`)}</p>
 
@@ -246,7 +246,7 @@ MEV-бот видит:
     </div>
 
     {/* Backrunning */}
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h3 className="text-xl font-bold text-white mb-3">{t("3. Backrunning (бэкраннинг) — 5% MEV")}</h3>
       <p className="text-gray-300 mb-4">{t(`Эксплуатация вашей транзакции:`)}</p>
 
@@ -275,7 +275,7 @@ MEV-бот:
 
   <div className="space-y-8 not-prose mb-12">
 
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
 
       <p className="text-gray-300 mb-2">{t(`Глобальные цифры (Ethereum)`)}</p>
       <p className="text-gray-300 mb-4">{t(`Период: 2020–2025`)}</p>
@@ -382,7 +382,7 @@ Time: 13 seconds (1 Ethereum block)
 
       <div className="space-y-6 not-prose mb-12">
 
-        <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+        <div className="  p-6 rounded-xl">
           <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 1: Правильный slippage tolerance`)}</h4>
 
           <pre className="bg-gray-900/20 p-4 rounded mb-4 text-sm text-gray-200 whitespace-pre-wrap">{t(`Проблема:
@@ -459,7 +459,7 @@ Slippage >10% = 95% вероятность sandwich-атаки
   <div className="space-y-8 not-prose mb-12">
 
     {/* Стратегия 2 */}
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 2: Разделение крупных ордеров`)}</h4>
 
       <p className="text-gray-300 mb-2">{t(`Почему это работает:`)}</p>
@@ -533,7 +533,7 @@ Slippage >10% = 95% вероятность sandwich-атаки
     </div>
 
    {/* Стратегия 3 */}
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 3: Использование limit orders (когда доступно)`)}</h4>
 
       <p className="text-gray-300 mb-2">{t(`На HyperCore Spot (Hyperliquid):`)}</p>
@@ -557,7 +557,7 @@ Limit order (защита от MEV):
     </div>
 
     {/* Стратегия 4 */}
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 4: Private mempool / MEV protection RPC`)}</h4>
 
       <p className="text-gray-300 mb-2">{t(`Проблема публичного mempool:`)}</p>
@@ -625,7 +625,7 @@ MEV-боты НЕ видят транзакцию заранее
           <div className="space-y-8 not-prose mb-12">
 
     {/* Стратегия 5 */}
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 5: Timing (выбор времени)`)}</h4>
 
       <p className="text-gray-300 mb-4">{t(`MEV-активность коррелирует с волатильностью и объёмом.`)}</p>
@@ -701,7 +701,7 @@ MEV-боты НЕ видят транзакцию заранее
 
   <div className="space-y-8 not-prose mb-12">
 
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`🚀 Почему Hyperliquid + Hypertrade = лучшая MEV-защита`)}</h4>
 
       <p className="text-gray-300 mb-4">{t(`Архитектурное преимущество: HyperBFT Consensus`)}</p>
@@ -857,7 +857,7 @@ Savings: $3,100 (avoided MEV attack)`)}
 
   <div className="space-y-8 not-prose mb-12">
 
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
 
       <h4 className="text-lg font-bold text-white mb-3">{t(`Преимущество 4: 0% platform fees = меньше MEV-мотивации`)}</h4>
 
@@ -1058,9 +1058,9 @@ Reduction: 80% lower MEV risk`)}
 
 <article className="prose prose-invert prose-lg max-w-none">
 
-  <div className="space-y-8 not-prose mb-12">
+  <div className="space-y-8 not-prose mb-6">
 
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
 
       <h4 className="text-lg font-bold text-white mb-3">{t(`Для крупных трейдеров ($50k+ свопы)`)}</h4>
 
@@ -1194,112 +1194,100 @@ MEV attack: PREVENTED by HyperBFT`)}
   <li>{t(`5. Transparency = постоянный мониторинг • Проверяйте executed vs expected price • Документируйте отклонения >2% • Переключайтесь на защищённые платформы`)}</li>       
 </ul>        
 
-<h4 className="text-lg font-bold text-white mb-3">{t(`Итоговая экономика`)}</h4>        
+<h4 className="text-lg font-bold text-white mt-4 mb-4">{t(`Итоговая экономика`)}</h4>        
 
-<pre className="text-gray-400 bg-hyper-900/50 p-4 rounded mb-4"> 
-{t(`Годовой объём торговли: $500,000 Платформа: Ethereum + Uniswap ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ MEV exposure: 70–80% Average MEV loss per swap: $250–$500 50 swaps/year: $12,500–$25,000 потерь  Платформа: Hyperliquid + Hypertrade ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ MEV exposure: <5% Average MEV loss per swap: $10–$50 50 swaps/year: $500–$2,500 потерь  SAVINGS: $10,000–$22,500/год ROI: 400–900%`)}       
+<pre style={{textWrap: "auto"}} className="text-gray-400 bg-hyper-900/50 p-4 rounded mb-0"> 
+{t(`Годовой объём торговли: $500,000 Платформа: Ethereum + Uniswap ━━━━━━━━ MEV exposure: 70–80% Average MEV loss per swap: $250–$500 50 swaps/year: $12,500–$25,000 потерь  Платформа: Hyperliquid + Hypertrade ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ MEV exposure: <5% Average MEV loss per swap: $10–$50 50 swaps/year: $500–$2,500 потерь  SAVINGS: $10,000–$22,500/год ROI: 400–900%`)}       
 </pre>      
 
 </div>    
 </div> 
 </article>    
 
-<article className="prose prose-invert prose-lg max-w-none">    
-<div className="space-y-8 not-prose mb-12">      
-<div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">        
 
-<h4 className="text-lg font-bold text-white mb-3">{t(`🔗 Полезные ссылки`)}</h4>        
-<p className="text-gray-300 mb-2">{t(`Hypertrade & Hyperliquid:`)}</p>       
-
-<ul className="list-disc list-inside text-gray-300 space-y-1 mb-4">         
-  <li>{t(`Hypertrade (MEV-protected swaps): https://ht.xyz`)}</li>         
-  <li>{t(`Hypertrade Docs: https://docs.hypertrade.io`)}</li>         
-  <li>{t(`Hyperliquid: https://hyperliquid.xyz`)}</li>         
-  <li>{t(`HyperBFT Technical Docs: https://hyperliquid.gitbook.io`)}</li>         
-  <li>{t(`Explorer: https://explorer.hyperliquid.xyz`)}</li>       
-</ul>        
-
-<p className="text-gray-300 mb-2">{t(`MEV Research & Education:`)}</p>       
-<ul className="list-disc list-inside text-gray-300 space-y-1 mb-4">         
-  <li>{t(`Flashbots MEV-Explore: https://explore.flashbots.net`)}</li>         
-  <li>{t(`MEV.day (статистика): https://mev.day`)}</li>         
-  <li>{t(`a16z MEV Guide: https://a16zcrypto.com/posts/article/mev-explained`)}</li>       
-</ul>        
-
-<p className="text-gray-300 mb-2">{t(`MEV Protection Tools (Ethereum):`)}</p>       
-<ul className="list-disc list-inside text-gray-300 space-y-1 mb-4">         
-  <li>{t(`Flashbots Protect RPC: https://docs.flashbots.net/flashbots-protect`)}</li>         
-  <li>{t(`CoW Swap (intent-based): https://cow.fi`)}</li>         
-  <li>{t(`MEV Blocker: https://mevblocker.io`)}</li>       
-</ul>        
-
-<hr className="border-gray-700 my-6" />        
-
-<h4 className="text-lg font-bold text-white mb-3">{t(`🚀 Начните торговать БЕЗ MEV-риска сегодня`)}</h4>       
-<p className="text-gray-300 mb-2">{t(`3 шага к защите:`)}</p>        
-
-<ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">         
-  <li>{t(`1. Переключитесь на Hyperliquid + Hypertrade o https://ht.xyz o Встроенная HyperBFT защита o Invisium Simulations 99.9% accuracy o 0% platform fees`)}</li>          
-  <li>{t(`2. Настройте правильный slippage o Major токены: 0.5–1% o Mid-cap: 1–2% o НИКОГДА >10%`)}</li>          
-  <li>{t(`3. Разделяйте крупные ордера o $50k+: минимум 3 части o $100k+: минимум 5 частей`)}</li>       
-</ul>        
-
-<p className="text-gray-300 mb-4">{t(`MEV-боты крадут $2–8 миллионов ЕЖЕДНЕВНО от розничных трейдеров.`)}</p>       
-<p className="text-gray-300 mb-4 font-semibold">{t(`Не будьте жертвой. Защитите свой капитал. Используйте Hypertrade.`)}</p>        
-
-<hr className="border-gray-700 my-6" />        
-
-<p className="text-gray-300 font-light">{t(`Статья 20 из серии “Полный гид по Hypertrade и Hyperliquid”`)}</p>      
-
-</div>    
-</div>  
-</article>   
-
-<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">   
+<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">   
 {/* 🔗 Полезные ссылки */}   
-<div className="bg-hyper-800/30 border border-gray-700 rounded-xl p-6 mb-8">     
-<h3 className="text-xl font-bold text-white mb-4">{t(`🔗 Полезные ссылки`)}</h3>
+<h2 className="text-2xl font-bold text-white mt-0 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
 
-   <div className="mb-4">
-  <h4 className="text-white font-semibold mb-2">{t(`Hypertrade & Hyperliquid:`)}</h4>
-  <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
-    <li>{t(`Hypertrade (MEV-protected swaps): https://ht.xyz`)}</li>
-    <li>{t(`Hypertrade Docs: https://docs.hypertrade.io`)}</li>
-    <li>{t(`Hyperliquid: https://hyperliquid.xyz`)}</li>
-    <li>{t(`HyperBFT Technical Docs: https://hyperliquid.gitbook.io`)}</li>
-    <li>{t(`Explorer: https://explorer.hyperliquid.xyz`)}</li>
-  </ul>
-</div>
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-4">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Tools:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade (optimal liquidity routing):`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://ht.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://docs.hypertrade.io`)}</a>
+      </li>
+      <li>
+        {t(`Invisium Technology:`)}{" "}
+        <a href="https://invisium.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://invisium.com`)}</a>
+      </li>
+    </ul>
+  </div>
 
-<div className="mb-4">
-  <h4 className="text-white font-semibold mb-2">{t(`MEV Research & Education:`)}</h4>
-  <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
-    <li>{t(`Flashbots MEV-Explore: https://explore.flashbots.net`)}</li>
-    <li>{t(`MEV.day (статистика): https://mev.day`)}</li>
-    <li>{t(`a16z MEV Guide: https://a16zcrypto.com/posts/article/mev-explained`)}</li>
-  </ul>
-</div>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`HyperCore Spot (order book):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/trade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://app.hyperliquid.xyz/trade`)}</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://explorer.hyperliquid.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Docs:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperliquid.gitbook.io`)}</a>
+      </li>
+    </ul>
+  </div>
 
-<div>
-  <h4 className="text-white font-semibold mb-2">{t(`MEV Protection Tools (Ethereum):`)}</h4>
-  <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
-    <li>{t(`Flashbots Protect RPC: https://docs.flashbots.net/flashbots-protect`)}</li>
-    <li>{t(`CoW Swap (intent-based): https://cow.fi`)}</li>
-    <li>{t(`MEV Blocker: https://mevblocker.io`)}</li>
-  </ul>
-</div>
-</div>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`DEX на Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hyperswap:`)}{" "}
+        <a href="https://hyperswap.fi" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperswap.fi`)}</a>
+      </li>
+      <li>
+        {t(`Kittenswap:`)}{" "}
+        <a href="https://kittenswap.org" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://kittenswap.org`)}</a>
+      </li>
+      <li>
+        {t(`Prjx:`)}{" "}
+        <a href="https://prjx.finance" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://prjx.finance`)}</a>
+      </li>
+    </ul>
+  </div>
 
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Analytics:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`CoinGlass (Hyperliquid):`)}{" "}
+        <a href="https://www.coinglass.com/hyperliquid" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://www.coinglass.com/hyperliquid`)}</a>
+      </li>
+      <li>
+        {t(`DexScreener:`)}{" "}
+        <a href="https://dexscreener.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://dexscreener.com`)}</a>
+      </li>
+    </ul>
+  </div>
+</div>
 {/* 🚀 Начните торговать БЕЗ MEV-риска сегодня */}
-<div className="bg-hyper-800/30 border border-gray-700 rounded-xl p-6 mb-8">
+<div className="  rounded-xl p-6 mb-8">
   <h3 className="text-xl font-bold text-white mb-4">{t(`🚀 Начните торговать БЕЗ MEV-риска сегодня`)}</h3>
   <p className="text-gray-300 mb-2">{t(`3 шага к защите:`)}</p>
 
   <ol className="list-decimal list-inside text-gray-300 text-sm space-y-2 mb-4">
     <li>
-      {t(`Переключитесь на Hyperliquid + Hypertrade`)}
+      {t(`Переключитесь на Hyperliquid + `)}
+      {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>Hypertrade</a>}
       <ul className="list-disc list-inside ml-4 text-gray-400 text-xs space-y-1 mt-1">
-        <li>{t(`https://ht.xyz`)}</li>
         <li>{t(`Встроенная HyperBFT защита`)}</li>
         <li>{t(`Invisium Simulations 99.9% accuracy`)}</li>
         <li>{t(`0% platform fees`)}</li>
@@ -1328,9 +1316,11 @@ MEV attack: PREVENTED by HyperBFT`)}
 
 {/* Кнопка Статья 20 из серии */}
 <div className="text-center">
+  <Link href={`/${lang}/blog`}>
   <button className="bg-hyper-accent text-hyper-900 font-bold py-3 px-8 rounded-xl hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20">
     {t(`Статья 20 из серии “Полный гид по Hypertrade и Hyperliquid”`)}
   </button>
+  </Link>
 </div>
 </div>
 

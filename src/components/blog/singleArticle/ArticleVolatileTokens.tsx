@@ -54,7 +54,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
   <h3 className="text-xl font-bold text-white mt-12 mb-4">{t(`Реальные кейсы провала:`)}</h3>
 
   <div className="space-y-6 mb-8 not-prose">
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Кейс 1: "All-in на мем-коин"`)}</h4>
       <ul className="list-disc list-inside text-gray-300">
         <li>{t(`Трейдер вложил $50,000 (100% депозита) в новый мем-коин`)}</li>
@@ -64,7 +64,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
       </ul>
     </div>
 
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Кейс 2: "Без стоп-лосса на волатильном токене"`)}</h4>
       <ul className="list-disc list-inside text-gray-300">
         <li>{t(`Трейдер купил low-cap токен за $20,000 (40% депозита)`)}</li>
@@ -74,7 +74,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
       </ul>
     </div>
 
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Кейс 3: "Усреднение убыточной позиции"`)}</h4>
       <ul className="list-disc list-inside text-gray-300">
         <li>{t(`Первая покупка: $10,000 → токен упал на -30%`)}</li>
@@ -136,7 +136,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
   <h3 className="text-xl font-bold text-white mt-12 mb-4">{t(`Как проверить волатильность токена перед входом`)}</h3>
 
   <div className="space-y-6 not-prose mb-8">
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Метод 1: Исторический анализ на Hyperliquid Explorer`)}</h4>
       <ol className="list-decimal list-inside text-gray-300">
         <li>{t(`Откройте https://explorer.hyperliquid.xyz`)}</li>
@@ -152,7 +152,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
       </ul>
     </div>
 
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Метод 2: ATR (Average True Range)`)}</h4>
       <ul className="list-disc list-inside text-gray-300">
         <li>{t(`Используйте индикатор ATR на TradingView`)}</li>
@@ -169,7 +169,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
   <h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🛡️ 8 критических стратегий для торговли волатильными токенами`)}</h2>
 
   <div className="space-y-6 not-prose mb-12">
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 1: Правило 1–2% (Position Sizing)`)}</h4>
       <p className="text-gray-300 mb-2">{t(`Золотое правило риск-менеджмента:`)}</p>
       <p className="text-gray-300 mb-2">{t(`Никогда не рискуйте более 1–2% от общего депозита на одну сделку.`)}</p>
@@ -219,7 +219,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
       <p className="text-gray-300 mt-2">{t(`Результат: Даже 10 убыточных сделок подряд = потеря всего 10–20% депозита (а не 100%).`)}</p>
     </div>
 
-    <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+    <div className="  p-6 rounded-xl">
       <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 2: Обязательный Stop-Loss`)}</h4>
       <p className="text-gray-300 mb-2">{t(`Правило: 100% сделок на волатильных токенах ОБЯЗАНЫ иметь stop-loss.`)}</p>
       <p className="text-gray-300 mb-2">{t(`Как правильно устанавливать stop-loss:`)}</p>
@@ -262,7 +262,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
 
     <div className="space-y-6 not-prose mb-12">
 
-  <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+  <div className="  p-6 rounded-xl">
     <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 3: Risk/Reward Ratio минимум 1:2`)}</h4>
     <p className="text-gray-300 mb-2">{t(`Правило: Потенциальная прибыль должна быть минимум в 2 раза больше риска.`)}</p>
     <p className="text-gray-300 mb-2">{t(`Формула:`)}</p>
@@ -291,25 +291,74 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
     </ul>
   </div>
 
-  <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+  <div className="  p-6 rounded-xl">
     <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 4: Диверсификация и лимит на категории`)}</h4>
     <p className="text-gray-300 mb-2">{t(`Правило: Не держите >30% депозита в волатильных токенах одновременно.`)}</p>
     <p className="text-gray-300 mb-2">{t(`Рекомендуемое распределение портфеля ($50,000):`)}</p>
-    <pre className="bg-hyper-900 text-gray-300 p-3 rounded mb-2">{t(`
-┌─────────────────────────────────────────────┐
-│ Стейблкоины (USDC/USDT): 40% = $20,000     │
-│ → Резерв для возможностей и защита          │
-├─────────────────────────────────────────────┤
-│ Major токены (HYPE, ETH): 30% = $15,000    │
-│ → Средневолатильные, относительно безопасно │
-├─────────────────────────────────────────────┤
-│ Mid-cap токены: 20% = $10,000              │
-│ → Высоковолатильные, активный трейдинг      │
-├─────────────────────────────────────────────┤
-│ Low-cap/мемы: 10% = $5,000 (МАКСИМУМ)      │
-│ → Экстремально волатильные, спекуляции     │
-└─────────────────────────────────────────────┘
-    `)}</pre>
+   <div className="bg-hyper-900 border border-gray-700 rounded-lg p-4 mb-4">
+  {/* Стейблкоины */}
+  <div className="flex items-start  py-3 border-b border-gray-800">
+    <div className="w-24 text-blue-300 font-medium">{t('Стейблкоины')}</div>
+    <div className="flex-1">
+      <div className="flex justify-between items-center mb-1">
+        <span className="text-gray-300 ps-4">{t('USDC/USDT')}</span>
+        <span className="text-green-400 ps-4 font-semibold">40% = $20,000</span>
+      </div>
+      <div className="flex items-center text-sm text-gray-400">
+        <span className="mr-2 ps-4">→</span>
+        <span>{t('Резерв для возможностей и защита')}</span>
+      </div>
+    </div>
+  </div>
+  
+  {/* Major токены */}
+  <div className="flex items-start py-3 border-b border-gray-800">
+    <div className="w-24 text-purple-300 font-medium">{t('Major токены')}</div>
+    <div className="flex-1">
+      <div className="flex justify-between items-center mb-1">
+        <span className="text-gray-300 ps-4">{t('HYPE, ETH')}</span>
+        <span className="text-green-400 ps-4 font-semibold">30% = $15,000</span>
+      </div>
+      <div className="flex items-center text-sm text-gray-400">
+        <span className="mr-2 ps-4">→</span>
+        <span>{t('Средневолатильные, относительно безопасно')}</span>
+      </div>
+    </div>
+  </div>
+  
+  {/* Mid-cap токены */}
+  <div className="flex items-start py-3 border-b border-gray-800">
+    <div className="w-24 text-yellow-300 font-medium">{t('Mid-cap')}</div>
+    <div className="flex-1">
+      <div className="flex justify-between items-center mb-1">
+        <span className="text-gray-300 ps-4">{t('Токены')}</span>
+        <span className="text-green-400 font-semibold">20% = $10,000</span>
+      </div>
+      <div className="flex items-center text-sm text-gray-400">
+        <span className="mr-2 ps-4">→</span>
+        <span>{t('Высоковолатильные, активный трейдинг')}</span>
+      </div>
+    </div>
+  </div>
+  
+  {/* Low-cap/мемы */}
+  <div className="flex items-start py-3">
+    <div className="w-24 text-red-300 font-medium">{t('Low-cap/мемы')}</div>
+    <div className="flex-1">
+      <div className="flex justify-between items-center mb-1">
+        <span className="text-gray-300 ps-4">{t('Экстремальные')}</span>
+        <span className="text-green-400 font-semibold">10% = $5,000</span>
+      </div>
+      <div className="flex items-center text-sm text-gray-400">
+        <span className="mr-2 ps-4">→</span>
+        <span>{t('Экстремально волатильные, спекуляции')}</span>
+        <span className="ml-2 bg-red-900/50 text-red-300 text-xs px-2 py-1 rounded">
+          {t('МАКСИМУМ')}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
     <p className="text-gray-300 mb-2">{t(`Лимиты на одновременные позиции:`)}</p>
     <ul className="list-disc list-inside text-gray-300">
       <li>{t(`Максимум 3–5 открытых позиций одновременно`)}</li>
@@ -318,7 +367,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
     </ul>
   </div>
 
-  <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+  <div className="  p-6 rounded-xl">
     <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 5: Тайминг входа (избегайте экстремальной волатильности)`)}</h4>
     <p className="text-gray-300 mb-2">{t(`Самые опасные времена для входа:`)}</p>
     <ol className="list-decimal list-inside text-gray-300 mb-2">
@@ -353,7 +402,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
     </ul>
   </div>
 
-  <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+  <div className="  p-6 rounded-xl">
     <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 6: Scaling In/Out (частичные входы/выходы)`)}</h4>
     <p className="text-gray-300 mb-2">{t(`Проблема: Один вход по рыночной цене = высокий риск неоптимального тайминга.`)}</p>
     <p className="text-gray-300 mb-2">{t(`Решение: Разделите вход и выход на 2–4 части.`)}</p>
@@ -394,7 +443,7 @@ export const ArticleVolatileTokens = ({ lang }: { lang: Language }) => {
 
 <div className="space-y-6 not-prose mb-12">
 
-  <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+  <div className="  p-6 rounded-xl">
     <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 7: Использование Hypertrade Invisium Simulations`)}</h4>
     <p className="text-gray-300 mb-2">{t(`Ключевая проблема на волатильных токенах:`)}</p>
     <ul className="list-disc list-inside text-gray-300 mb-2">
@@ -471,7 +520,7 @@ Options:
     </ul>
   </div>
 
-  <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+  <div className="  p-6 rounded-xl">
     <h4 className="text-lg font-bold text-white mb-3">{t(`Стратегия 8: Trailing Stop-Loss для максимизации прибыли`)}</h4>
     <p className="text-gray-300 mb-2">{t(`Проблема фиксированного take-profit: Ограничиваете прибыль, если тренд продолжается.`)}</p>
     <p className="text-gray-300 mb-2">{t(`Решение: Trailing Stop-Loss`)}</p>
@@ -525,7 +574,7 @@ Options:
     </ol>
   </div>
 
-  <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+  <div className="  p-6 rounded-xl">
     <h4 className="text-lg font-bold text-white mb-3">{t(`💡 Практический чеклист перед входом в волатильный токен`)}</h4>
     <p className="text-gray-300 mb-2">{t(`Копируйте этот чеклист для каждой сделки:`)}</p>
     <ul className="list-disc list-inside text-gray-300">
@@ -548,7 +597,7 @@ Options:
 
 <div className="space-y-6 not-prose mb-12">
 
-  <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+  <div className="  p-6 rounded-xl">
     <h4 className="text-lg font-bold text-white mb-3">{t(`📊 Сравнение: торговля без стратегии vs с риск-менеджментом`)}</h4>
     <p className="text-gray-300 mb-2">{t(`Симуляция 100 сделок на волатильных токенах`)}</p>
 
@@ -585,7 +634,7 @@ Options:
     <p className="text-gray-300">{t(`Вывод: Одинаковый winrate 45%, но результат противоположный из-за риск-менеджмента.`)}</p>
   </div>
 
-  <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+  <div className="  p-6 rounded-xl">
     <h4 className="text-lg font-bold text-white mb-3">{t(`🎯 Примеры реальных сделок с применением стратегий`)}</h4>
 
     <h5 className="text-white font-bold mb-2">{t(`Пример 1: Mid-cap токен (высокая волатильность)`)}</h5>
@@ -650,7 +699,7 @@ Options:
     </ul>
   </div>
 
-  <div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl">
+  <div className="  p-6 rounded-xl">
     <h5 className="text-lg font-bold text-white mb-3">{t(`Пример 2: Мем-коин (экстремальная волатильность)`)}</h5>
     <ul className="list-disc list-inside text-gray-300 mb-2">
       <li>{t(`Setup:`)}</li>
@@ -1054,25 +1103,76 @@ Recommendation: increase slippage to 9-10%"
   <hr className="border-gray-700 mb-12" />
 
   <h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
-  <ul className="list-disc list-inside text-gray-300 mb-8 space-y-1">
-    <li>{t(`Hypertrade:`)}</li>
-    <li className="ml-6">{t(`• Официальный сайт: https://ht.xyz`)}</li>
-    <li className="ml-6">{t(`• Документация: https://docs.hypertrade.io`)}</li>
-    <li className="ml-6">{t(`• Discord: https://discord.gg/hypertrade`)}</li>
-    <li className="ml-6">{t(`• Twitter: https://twitter.com/Hypertrade_xyz`)}</li>
-    <li>{t(`Hyperliquid:`)}</li>
-    <li className="ml-6">{t(`• Официальный сайт: https://hyperliquid.xyz`)}</li>
-    <li className="ml-6">{t(`• HyperCore Spot: https://app.hyperliquid.xyz/trade`)}</li>
-    <li className="ml-6">{t(`• Explorer: https://explorer.hyperliquid.xyz`)}</li>
-    <li className="ml-6">{t(`• Документация: https://hyperliquid.gitbook.io/hyperliquid-docs`)}</li>
-    <li>{t(`DEX на Hyperliquid:`)}</li>
-    <li className="ml-6">{t(`• Hyperswap: https://hyperswap.fi`)}</li>
-    <li className="ml-6">{t(`• Kittenswap: https://kittenswap.org`)}</li>
-    <li className="ml-6">{t(`• Prjx: https://prjx.finance`)}</li>
-    <li>{t(`Инструменты для анализа:`)}</li>
-    <li className="ml-6">{t(`• CoinGlass (волатильность, liquidations): https://www.coinglass.com/hyperliquid`)}</li>
-    <li className="ml-6">{t(`• DexScreener: https://dexscreener.com`)}</li>
-  </ul>
+
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-4">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Tools:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade (optimal liquidity routing):`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://ht.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://docs.hypertrade.io`)}</a>
+      </li>
+      <li>
+        {t(`Invisium Technology:`)}{" "}
+        <a href="https://invisium.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://invisium.com`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`HyperCore Spot (order book):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/trade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://app.hyperliquid.xyz/trade`)}</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://explorer.hyperliquid.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Docs:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperliquid.gitbook.io`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`DEX на Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hyperswap:`)}{" "}
+        <a href="https://hyperswap.fi" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperswap.fi`)}</a>
+      </li>
+      <li>
+        {t(`Kittenswap:`)}{" "}
+        <a href="https://kittenswap.org" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://kittenswap.org`)}</a>
+      </li>
+      <li>
+        {t(`Prjx:`)}{" "}
+        <a href="https://prjx.finance" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://prjx.finance`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Analytics:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`CoinGlass (Hyperliquid):`)}{" "}
+        <a href="https://www.coinglass.com/hyperliquid" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://www.coinglass.com/hyperliquid`)}</a>
+      </li>
+      <li>
+        {t(`DexScreener:`)}{" "}
+        <a href="https://dexscreener.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://dexscreener.com`)}</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
   <hr className="border-gray-700 mb-12" />
 
@@ -1101,9 +1201,11 @@ Recommendation: increase slippage to 9-10%"
 
   <hr className="border-gray-700 mb-12" />
 
+<Link href={`/${lang}/blog`}>
 <button className="bg-hyper-accent text-hyper-900 font-bold py-2 px-4 rounded-xl hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20 mb-4">
   {t(`Статья 18 из серии "Полный гид по Hypertrade и Hyperliquid"`)}
 </button>
+</Link>
   
 
 </article>

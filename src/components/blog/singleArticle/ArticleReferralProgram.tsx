@@ -846,50 +846,212 @@ For a trader with $50k/month volume, that's $500-2,500/year savings."
 Важно: будьте честными и реалистичными. Это строит trust и увеличивает конверсию.`)}
 </pre>
 
-<h4 className="text-lg font-bold text-hyper-accent mb-4">{t(`FAQ по реферальной программе`)}</h4>
 
-<h5 className="text-white font-bold mt-4 mb-2">{t(`1. Сколько я могу заработать?`)}</h5>
-<p className="text-gray-400 mb-2">{t(`Зависит от количества и активности рефералов. Примеры:`)}</p>
-<ul className="list-disc list-inside ml-6 text-gray-400 space-y-1">
-  <li>{t(`10 рефералов × $10k/месяц = $100/месяц (Bronze)`)}</li>
-  <li>{t(`200 рефералов × $25k/месяц = $5,000/месяц (Platinum)`)}</li>
-  <li>{t(`1,000 рефералов × $30k/месяц = $30,000/месяц (Diamond) 💎`)}</li>
-</ul>
 
-<h5 className="text-white font-bold mt-4 mb-2">{t(`2. Как долго я получаю комиссию?`)}</h5>
-<p className="text-gray-400">{t(`Навсегда (lifetime commissions), пока реферал использует Hypertrade.`)}</p>
 
-<h5 className="text-white font-bold mt-4 mb-2">{t(`3. Нужен ли KYC?`)}</h5>
-<p className="text-gray-400">{t(`Нет для выплат <$10,000/месяц. Для больших сумм может потребоваться.`)}</p>
 
-<h5 className="text-white font-bold mt-4 mb-2">{t(`4. Когда выплаты?`)}</h5>
-<p className="text-gray-400">{t(`Ежемесячно, 1-5 числа. Минимум: $100.`)}</p>
 
-<h5 className="text-white font-bold mt-4 mb-2">{t(`5. Можно ли использовать несколько реф. кодов?`)}</h5>
-<p className="text-gray-400">{t(`Нет, один wallet = один реф. код.`)}</p>
 
-<h5 className="text-white font-bold mt-4 mb-2">{t(`6. Что, если реферал уже использовал Hypertrade без реф. ссылки?`)}</h5>
-<p className="text-gray-400">{t(`К сожалению, первый визит без реф. ссылки = нет комиссии. Поэтому важно, чтобы первый визит был через вашу ссылку.`)}</p>
 
-<h5 className="text-white font-bold mt-4 mb-2">{t(`7. Можно ли самому быть своим рефералом?`)}</h5>
-<p className="text-gray-400">{t(`Нет, self-referrals запрещены. Hypertrade отслеживает это и может заблокировать аккаунт.`)}</p>
 
-<h5 className="text-white font-bold mt-4 mb-2">{t(`8. Есть ли ограничение на количество рефералов?`)}</h5>
-<p className="text-gray-400">{t(`Нет, вы можете привлекать неограниченное количество.`)}</p>
 
-<h5 className="text-white font-bold mt-4 mb-2">{t(`9. Что делать, если я не получил выплату?`)}</h5>
-<p className="text-gray-400">{t(`Свяжитесь с support: referrals@hypertrade.io или Discord (#referral-support).`)}</p>
 
-<h5 className="text-white font-bold mt-4 mb-2">{t(`10. Можно ли использовать paid ads?`)}</h5>
-<p className="text-gray-400">{t(`Да, но запрещено:`)}</p>
-<ul className="list-disc list-inside ml-6 text-gray-400 space-y-1">
-  <li>{t(`Brand bidding (ставки на “Hypertrade” в Google Ads)`)}</li>
-  <li>{t(`Фишинговые сайты`)}</li>
-  <li>{t(`Спам`)}</li>
+<h2 className="text-2xl font-bold text-white mt-12 mb-6">
+  {t(`💡 Часто задаваемые вопросы по реферальной программе`)}
+</h2>
+
+<div className="space-y-4">
+  {/* Вопрос 1 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`1. Сколько я могу заработать?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="text-gray-400 mb-2">
+        {t(`Зависит от количества и активности рефералов. Примеры:`)}
+      </p>
+      <ul className="list-disc list-inside ml-6 text-gray-400 space-y-1">
+        <li>{t(`10 рефералов × $10k/месяц = $100/месяц (Bronze)`)}</li>
+        <li>{t(`200 рефералов × $25k/месяц = $5,000/месяц (Platinum)`)}</li>
+        <li>{t(`1,000 рефералов × $30k/месяц = $30,000/месяц (Diamond) 💎`)}</li>
       </ul>
-
     </div>
+  </details>
 
+  {/* Вопрос 2 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`2. Как долго я получаю комиссию?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="text-gray-400">
+        {t(`Навсегда (lifetime commissions), пока реферал использует Hypertrade.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 3 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`3. Нужен ли KYC?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="text-gray-400">
+        {t(`Нет для выплат <$10,000/месяц. Для больших сумм может потребоваться.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 4 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`4. Когда выплаты?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="text-gray-400">
+        {t(`Ежемесячно, 1-5 числа. Минимум: $100.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 5 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`5. Можно ли использовать несколько реф. кодов?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="text-gray-400">
+        {t(`Нет, один wallet = один реф. код.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 6 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`6. Что, если реферал уже использовал Hypertrade без реф. ссылки?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="text-gray-400">
+        {t(`К сожалению, первый визит без реф. ссылки = нет комиссии. Поэтому важно, чтобы первый визит был через вашу ссылку.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 7 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`7. Можно ли самому быть своим рефералом?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="text-gray-400">
+        {t(`Нет, self-referrals запрещены. Hypertrade отслеживает это и может заблокировать аккаунт.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 8 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`8. Есть ли ограничение на количество рефералов?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="text-gray-400">
+        {t(`Нет, вы можете привлекать неограниченное количество.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 9 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`9. Что делать, если я не получил выплату?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="text-gray-400">
+        {t(`Свяжитесь с support: referrals@hypertrade.io или Discord (#referral-support).`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 10 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`10. Можно ли использовать paid ads?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="text-gray-400">
+        {t(`Да, но запрещено:`)}
+      </p>
+      <ul className="list-disc list-inside ml-6 text-gray-400 space-y-1 mt-2">
+        <li>{t(`Brand bidding (ставки на "Hypertrade" в Google Ads)`)}</li>
+        <li>{t(`Фишинговые сайты`)}</li>
+        <li>{t(`Спам`)}</li>
+      </ul>
+    </div>
+  </details>
+</div>
+</div>
 {/* Заключение */}
 <div className="space-y-8 mb-12">
 
@@ -908,7 +1070,7 @@ For a trader with $50k/month volume, that's $500-2,500/year savings."
   <li>{t(`✅ Нет ограничений по количеству рефералов`)}</li>
 </ul>
 
-<div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl shadow-md">
+<div className=" p-6 rounded-xl shadow-md">
   <h4 className="text-lg font-bold text-hyper-accent mb-4">{t(`Кто может зарабатывать:`)}</h4>
   <ul className="list-inside ml-6 text-gray-400 space-y-2">
     <li>{t(`🐦 Crypto influencers (Twitter, YouTube, TikTok)`)}</li>
@@ -920,7 +1082,7 @@ For a trader with $50k/month volume, that's $500-2,500/year savings."
   </ul>
 </div>
 
-<div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl shadow-md">
+<div className=" p-6 rounded-xl shadow-md">
   <h4 className="text-lg font-bold text-hyper-accent mb-4">{t(`Начните прямо сейчас:`)}</h4>
   <ol className="list-decimal list-inside ml-6 text-gray-400 space-y-2">
     <li>{t(`🔗 Зарегистрируйтесь: https://ht.xyz/referral`)}</li>
@@ -932,29 +1094,78 @@ For a trader with $50k/month volume, that's $500-2,500/year savings."
   <p className="text-gray-300 mt-4">{t(`Начните сегодня и создайте источник пассивного дохода на годы вперёд! 🚀`)}</p>
 </div>
 
-<div className="bg-hyper-800/30 border border-gray-700 p-6 rounded-xl shadow-md">
-  <h4 className="text-lg font-bold text-hyper-accent mb-4">{t(`Ресурсы и поддержка`)}</h4>
+<div className=" p-6 rounded-xl shadow-md">
+<h2 className="text-2xl font-bold text-white  mb-6">{t(`🔗 Полезные ссылки`)}</h2>
 
-  <p className="text-gray-300 mb-2">{t(`📚 Документация:`)}</p>
-  <ul className="list-disc list-inside ml-6 text-gray-400 space-y-1 mb-4">
-    <li>{t(`Referral Program Guide: https://docs.hypertrade.io/referral`)}</li>
-    <li>{t(`Marketing Kit: https://docs.hypertrade.io/referral/marketing-kit`)}</li>
-    <li>{t(`Dashboard: https://app.hypertrade.io/referrals/dashboard`)}</li>
-  </ul>
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-4">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Tools:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade (optimal liquidity routing):`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://ht.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://docs.hypertrade.io`)}</a>
+      </li>
+      <li>
+        {t(`Invisium Technology:`)}{" "}
+        <a href="https://invisium.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://invisium.com`)}</a>
+      </li>
+    </ul>
+  </div>
 
-  <p className="text-gray-300 mb-2">{t(`💬 Сообщество:`)}</p>
-  <ul className="list-disc list-inside ml-6 text-gray-400 space-y-1 mb-4">
-    <li>{t(`Discord (#referral-program): https://discord.gg/hypertrade`)}</li>
-    <li>{t(`Twitter: @Hypertrade_xyz`)}</li>
-    <li>{t(`Telegram: @HypertradeReferrals`)}</li>
-  </ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`HyperCore Spot (order book):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/trade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://app.hyperliquid.xyz/trade`)}</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://explorer.hyperliquid.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Docs:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperliquid.gitbook.io`)}</a>
+      </li>
+    </ul>
+  </div>
 
-  <p className="text-gray-300 mb-2">{t(`📧 Поддержка:`)}</p>
-  <ul className="list-disc list-inside ml-6 text-gray-400 space-y-1">
-    <li>{t(`Общие вопросы: referrals@hypertrade.io`)}</li>
-    <li>{t(`Технические проблемы: support@hypertrade.io`)}</li>
-    <li>{t(`Партнёрство (Diamond уровень): partnerships@hypertrade.io`)}</li>
-  </ul>
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`DEX на Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hyperswap:`)}{" "}
+        <a href="https://hyperswap.fi" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperswap.fi`)}</a>
+      </li>
+      <li>
+        {t(`Kittenswap:`)}{" "}
+        <a href="https://kittenswap.org" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://kittenswap.org`)}</a>
+      </li>
+      <li>
+        {t(`Prjx:`)}{" "}
+        <a href="https://prjx.finance" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://prjx.finance`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Analytics:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`CoinGlass (Hyperliquid):`)}{" "}
+        <a href="https://www.coinglass.com/hyperliquid" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://www.coinglass.com/hyperliquid`)}</a>
+      </li>
+      <li>
+        {t(`DexScreener:`)}{" "}
+        <a href="https://dexscreener.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://dexscreener.com`)}</a>
+      </li>
+    </ul>
+  </div>
+</div>
 </div>
   </div>
 

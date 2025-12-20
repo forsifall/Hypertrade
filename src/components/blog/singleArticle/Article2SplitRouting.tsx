@@ -855,9 +855,11 @@ export const ArticleSplitRouting2 = ({ lang }: { lang: Language }) => {
       <p className="text-gray-300 mb-2">{t(`Fees: ~$6.20 (gas + DEX fees)`)}</p>
       <p className="text-green-400 font-bold">{t(`✓ Invisium Simulation: 99.8% accurate`)}</p>
 
+<Link href="https://ht.xyz/">
       <button className="mt-4 bg-hyper-accent text-hyper-900 font-bold py-2 px-6 rounded-xl hover:bg-cyan-300 transition-colors">
         {t(`Swap Now`)}
       </button>
+      </Link>
     </div>
   </div>
 
@@ -1055,28 +1057,77 @@ export const ArticleSplitRouting2 = ({ lang }: { lang: Language }) => {
   </div>
 
   {/* Полезные ссылки */}
-  <div className="mb-12">
-    <h3 className="text-xl font-bold text-white mb-4">{t(`🔗 Полезные ссылки`)}</h3>
-    <ul className="text-gray-300 ml-4 list-disc space-y-1">
-      <li>{t(`Hypertrade:`)}</li>
-      <li>{t(`• Официальный сайт: https://ht.xyz`)}</li>
-      <li>{t(`• Документация R1 Router: https://docs.hypertrade.io`)}</li>
-      <li>{t(`• Discord: https://discord.gg/hypertrade`)}</li>
-      <li>{t(`• Twitter: https://twitter.com/Hypertrade_xyz`)}</li>
-      <li>{t(`Hyperliquid:`)}</li>
-      <li>{t(`• Официальный сайт: https://hyperliquid.xyz`)}</li>
-      <li>{t(`• HyperCore Spot: https://app.hyperliquid.xyz/trade`)}</li>
-      <li>{t(`• Explorer: https://explorer.hyperliquid.xyz`)}</li>
-      <li>{t(`• Документация: https://hyperliquid.gitbook.io/hyperliquid-docs`)}</li>
-      <li>{t(`DEX на Hyperliquid:`)}</li>
-      <li>{t(`• Hyperswap: https://hyperswap.fi`)}</li>
-      <li>{t(`• Kittenswap: https://kittenswap.org`)}</li>
-      <li>{t(`• Prjx: https://prjx.finance`)}</li>
-      <li>{t(`Analytics:`)}</li>
-      <li>{t(`• CoinGlass Hyperliquid: https://www.coinglass.com/hyperliquid`)}</li>
-      <li>{t(`• DexScreener: https://dexscreener.com`)}</li>
+ <h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
+
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-4">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Tools:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade (optimal liquidity routing):`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://ht.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://docs.hypertrade.io`)}</a>
+      </li>
+      <li>
+        {t(`Invisium Technology:`)}{" "}
+        <a href="https://invisium.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://invisium.com`)}</a>
+      </li>
     </ul>
   </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`HyperCore Spot (order book):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/trade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://app.hyperliquid.xyz/trade`)}</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://explorer.hyperliquid.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Docs:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperliquid.gitbook.io`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`DEX на Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hyperswap:`)}{" "}
+        <a href="https://hyperswap.fi" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperswap.fi`)}</a>
+      </li>
+      <li>
+        {t(`Kittenswap:`)}{" "}
+        <a href="https://kittenswap.org" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://kittenswap.org`)}</a>
+      </li>
+      <li>
+        {t(`Prjx:`)}{" "}
+        <a href="https://prjx.finance" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://prjx.finance`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Analytics:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`CoinGlass (Hyperliquid):`)}{" "}
+        <a href="https://www.coinglass.com/hyperliquid" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://www.coinglass.com/hyperliquid`)}</a>
+      </li>
+      <li>
+        {t(`DexScreener:`)}{" "}
+        <a href="https://dexscreener.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://dexscreener.com`)}</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 
     {/* Начать экономить */}
@@ -1084,7 +1135,9 @@ export const ArticleSplitRouting2 = ({ lang }: { lang: Language }) => {
   <h3 className="text-2xl font-bold text-white mb-4">{t(`🚀 Начните экономить уже сегодня`)}</h3>
   <p className="text-gray-300 mb-4">{t(`3 простых шага:`)}</p>
   <ol className="text-gray-300 ml-4 space-y-2 mb-4">
-    <li>{t(`Откройте https://ht.xyz`)}</li>
+    <li>{t(`Откройте `)}
+      {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`https://ht.xyz`}>https://ht.xyz</a>}
+    </li>
     <li>{t(`Сделайте первый своп с split-routing`)}</li>
     <li>{t(`Оцените экономию`)}</li>
   </ol>
@@ -1094,14 +1147,12 @@ export const ArticleSplitRouting2 = ({ lang }: { lang: Language }) => {
 
 {/* Кнопка для статьи 19 */}
 <div className="text-center mb-12">
+  <Link href={`/${lang}/blog`}>
   <button className="bg-hyper-accent text-hyper-900 font-bold py-3 px-6 rounded-xl hover:bg-cyan-300 transition-colors">
     {t(`Статья 19 из серии “Полный гид по Hypertrade и Hyperliquid”`)}
   </button>
+  </Link>
 </div>
-
-<p className="text-gray-300 mb-12">
-  {t(`Готово! Статья 19 создана с глубоким техническим объяснением split-routing технологии, практическими примерами расчётов, визуализацией процесса и демонстрацией реальной экономии в долларах. Акцент сделан на том, что эта технология работает автоматически в Hypertrade, и пользователю не нужно ничего настраивать вручную.`)}
-</p>
 
 </article>
 

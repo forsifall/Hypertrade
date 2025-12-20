@@ -1,4 +1,5 @@
 import { getDictionary, Language } from "@/app/translations";
+import Link from "next/link";
 
 // --- CTA Section ---
 export function CTA({ lang }: { lang: Language }) {
@@ -11,11 +12,11 @@ export function CTA({ lang }: { lang: Language }) {
         <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
           {translationData.cta.subtitle}
         </p>
-        <button className="bg-hyper-accent hover:bg-cyan-300 text-hyper-900 font-bold py-4 px-12 rounded-xl text-xl transition-all transform hover:scale-105 shadow-xl shadow-cyan-500/30">
+        <Link href='https://ht.xyz/' className="bg-hyper-accent hover:bg-cyan-300 text-hyper-900 font-bold py-4 px-12 rounded-xl text-xl transition-all transform hover:scale-105 shadow-xl shadow-cyan-500/30">
           {translationData.cta.btn}
-        </button>
+        </Link>
         <p className="mt-6 text-sm text-gray-500">
-          {translationData.cta.footer} <span className="text-hyper-accent">ht.xyz</span>
+          {translationData.cta.footer} <Link href='https://ht.xyz/' className="text-hyper-accent">ht.xyz</Link>
         </p>
       </div>
     </section>

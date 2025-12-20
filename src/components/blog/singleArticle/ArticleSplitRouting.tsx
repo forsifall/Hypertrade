@@ -903,7 +903,9 @@ export const ArticleSplitRouting = ({lang}:{lang:Language}) => {
 <div className="bg-gradient-to-r from-hyper-accent/20 to-hyper-secondary/20 p-8 rounded-2xl border border-hyper-accent/30 text-center not-prose mt-12">
   <h3 className="text-2xl font-bold text-white mb-4">{t("Начните экономить с Hypertrade")}</h3>
   <ol className="list-decimal pl-6 text-gray-300 space-y-2 mb-4">
-    <li>{t("🚀 Откройте https://ht.xyz")}</li>
+    <li>{t("🚀 Откройте ")}
+      {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`https://ht.xyz`}>https://ht.xyz</a>}
+    </li>
     <li>{t("🔗 Подключите кошелёк (MetaMask, WalletConnect)")}</li>
     <li>{t("💰 Пополните HYPE для gas (5-10 HYPE)")}</li>
     <li>{t("🔄 Сделайте первый swap — split-routing включится автоматически")}</li>

@@ -1,7 +1,7 @@
 "use client"
 import { Language } from "@/app/translations";
 import BackButton from "@/components/ui/BackButton";
-import { Zap, Clock, CheckCircle, Settings, ArrowRight, Wallet, Link as LinkIcon, Cpu, BarChart, DollarSign } from "lucide-react";
+import { Zap, Clock, CheckCircle, Settings, ArrowRight, Wallet, Link as LinkIcon, Cpu, BarChart, DollarSign, Plus } from "lucide-react";
 import Link from "next/link";
 import { getBlogPosts } from "../data";
 import { useTranslation } from "react-i18next";
@@ -43,7 +43,7 @@ export const ArticleQuickStartGuide = ({ lang }: { lang: Language }) => {
 <p className="text-gray-400 mb-6">{t(`Последнее обновление: 14 декабря 2025 | Время чтения: 7 минут`)}</p>
 <hr className="border-gray-700 my-6" />
 
-<p className="text-gray-300 mb-6">{t(`Вы хотите начать экономить на каждом обмене криптовалюты, но не знаете с чего начать?`)}</p>
+<p className="text-xl text-gray-300 leading-relaxed font-light mb-12 border-l-4 border-hyper-accent pl-6 italic">{t(`Вы хотите начать экономить на каждом обмене криптовалюты, но не знаете с чего начать?`)}</p>
 <p className="text-gray-300 mb-6">{t(`Хорошая новость: использование Hypertrade настолько простое, что даже абсолютный новичок может сделать свой первый выгодный своп за 5 минут. В этом руководстве мы пройдем весь процесс шаг за шагом — от подключения кошелька до выполнения первой транзакции.`)}</p>
 <p className="text-gray-300 mb-6">{t(`Никакой сложной терминологии. Только конкретные действия.`)}</p>
 <hr className="border-gray-700 my-6" />
@@ -51,7 +51,9 @@ export const ArticleQuickStartGuide = ({ lang }: { lang: Language }) => {
 <h3 className="text-xl font-bold text-white mt-12 mb-4">{t(`⏱️ Что вы получите за 5 минут`)}</h3>
 <p className="text-gray-300 mb-4">{t(`К концу этого руководства вы сможете:`)}</p>
 <ul className="list-disc list-inside text-gray-300 mb-6 space-y-2">
-  <li>{t(`✅ Подключить свой кошелек к Hypertrade`)}</li>
+  <li>{t(`✅ Подключить свой кошелек к `)}
+    {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>Hypertrade</a>}
+  </li>
   <li>{t(`✅ Настроить сеть Hyperliquid`)}</li>
   <li>{t(`✅ Выполнить первый обмен с лучшим курсом`)}</li>
   <li>{t(`✅ Понять интерфейс и основные настройки`)}</li>
@@ -126,7 +128,9 @@ export const ArticleQuickStartGuide = ({ lang }: { lang: Language }) => {
 <ul className="list-disc list-inside text-gray-300 mb-4 space-y-1">
   <li>{t(`• Популярные токены: USDC, ETH, USDT, BTC`)}</li>
   <li>{t(`• Альткоины на Hyperliquid`)}</li>
-  <li>{t(`• Любые токены, доступные на интегрированных DEX`)}</li>
+  <li>{t(`• Любые токены, доступные на интегрированных `)}
+    {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>DEX</a>}
+  </li>
 </ul>
 <p className="text-gray-300 mb-4">{t(`Для первого теста подойдет:`)}</p>
 <ul className="list-disc list-inside text-gray-300 mb-6 space-y-1">
@@ -587,7 +591,7 @@ ETH: 0.5 ≈ $1,750.00
   <li>{t(`Посмотрите разницу с другими DEX`)}</li>
   <li>{t(`Убедитесь, что экономия существенна`)}</li>
 </ol>
-<pre className="bg-hyper-800/20 text-gray-300 p-4 rounded-lg mb-6">
+<pre style={{textWrap: "auto"}} className="bg-hyper-800/20 text-gray-300 p-4 rounded-lg mb-6">
 {t(`Пример вывода:
 Hypertrade:      0.0285 ETH (лучшее!) ✅
 Direct DEX A:    0.0279 ETH (-2.1%)
@@ -598,7 +602,9 @@ Your savings: $2.10 (2.1%)
 </pre>
 
 
-<h4 className="text-lg font-bold text-white mt-12 mb-2">{t(`Совет 4: Следите за балансом HYPE`)}</h4>
+<h4 className="text-lg font-bold text-white mt-12 mb-2">{t(`Совет 4: Следите за балансом `)}
+  {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>HYPE</a>}
+</h4>
 <p className="text-gray-300 mb-4">{t(`Всегда держите запас HYPE для газа!`)}</p>
 <p className="text-gray-300 mb-2">{t(`Рекомендуемые резервы:`)}</p>
 <ul className="list-disc list-inside text-gray-300 mb-4 space-y-1">
@@ -780,105 +786,290 @@ Best Swap Savings: $15.30 (ETH/USDC)
   <li>{t(`🐦 Twitter: @Hypertrade_xyz`)}</li>
 </ul>
 
-<h4 className="text-lg font-bold text-white mt-12 mb-2">{t(`❓ Часто задаваемые вопросы`)}</h4>
-<h5 className="text-md font-bold text-white mt-6 mb-2">{t(`Сколько стоит использование Hypertrade?`)}</h5>
-<p className="text-gray-300 mb-2">{t(`Hypertrade абсолютно бесплатен!`)}</p>
-<p className="text-gray-300 mb-4">{t(`Вы платите только:`)}</p>
-<ul className="list-disc list-inside text-gray-300 mb-6 space-y-1">
-  <li>{t(`Газ сети Hyperliquid (обычно 0.5-2 HYPE ≈ $0.50-$2)`)}</li>
-  <li>{t(`Стандартные комиссии DEX (0.1-0.3% в зависимости от протокола)`)}</li>
-</ul>
-<p className="text-gray-300 mb-6">{t(`Нет никаких комиссий за агрегацию!`)}</p>
+<h2 className="text-2xl font-bold text-white mt-12 mb-6">
+  {t(`❓ Часто задаваемые вопросы`)}
+</h2>
 
-<h5 className="text-md font-bold text-white mt-6 mb-2">{t(`Безопасно ли давать approval токенов?`)}</h5>
-<p className="text-gray-300 mb-2">{t(`Да, это стандартная процедура для всех DEX.`)}</p>
-<p className="text-gray-300 mb-4">{t(`Что важно:`)}</p>
-<ul className="list-disc list-inside text-gray-300 mb-6 space-y-1">
-  <li>{t(`Approval дает разрешение только на конкретный токен`)}</li>
-  <li>{t(`Hypertrade не может забрать другие ваши токены`)}</li>
-  <li>{t(`Hypertrade не может забрать больше, чем вы указываете в свопе`)}</li>
-  <li>{t(`Смарт-контракты Hypertrade прошли аудит`)}</li>
-</ul>
-<p className="text-gray-300 mb-6">{t(`Вы всегда контролируете свои средства.`)}</p>
+<div className="space-y-4">
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Сколько стоит использование Hypertrade?`)}
+      </span>
+      <Plus className="text-cyan-400 w-5 h-5 shrink-0" />
+    </summary>
 
-<h5 className="text-md font-bold text-white mt-6 mb-2">{t(`Можно ли отменить транзакцию после подтверждения?`)}</h5>
-<p className="text-gray-300 mb-2">{t(`Нет, блокчейн-транзакции необратимы.`)}</p>
-<p className="text-gray-300 mb-4">{t(`После нажатия "Confirm" в MetaMask транзакция отправлена в сеть и её нельзя отменить.`)}</p>
-<p className="text-gray-300 mb-6">{t(`Поэтому важно:`)}</p>
-<ul className="list-disc list-inside text-gray-300 mb-6 space-y-1">
-  <li>{t(`Внимательно проверять детали перед подтверждением`)}</li>
-  <li>{t(`Убедиться в правильности адресов`)}</li>
-  <li>{t(`Проверить суммы`)}</li>
-</ul>
+    <div className="p-4 pt-2">
+      <p className="mb-2">
+        {t(`Hypertrade абсолютно бесплатен!`)}
+      </p>
+      <p className="mb-4">
+        {t(`Вы платите только:`)}
+      </p>
 
-<h5 className="text-md font-bold text-white mt-6 mb-2">{t(`Что делать, если своп не прошел?`)}</h5>
-<p className="text-gray-300 mb-2">{t(`Проверьте статус транзакции:`)}</p>
-<ol className="list-decimal list-inside text-gray-300 mb-4 space-y-1">
-  <li>{t(`Найдите транзакцию в History`)}</li>
-  <li>{t(`Нажмите "View on Explorer"`)}</li>
-  <li>{t(`Посмотрите причину ошибки`)}</li>
-</ol>
-<p className="text-gray-300 mb-4">{t(`Частые причины:`)}</p>
-<ul className="list-disc list-inside text-gray-300 mb-6 space-y-1">
-  <li>{t(`Недостаточно газа (HYPE)`)}</li>
-  <li>{t(`Slippage слишком низкий`)}</li>
-  <li>{t(`Изменилась цена до выполнения`)}</li>
-</ul>
-<p className="text-gray-300 mb-6">{t(`Газ НЕ возвращается даже при неудаче (так работает блокчейн).`)}</p>
+      <ul className="mb-6 list-disc list-inside">
+        <li>{t(`Газ сети Hyperliquid (обычно 0.5-2 HYPE ≈ $0.50-$2)`)}</li>
+        <li>{t(`Стандартные комиссии DEX (0.1-0.3% в зависимости от протокола)`)}</li>
+      </ul>
 
-<h5 className="text-md font-bold text-white mt-6 mb-2">{t(`Какой минимальный размер свопа?`)}</h5>
-<p className="text-gray-300 mb-2">{t(`Технически: Нет минимума.`)}</p>
-<p className="text-gray-300 mb-4">{t(`Практически: Рекомендуется свопать от $10-20, чтобы комиссия газа не съела всю выгоду.`)}</p>
-<pre className="bg-hyper-800/20 text-gray-300 p-4 rounded-lg mb-6">
+      <p className="mb-12">
+        {t(`Нет никаких комиссий за агрегацию!`)}
+      </p>
+    </div>
+  </details>
+
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Безопасно ли давать approval токенов?`)}
+      </span>
+      <Plus className="text-cyan-400 w-5 h-5 shrink-0" />
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-2">
+        {t(`Да, это стандартная процедура для всех DEX.`)}
+      </p>
+      <p className="mb-4">
+        {t(`Что важно:`)}
+      </p>
+
+      <ul className="mb-6 list-disc list-inside">
+        <li>{t(`Approval дает разрешение только на конкретный токен`)}</li>
+        <li>{t(`Hypertrade не может забрать другие ваши токены`)}</li>
+        <li>{t(`Hypertrade не может забрать больше, чем вы указываете в свопе`)}</li>
+        <li>{t(`Смарт-контракты Hypertrade прошли аудит`)}</li>
+      </ul>
+
+      <p className="mb-12">
+        {t(`Вы всегда контролируете свои средства.`)}
+      </p>
+    </div>
+  </details>
+
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Можно ли отменить транзакцию после подтверждения?`)}
+      </span>
+      <Plus className="text-cyan-400 w-5 h-5 shrink-0" />
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-2">
+        {t(`Нет, блокчейн-транзакции необратимы.`)}
+      </p>
+      <p className="mb-4">
+        {t(`После нажатия "Confirm" в MetaMask транзакция отправлена в сеть и её нельзя отменить.`)}
+      </p>
+      <p className="mb-4">
+        {t(`Поэтому важно:`)}
+      </p>
+
+      <ul className="mb-12 list-disc list-inside">
+        <li>{t(`Внимательно проверять детали перед подтверждением`)}</li>
+        <li>{t(`Убедиться в правильности адресов`)}</li>
+        <li>{t(`Проверить суммы`)}</li>
+      </ul>
+    </div>
+  </details>
+
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Что делать, если своп не прошел?`)}
+      </span>
+      <Plus className="text-cyan-400 w-5 h-5 shrink-0" />
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-2">
+        {t(`Проверьте статус транзакции:`)}
+      </p>
+
+      <ol className="mb-4 list-decimal list-inside">
+        <li>{t(`Найдите транзакцию в History`)}</li>
+        <li>{t(`Нажмите "View on Explorer"`)}</li>
+        <li>{t(`Посмотрите причину ошибки`)}</li>
+      </ol>
+
+      <p className="mb-4">
+        {t(`Частые причины:`)}
+      </p>
+
+      <ul className="mb-6 list-disc list-inside">
+        <li>{t(`Недостаточно газа (HYPE)`)}</li>
+        <li>{t(`Slippage слишком низкий`)}</li>
+        <li>{t(`Изменилась цена до выполнения`)}</li>
+      </ul>
+
+      <p className="mb-12">
+        {t(`Газ НЕ возвращается даже при неудаче (так работает блокчейн).`)}
+      </p>
+    </div>
+  </details>
+
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Какой минимальный размер свопа?`)}
+      </span>
+      <Plus className="text-cyan-400 w-5 h-5 shrink-0" />
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-2">
+        {t(`Технически: Нет минимума.`)}
+      </p>
+      <p className="mb-4">
+        {t(`Практически: Рекомендуется свопать от $10-20, чтобы комиссия газа не съела всю выгоду.`)}
+      </p>
+
+      <pre className="bg-hyper-800/20 text-gray-300 p-4 rounded-lg mb-12">
 {t(`Пример:
 • Своп $5: газ $1.50 (30% потерь) ❌
 • Своп $50: газ $1.50 (3% потерь) ⭐
 • Своп $500: газ $1.50 (0.3% потерь) ✅`)}
-</pre>
+      </pre>
+    </div>
+  </details>
 
-<h5 className="text-md font-bold text-white mt-6 mb-2">{t(`Как часто обновляются цены?`)}</h5>
-<p className="text-gray-300 mb-4">{t(`В реальном времени!`)}</p>
-<ul className="list-disc list-inside text-gray-300 mb-6 space-y-1">
-  <li>{t(`Hypertrade обновляет цены каждые:`)}</li>
-  <li>{t(`1-2 секунды в обычном режиме`)}</li>
-  <li>{t(`<1 секунды при активном вводе суммы`)}</li>
-</ul>
-<p className="text-gray-300 mb-6">{t(`Симуляция пересчитывается при каждом изменении суммы.`)}</p>
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Как часто обновляются цены?`)}
+      </span>
+      <Plus className="text-cyan-400 w-5 h-5 shrink-0" />
+    </summary>
 
-<h4 className="text-lg font-bold text-white mt-12 mb-4">{t(`📚 Полезные ресурсы`)}</h4>
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-  <div className="bg-hyper-800/20 p-4 rounded-xl border border-gray-700 hover:bg-hyper-800/40 transition-colors">
-    <p className="font-bold text-white mb-1">{t(`Документация`)}</p>
-    <p className="text-gray-300 text-sm mb-2">{t(`📖 docs.hypertrade.io — техническая документация`)}</p>
-    <p className="font-bold text-white mb-1">{t(`Обучение`)}</p>
-    <p className="text-gray-300 text-sm mb-2">{t(`🎓 Блог Hypertrade — статьи и гайды`)}</p>
-    <p className="text-gray-300 text-sm">{t(`📹 YouTube канал — видео-инструкции`)}</p>
-  </div>
-  <div className="bg-hyper-800/20 p-4 rounded-xl border border-gray-700 hover:bg-hyper-800/40 transition-colors">
-    <p className="font-bold text-white mb-1">{t(`Сообщество`)}</p>
-    <p className="text-gray-300 text-sm mb-2">{t(`💬 Discord — общение с трейдерами`)}</p>
-    <p className="text-gray-300 text-sm mb-2">{t(`📱 Telegram — новости и обновления`)}</p>
-    <p className="text-gray-300 text-sm mb-2">{t(`🐦 Twitter — анонсы`)}</p>
-    <p className="font-bold text-white mb-1">{t(`Поддержка`)}</p>
-    <p className="text-gray-300 text-sm">{t(`📧 support@hypertrade.io`)}</p>
-    <p className="text-gray-300 text-sm">{t(`⏰ Ответ в течение 24 часов`)}</p>
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`В реальном времени!`)}
+      </p>
+
+      <ul className="mb-6 list-disc list-inside">
+        <li>{t(`Hypertrade обновляет цены каждые:`)}</li>
+        <li>{t(`1-2 секунды в обычном режиме`)}</li>
+        <li>{t(`<1 секунды при активном вводе суммы`)}</li>
+      </ul>
+
+      <p className="mb-12">
+        {t(`Симуляция пересчитывается при каждом изменении суммы.`)}
+      </p>
+    </div>
+  </details>
+</div>
+
+  <div className="mt-16 pt-10 border-t border-gray-800/50">
+  <div className="mb-8">
+    <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+      <span className="text-2xl">📚</span>
+      {t(`Дополнительные ресурсы`)}
+    </h3>
+    
+    {/* Официальная документация */}
+    <div className="mb-8">
+      <h4 className="text-gray-300 font-medium mb-4 flex items-center gap-2">
+        <span>📖</span>
+        {t(`Официальная документация`)}
+      </h4>
+      <div className="space-y-3 pl-6">
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-900/40 hover:bg-gray-800/60 border border-gray-800/50 hover:border-gray-700/60 transition-colors cursor-pointer">
+          <span className="text-xl">📖</span>
+          <span className="text-gray-300">{t(`MetaMask Documentation`)}</span>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-900/40 hover:bg-gray-800/60 border border-gray-800/50 hover:border-gray-700/60 transition-colors cursor-pointer">
+          <span className="text-xl">📖</span>
+          <span className="text-gray-300">{t(`Hyperliquid Docs`)}</span>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-900/40 hover:bg-gray-800/60 border border-gray-800/50 hover:border-gray-700/60 transition-colors cursor-pointer">
+          <span className="text-xl">📖</span>
+          <span className="text-gray-300">{t(`Hypertrade Docs`)}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Видео-инструкции */}
+    <div className="mb-8">
+      <h4 className="text-gray-300 font-medium mb-4 flex items-center gap-2">
+        <span>📹</span>
+        {t(`Видео-инструкции`)}
+      </h4>
+      <div className="space-y-3 pl-6">
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-900/40 hover:bg-gray-800/60 border border-gray-800/50 hover:border-gray-700/60 transition-colors cursor-pointer">
+          <span className="text-xl">📹</span>
+          <span className="text-gray-300">{t(`YouTube: Настройка MetaMask`)}</span>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-900/40 hover:bg-gray-800/60 border border-gray-800/50 hover:border-gray-700/60 transition-colors cursor-pointer">
+          <span className="text-xl">📹</span>
+          <span className="text-gray-300">{t(`YouTube: Первый своп на Hypertrade`)}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Поддержка */}
+    <div className="mb-8">
+      <h4 className="text-gray-300 font-medium mb-4 flex items-center gap-2">
+        <span>💬</span>
+        {t(`Поддержка`)}
+      </h4>
+      <div className="space-y-3 pl-6">
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-900/20 hover:bg-blue-900/30 border border-blue-800/30 hover:border-blue-700/40 transition-colors cursor-pointer">
+          <span className="text-xl">📧</span>
+          <span className="text-gray-300">{t(`support@hypertrade.io`)}</span>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-purple-900/20 hover:bg-purple-900/30 border border-purple-800/30 hover:border-purple-700/40 transition-colors cursor-pointer">
+          <span className="text-xl">💬</span>
+          <span className="text-gray-300">{t(`Discord: discord.gg/hypertrade`)}</span>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-900/20 hover:bg-blue-900/30 border border-blue-800/30 hover:border-blue-700/40 transition-colors cursor-pointer">
+          <span className="text-xl">📱</span>
+          <span className="text-gray-300">{t(`Telegram: @HypertradeSupport`)}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
 
 <h4 className="text-lg font-bold text-white mt-12 mb-4">{t(`Готовы сделать первый шаг к умной торговле?`)}</h4>
 <p className="text-gray-300 mb-4">{t(`🎯 Начать использовать Hypertrade →`)}</p>
 <p className="text-gray-300 mb-6">{t(`Подключите кошелек за 30 секунд и выполните первый выгодный своп!`)}</p>
 
-<div className="text-center mb-12">
-  <button className="bg-hyper-accent text-hyper-900 font-bold py-3 px-8 rounded-xl hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20">
+<div className="text-center py-3 mb-12">
+  <Link href="https://ht.xyz/" className="bg-hyper-accent text-hyper-900 font-bold py-3 px-8 rounded-xl hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20">
     {t(`Открыть Hypertrade и сделать первый своп`)}
-  </button>
+  </Link>
 </div>
 
-<p className="text-gray-400 mb-2">{t(`Последнее обновление: 14 декабря 2025`)}</p>
-<p className="text-gray-400 mb-2">{t(`Автор: Команда Hypertrade`)}</p>
-<p className="text-gray-400 mb-12">{t(`Отказ от ответственности: Торговля криптовалютой несет риски. Данное руководство носит образовательный характер и не является финансовой рекомендацией. Проводите собственное исследование (DYOR) перед принятием инвестиционных решений.`)}</p>
+<div className="mb-16">
+  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 text-sm mb-8">
+    <div className="flex items-center gap-2 text-gray-400">
+      <Clock size={16} className="text-hyper-accent/70" />
+      <span>{t(`Последнее обновление: 14 декабря 2025`)}</span>
+    </div>
+    
+    <div className="hidden sm:block w-px h-4 bg-gradient-to-b from-gray-700 to-transparent"></div>
+    
+    <div className="flex items-center gap-2 text-gray-400">
+      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center">
+        <span className="text-xs font-bold text-cyan-300">H</span>
+      </div>
+      <span>{t(`Автор: Команда Hypertrade`)}</span>
+    </div>
+  </div>
 
+  <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900/40 to-hyper-900/20 p-6 border border-gray-700/50">
+    <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-hyper-accent to-blue-500"></div>
+    <div className="pl-4">
+      <p className="text-sm text-gray-400/90 leading-relaxed">
+        {t(
+          `Отказ от ответственности: Данное руководство носит образовательный характер. Всегда проверяйте официальные источники и будьте осторожны с приватными ключами и seed-фразами.`
+        )}
+      </p>
+    </div>
+  </div>
+</div>
         </article>
       </div>
     </section>

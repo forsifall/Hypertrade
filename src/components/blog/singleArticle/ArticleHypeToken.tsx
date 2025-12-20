@@ -48,7 +48,7 @@ export const ArticleHypeToken = ({ lang }: { lang: Language }) => {
     {t(`Последнее обновление: 14 декабря 2025 | Время чтения: 9 минут`)}
   </p>
 
-  <p className="mb-6">
+  <p className="text-xl text-gray-300 leading-relaxed font-light mb-12 border-l-4 border-hyper-accent pl-6 italic">
     {t(`Пытаетесь сделать первый своп на Hyperliquid, но видите ошибку "Insufficient funds for gas"?`)}
   </p>
 
@@ -69,7 +69,8 @@ export const ArticleHypeToken = ({ lang }: { lang: Language }) => {
   </h2>
 
   <p className="mb-6">
-    {t(`HYPE — это нативный токен блокчейна Hyperliquid. Думайте о нем как об эквиваленте ETH для Ethereum или BNB для BSC.`)}
+    {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>HYPE</a>}
+    {t(` — это нативный токен блокчейна Hyperliquid. Думайте о нем как об эквиваленте ETH для Ethereum или BNB для BSC.`)}
   </p>
 
   <h3 className="text-xl font-bold text-white mt-8 mb-4">
@@ -97,13 +98,15 @@ export const ArticleHypeToken = ({ lang }: { lang: Language }) => {
     <li>{t(`✅ Подтверждение approvals`)}</li>
     <li>{t(`🔄 Любые другие транзакции`)}</li>
   </ul>
+  
 
   <p className="font-semibold mb-12">
     {t(`Нет HYPE = Не можете ничего сделать на Hyperliquid. Всё так просто.`)}
   </p>
 
   <h2 className="text-2xl font-bold text-white mt-12 mb-6">
-    {t(`📊 Основные характеристики токена HYPE`)}
+    {t(`📊 Основные характеристики токена `)}
+    {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>HYPE</a>}
   </h2>
 
   <h3 className="text-xl font-bold text-white mt-8 mb-4">
@@ -122,7 +125,8 @@ export const ArticleHypeToken = ({ lang }: { lang: Language }) => {
   </ul>
 
   <h3 className="text-xl font-bold text-white mt-8 mb-4">
-    {t(`Основные функции HYPE`)}
+    {t(`Основные функции `)}
+    {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>HYPE</a>}
   </h3>
 
   <p className="font-semibold mb-2">
@@ -829,7 +833,9 @@ export const ArticleHypeToken = ({ lang }: { lang: Language }) => {
   <li>{t(`Обмен: см. способ 2A`)}</li>
 </ul>
 
-  <h4 className="text-lg font-bold text-white mt-8 mb-4">{t(`📊 Сравнение способов покупки HYPE`)}</h4>
+  <h4 className="text-lg font-bold text-white mt-8 mb-4">{t(`📊 Сравнение способов покупки `)}
+    {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>HYPE</a>}
+  </h4>
   <div className="overflow-x-auto mb-12">
     <table className="w-full text-left border-collapse text-sm text-gray-300">
       <thead>
@@ -1227,12 +1233,12 @@ export const ArticleHypeToken = ({ lang }: { lang: Language }) => {
   <h3 className="text-xl font-bold text-white mt-12 mb-6">{t(`Готовы начать?`)}</h3>
 
 <div className="flex flex-col md:flex-row gap-4 mb-12">
-  <button className="bg-hyper-accent text-hyper-900 font-bold py-3 px-6 rounded-xl hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20">
+  <Link href="https://ht.xyz/" className="bg-hyper-accent text-hyper-900 font-bold py-3 px-6 rounded-xl hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20">
     {t(`Вариант 1: Купить HYPE на Binance`)}
-  </button>
-  <button className="bg-hyper-secondary text-white font-bold py-3 px-6 rounded-xl hover:bg-indigo-600 transition-colors shadow-lg shadow-indigo-500/20">
+  </Link>
+  <Link href="https://ht.xyz/" className="bg-hyper-secondary text-white font-bold py-3 px-6 rounded-xl hover:bg-indigo-600 transition-colors shadow-lg shadow-indigo-500/20">
     {t(`Вариант 2: Обменять через Hypertrade`)}
-  </button>
+  </Link>
 </div>
 <p className="text-gray-300 mb-12">{t(`Для новичков — самый простой способ или если уже есть другие токены на Hyperliquid`)}</p>
 
@@ -1275,18 +1281,76 @@ export const ArticleHypeToken = ({ lang }: { lang: Language }) => {
   </a>
 </div>
 
-<h3 className="text-xl font-bold text-white mt-12 mb-6">{t(`Эта статья была полезной? 👍 Да 👎 Нет`)}</h3>
-<p className="text-gray-300 mb-4">{t(`Поделитесь с друзьями, которые спрашивают про HYPE:`)}</p>
-<div className="flex flex-wrap gap-3 mb-12">
-  <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-400 transition-colors">{t(`Twitter`)}</button>
-  <button className="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-500 transition-colors">{t(`Telegram`)}</button>
-  <button className="bg-indigo-700 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition-colors">{t(`Discord`)}</button>
-  <button className="bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-500 transition-colors">{t(`Копировать ссылку`)}</button>
-</div>
-<p className="text-gray-400 mb-1">{t(`Последнее обновление: 14 декабря 2025`)}</p>
-<p className="text-gray-400 mb-1">{t(`Автор: Команда Hypertrade`)}</p>
-<p className="text-gray-400 mb-12">{t(`Отказ от ответственности: Цены и комиссии могут меняться. Всегда проверяйте актуальную информацию на официальных источниках. Данная статья не является финансовой рекомендацией. Инвестируйте ответственно и проводите собственное исследование (DYOR).`)}</p>
+<div className="mt-16 pt-10 border-t border-gray-800/50">
+  <div className="mb-8">
+    <p className="text-gray-300 font-medium mb-4 text-center">
+      {t(`Эта статья была полезной?`)}
+    </p>
+    <div className="flex justify-center gap-4">
+      <button className="px-6 py-3 rounded-xl bg-green-900/30 hover:bg-green-900/50 border border-green-800/30 hover:border-green-700/50 transition-all group">
+        <span className="text-2xl">👍</span>
+      </button>
+      
+      <button className="px-6 py-3 rounded-xl bg-red-900/30 hover:bg-red-900/50 border border-red-800/30 hover:border-red-700/50 transition-all group">
+        <span className="text-2xl">👎</span>
+      </button>
+    </div>
+  </div>
 
+  <div className="mb-8">
+    <p className="text-gray-300 font-medium mb-4 text-center">
+      {t(`Поделитесь с друзьями, кто хочет начать торговать на Hyperliquid:`)}
+    </p>
+    <div className="flex justify-center gap-3 flex-wrap">
+      <button className="p-3 rounded-lg bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/30 hover:border-blue-700/50 transition-colors">
+        <span className="text-gray-300">{t(`Twitter`)}</span>
+      </button>
+      
+      <button className="p-3 rounded-lg bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/30 hover:border-blue-700/50 transition-colors">
+        <span className="text-gray-300">{t(`Telegram`)}</span>
+      </button>
+      
+      <button className="p-3 rounded-lg bg-purple-900/30 hover:bg-purple-900/50 border border-purple-800/30 hover:border-purple-700/50 transition-colors">
+        <span className="text-gray-300">{t(`Discord`)}</span>
+      </button>
+      
+      <button className="p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 border border-gray-700/50 hover:border-gray-600/50 transition-colors">
+        <span className="text-gray-300">{t(`Копировать ссылку`)}</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div className="mb-16">
+  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 text-sm mb-8">
+    <div className="flex items-center gap-2 text-gray-400">
+      <Clock size={16} className="text-hyper-accent/70" />
+      <span>{t(`Последнее обновление: 14 декабря 2025`)}</span>
+    </div>
+    
+    <div className="hidden sm:block w-px h-4 bg-gradient-to-b from-gray-700 to-transparent"></div>
+    
+    <div className="flex items-center gap-2 text-gray-400">
+      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center">
+        <span className="text-xs font-bold text-cyan-300">H</span>
+      </div>
+      <span>{t(`Автор: Команда Hypertrade`)}</span>
+    </div>
+  </div>
+
+              <hr className="border-gray-700 mb-12 mt-12" />
+
+  <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900/40 to-hyper-900/20 p-6 border border-gray-700/50">
+    <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-hyper-accent to-blue-500"></div>
+    <div className="pl-4">
+      <p className="text-sm text-gray-400/90 leading-relaxed">
+        {t(
+          `Отказ от ответственности: Данное руководство носит образовательный характер. Всегда проверяйте официальные источники и будьте осторожны с приватными ключами и seed-фразами.`
+        )}
+      </p>
+    </div>
+  </div>
+</div>
       
 
         </article>

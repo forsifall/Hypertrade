@@ -704,36 +704,77 @@ export const ArticleComparison = ({lang}:{lang:Language}) => {
   <li>🔄 {t("Сделайте первый swap и сравните результат")}</li>
 </ol>
 
-<h2 className="text-2xl font-bold text-white mt-12 mb-6">{t("Ресурсы и поддержка")}</h2>
-<ul className="list-disc list-inside space-y-2 text-gray-300">
-  <li>📚 {t("Документация:")}
-    <ul className="list-disc list-inside ml-5">
-      <li>{t("Официальный сайт:")} <a href="https://ht.xyz" className="text-hyper-accent">https://ht.xyz</a></li>
-      <li>{t("Comparison guide:")} <a href="https://docs.hypertrade.io/comparison" className="text-hyper-accent">https://docs.hypertrade.io/comparison</a></li>
-      <li>{t("Technical docs:")} <a href="https://docs.hypertrade.io" className="text-hyper-accent">https://docs.hypertrade.io</a></li>
+<h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
+
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-4">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Tools:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade (optimal liquidity routing):`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://ht.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://docs.hypertrade.io`)}</a>
+      </li>
+      <li>
+        {t(`Invisium Technology:`)}{" "}
+        <a href="https://invisium.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://invisium.com`)}</a>
+      </li>
     </ul>
-  </li>
-  <li>💬 {t("Сообщество:")}
-    <ul className="list-disc list-inside ml-5">
-      <li>{t("Discord:")} <a href="https://discord.gg/hypertrade" className="text-hyper-accent">https://discord.gg/hypertrade</a></li>
-      <li>Twitter: @Hypertrade_xyz</li>
-      <li>Telegram: @HypertradeOfficial</li>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`HyperCore Spot (order book):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/trade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://app.hyperliquid.xyz/trade`)}</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://explorer.hyperliquid.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Docs:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperliquid.gitbook.io`)}</a>
+      </li>
     </ul>
-  </li>
-  <li>🛠️ {t("Для разработчиков:")}
-    <ul className="list-disc list-inside ml-5">
-      <li>{t("API documentation:")} <a href="https://docs.hypertrade.io/api" className="text-hyper-accent">https://docs.hypertrade.io/api</a></li>
-      <li>{t("Integration guide:")} <a href="https://docs.hypertrade.io/integration" className="text-hyper-accent">https://docs.hypertrade.io/integration</a></li>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`DEX на Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hyperswap:`)}{" "}
+        <a href="https://hyperswap.fi" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperswap.fi`)}</a>
+      </li>
+      <li>
+        {t(`Kittenswap:`)}{" "}
+        <a href="https://kittenswap.org" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://kittenswap.org`)}</a>
+      </li>
+      <li>
+        {t(`Prjx:`)}{" "}
+        <a href="https://prjx.finance" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://prjx.finance`)}</a>
+      </li>
     </ul>
-  </li>
-  <li>📧 {t("Поддержка:")}
-    <ul className="list-disc list-inside ml-5">
-      <li>support@hypertrade.io</li>
-      <li>tech@hypertrade.io</li>
-      <li>partnerships@hypertrade.io</li>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Analytics:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`CoinGlass (Hyperliquid):`)}{" "}
+        <a href="https://www.coinglass.com/hyperliquid" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://www.coinglass.com/hyperliquid`)}</a>
+      </li>
+      <li>
+        {t(`DexScreener:`)}{" "}
+        <a href="https://dexscreener.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://dexscreener.com`)}</a>
+      </li>
     </ul>
-  </li>
-</ul>
+  </div>
+</div>
   </div>
 </div>
 

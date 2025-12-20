@@ -1,7 +1,7 @@
 "use client"
 import { Language } from "@/app/translations";
 import BackButton from "@/components/ui/BackButton";
-import { Calculator, Calendar, Clock, DollarSign, LineChart, PieChart, Target, TrendingDown, TrendingUp, Zap, BarChart3, Shield } from "lucide-react";
+import { Calculator, Calendar, Clock, DollarSign, LineChart, PieChart, Target, TrendingDown, TrendingUp, Zap, BarChart3, Shield, Settings } from "lucide-react";
 import Link from "next/link";
 import { getBlogPosts } from "../data";
 import { useTranslation } from "react-i18next";
@@ -17,20 +17,34 @@ export const ArticleDCAStrategy = ({ lang }: { lang: Language }) => {
 
   return (
     <section className="bg-hyper-900 min-h-screen pb-20">
-      {/* Header Image/Gradient */}
-      <div className={`h-64 md:h-80 w-full bg-gradient-to-r ${post.imageColor} relative`}>
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/always-grey.png')] opacity-20"></div>
+         {/* Header Image/Gradient */}
+      <div
+        className={`min-h-64 md:min-h-80 w-full bg-gradient-to-r ${post.imageColor} relative`}
+      >
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-15"></div>
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-hyper-900 to-transparent"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-12 relative z-10">
-           <BackButton label="Назад к статьям" />
-           <div className="flex flex-wrap gap-4 text-sm font-medium text-blue-400 mb-4">
-             <span className="bg-blue-400/10 px-3 py-1 rounded-full border border-blue-400/20">{post.category}</span>
-             <span className="flex items-center gap-1 text-gray-400"><Clock size={14} /> {post.readTime}</span>
-             <span className="flex items-center gap-1 text-gray-400"><Calendar size={14} /> {post.date}</span>
-           </div>
-           <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-             {post.title}
-           </h1>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+          <div className="mb-8">
+            <BackButton label="Назад к статьям" />
+          </div>
+
+          {/* Метаданные всегда сверху */}
+          <div className="flex flex-wrap gap-4 text-sm font-medium text-blue-400 mb-4">
+            <span className="bg-blue-400/10 px-3 py-1 rounded-full border border-blue-400/20">
+              {post.category}
+            </span>
+            <span className="flex items-center gap-1 text-gray-400">
+              <Settings size={14} /> {post.readTime}
+            </span>
+            <span className="flex items-center gap-1 text-gray-400">
+              <Clock size={14} /> {post.date}
+            </span>
+          </div>
+
+          {/* Заголовок занимает оставшееся место */}
+          <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight break-words">
+            {post.title}
+          </h1>
         </div>
       </div>
 
@@ -1229,13 +1243,77 @@ contract DCA_Executor {
   <li>{t(`🚀 Начните первую покупку (прямо сейчас!) Следующая покупка через неделю/месяц. Повторяйте. Profit. 💰`)}</li>
 </ol>
 
-<h3 className="text-xl font-bold text-white mt-12 mb-6">{t(`Ресурсы`)}</h3>
-<ul className="list-disc list-inside mb-6 text-gray-300">
-  <li>{t(`📊 Калькуляторы: DCA Bitcoin Calculator: https://dcabtc.com, Cost Averaging Calculator: https://costavg.com`)}</li>
-  <li>{t(`📚 Исследования: Vanguard: “Dollar-cost averaging just means taking risk later”, CoinGecko Research: “DCA vs Lump Sum in Crypto Markets”`)}</li>
-  <li>{t(`🛠️ Инструменты: Hypertrade (DCA execution): https://ht.xyz, CoinTracker (portfolio tracking): https://cointracker.io, TradingView (price alerts): https://tradingview.com`)}</li>
-  <li>{t(`💬 Сообщество: Hypertrade Discord: https://discord.gg/hypertrade, r/DCA (Reddit): обсуждения DCA стратегий, Twitter: @Hypertrade_xyz`)}</li>
-</ul>
+<h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`🔗 Полезные ссылки`)}</h2>
+
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-6 space-y-4">
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hypertrade & Tools:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hypertrade (optimal liquidity routing):`)}{" "}
+        <a href="https://ht.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://ht.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hypertrade Docs:`)}{" "}
+        <a href="https://docs.hypertrade.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://docs.hypertrade.io`)}</a>
+      </li>
+      <li>
+        {t(`Invisium Technology:`)}{" "}
+        <a href="https://invisium.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://invisium.com`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`HyperCore Spot (order book):`)}{" "}
+        <a href="https://app.hyperliquid.xyz/trade" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://app.hyperliquid.xyz/trade`)}</a>
+      </li>
+      <li>
+        {t(`Explorer:`)}{" "}
+        <a href="https://explorer.hyperliquid.xyz" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://explorer.hyperliquid.xyz`)}</a>
+      </li>
+      <li>
+        {t(`Hyperliquid Docs:`)}{" "}
+        <a href="https://hyperliquid.gitbook.io" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperliquid.gitbook.io`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`DEX на Hyperliquid:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`Hyperswap:`)}{" "}
+        <a href="https://hyperswap.fi" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://hyperswap.fi`)}</a>
+      </li>
+      <li>
+        {t(`Kittenswap:`)}{" "}
+        <a href="https://kittenswap.org" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://kittenswap.org`)}</a>
+      </li>
+      <li>
+        {t(`Prjx:`)}{" "}
+        <a href="https://prjx.finance" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://prjx.finance`)}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 className="text-lg font-bold text-white mb-2">{t(`Analytics:`)}</h4>
+    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+      <li>
+        {t(`CoinGlass (Hyperliquid):`)}{" "}
+        <a href="https://www.coinglass.com/hyperliquid" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://www.coinglass.com/hyperliquid`)}</a>
+      </li>
+      <li>
+        {t(`DexScreener:`)}{" "}
+        <a href="https://dexscreener.com" className="text-hyper-accent underline" target="_blank" rel="noreferrer">{t(`https://dexscreener.com`)}</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
         </article>
     </div>

@@ -10,6 +10,7 @@ import {
   Clock,
   Smartphone,
   Shield,
+  Plus,
 } from "lucide-react";
 import Link from "next/link";
 import { getBlogPosts } from "../data";
@@ -66,7 +67,7 @@ export const ArticleMetaMaskGuide = ({ lang }: { lang: Language }) => {
               )}
             </p>
 
-            <p className="mb-6">
+            <p className="text-xl text-gray-300 leading-relaxed font-light mb-12 border-l-4 border-hyper-accent pl-6 italic">
               {t(
                 `Хотите начать торговать на Hyperliquid, но не знаете, как подключить MetaMask?`
               )}
@@ -181,7 +182,7 @@ export const ArticleMetaMaskGuide = ({ lang }: { lang: Language }) => {
               )}
             </p>
 
-            <p className="font-medium mb-2">{t(`Где купить HYPE:`)}</p>
+            <p className="font-medium mb-2">{t(`Где купить HYPE`)}</p>
 
             <ul className="mb-4">
               <li>{t(`Centralized exchanges: Binance, OKX, Bybit`)}</li>
@@ -201,7 +202,8 @@ export const ArticleMetaMaskGuide = ({ lang }: { lang: Language }) => {
             </p>
 
             <h3 className="text-xl font-bold text-white mb-4">
-              {t(`Шаг 1: Перейдите на Hypertrade`)}
+              {t(`Шаг 1: Перейдите на `)}
+              {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>Hypertrade</a>}
             </h3>
 
             <p className="mb-12">{t(`Откройте в браузере: ht.xyz`)}</p>
@@ -407,7 +409,8 @@ export const ArticleMetaMaskGuide = ({ lang }: { lang: Language }) => {
             </p>
 
             <h3 className="text-xl font-bold text-white mb-4">
-              {t(`Шаг 4: Введите данные сети Hyperliquid`)}
+              {t(`Шаг 4: Введите данные сети `)}
+              {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>Hyperliquid</a>}
             </h3>
 
             <p className="mb-6">
@@ -494,7 +497,8 @@ export const ArticleMetaMaskGuide = ({ lang }: { lang: Language }) => {
             </p>
 
             <h2 className="text-2xl font-bold text-white mt-12 mb-6">
-              {t(`Шаг 6: Переключитесь на сеть Hyperliquid`)}
+              {t(`Шаг 6: Переключитесь на сеть `)}
+              {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>Hyperliquid</a>}
             </h2>
 
             <p className="mb-4">
@@ -635,7 +639,8 @@ export const ArticleMetaMaskGuide = ({ lang }: { lang: Language }) => {
             </h2>
 
             <h3 className="text-xl font-bold text-white mb-4">
-              {t(`1. Пополните кошелек токенами HYPE`)}
+              {t(`1. Пополните кошелек токенами `)}
+              {<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>HYPE</a>}
             </h3>
 
             <p className="font-bold mb-2">{t(`Зачем нужны HYPE:`)}</p>
@@ -1498,50 +1503,65 @@ export const ArticleMetaMaskGuide = ({ lang }: { lang: Language }) => {
 
             <hr className="border-gray-700 mb-12" />
 
-            <h2 className="text-2xl font-bold text-white mb-6">
-              {t(`💡 Часто задаваемые вопросы`)}
-            </h2>
+ <h2 className="text-2xl font-bold text-white mb-6">
+  {t(`💡 Часто задаваемые вопросы`)}
+</h2>
 
-            <p className="font-bold mb-2">
-              {t(`Можно ли использовать один MetaMask для нескольких сетей?`)}
-            </p>
+<div className="space-y-4">
+  {/* Вопрос 1 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Можно ли использовать один MetaMask для нескольких сетей?`)}
+      </span>
+      <Plus className="text-cyan-400 w-5 h-5 shrink-0" />
+    </summary>
 
-            <p className="mb-4">
-              {t(`Да! MetaMask поддерживает множество сетей одновременно:`)}
-            </p>
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`Да! MetaMask поддерживает множество сетей одновременно:`)}
+      </p>
 
-            <ul className="mb-4">
-              <li>{t(`Ethereum`)}</li>
-              <li>{t(`Hyperliquid`)}</li>
-              <li>{t(`BSC`)}</li>
-              <li>{t(`Polygon`)}</li>
-              <li>{t(`И многие другие`)}</li>
-            </ul>
+      <ul className="mb-4 list-disc list-inside">
+        <li>{t(`Ethereum`)}</li>
+        <li>{t(`Hyperliquid`)}</li>
+        <li>{t(`BSC`)}</li>
+        <li>{t(`Polygon`)}</li>
+        <li>{t(`И многие другие`)}</li>
+      </ul>
 
-            <p className="mb-12">
-              {t(`Просто переключайтесь между ними через выпадающее меню.`)}
-            </p>
+      <p className="mb-12">
+        {t(`Просто переключайтесь между ними через выпадающее меню.`)}
+      </p>
+    </div>
+  </details>
 
-            <hr className="border-gray-700 mb-12" />
+  {/* Вопрос 2 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Нужно ли платить за добавление сети?`)}
+      </span>
+      <Plus className="text-cyan-400 w-5 h-5 shrink-0" />
+    </summary>
 
-            <p className="font-bold mb-2">
-              {t(`Нужно ли платить за добавление сети?`)}
-            </p>
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(
+          `Нет! Добавление сети Hyperliquid в MetaMask абсолютно бесплатно.`
+        )}
+      </p>
 
-            <p className="mb-4">
-              {t(
-                `Нет! Добавление сети Hyperliquid в MetaMask абсолютно бесплатно.`
-              )}
-            </p>
+      <p className="mb-2">{t(`Вы платите только:`)}</p>
 
-            <p className="mb-2">{t(`Вы платите только:`)}</p>
-
-            <ul className="mb-12">
-              <li>{t(`Газ за транзакции (после пополнения HYPE)`)}</li>
-              <li>{t(`Никаких комиссий за само подключение`)}</li>
-            </ul>
-
-            <hr className="border-gray-700 mb-12" />
+      <ul className="mb-12 list-disc list-inside">
+        <li>{t(`Газ за транзакции (после пополнения HYPE)`)}</li>
+        <li>{t(`Никаких комиссий за само подключение`)}</li>
+      </ul>
+    </div>
+  </details>
+</div>
+            <hr className="border-gray-700 mb-12 mt-12" />
 
             <p className="font-bold mb-4">
               {t(`Безопасно ли хранить средства в MetaMask?`)}
@@ -1665,62 +1685,152 @@ export const ArticleMetaMaskGuide = ({ lang }: { lang: Language }) => {
               )}
             </p>
 
+
+           <div className="mt-16 pt-10 border-t border-gray-800/50">
+  <div className="mb-8">
+    <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+      <span className="text-2xl">📚</span>
+      {t(`Дополнительные ресурсы`)}
+    </h3>
+    
+    {/* Официальная документация */}
+    <div className="mb-8">
+      <h4 className="text-gray-300 font-medium mb-4 flex items-center gap-2">
+        <span>📖</span>
+        {t(`Официальная документация`)}
+      </h4>
+      <div className="space-y-3 pl-6">
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-900/40 hover:bg-gray-800/60 border border-gray-800/50 hover:border-gray-700/60 transition-colors cursor-pointer">
+          <span className="text-xl">📖</span>
+          <span className="text-gray-300">{t(`MetaMask Documentation`)}</span>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-900/40 hover:bg-gray-800/60 border border-gray-800/50 hover:border-gray-700/60 transition-colors cursor-pointer">
+          <span className="text-xl">📖</span>
+          <span className="text-gray-300">{t(`Hyperliquid Docs`)}</span>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-900/40 hover:bg-gray-800/60 border border-gray-800/50 hover:border-gray-700/60 transition-colors cursor-pointer">
+          <span className="text-xl">📖</span>
+          <span className="text-gray-300">{t(`Hypertrade Docs`)}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Видео-инструкции */}
+    <div className="mb-8">
+      <h4 className="text-gray-300 font-medium mb-4 flex items-center gap-2">
+        <span>📹</span>
+        {t(`Видео-инструкции`)}
+      </h4>
+      <div className="space-y-3 pl-6">
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-900/40 hover:bg-gray-800/60 border border-gray-800/50 hover:border-gray-700/60 transition-colors cursor-pointer">
+          <span className="text-xl">📹</span>
+          <span className="text-gray-300">{t(`YouTube: Настройка MetaMask`)}</span>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-900/40 hover:bg-gray-800/60 border border-gray-800/50 hover:border-gray-700/60 transition-colors cursor-pointer">
+          <span className="text-xl">📹</span>
+          <span className="text-gray-300">{t(`YouTube: Первый своп на Hypertrade`)}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Поддержка */}
+    <div className="mb-8">
+      <h4 className="text-gray-300 font-medium mb-4 flex items-center gap-2">
+        <span>💬</span>
+        {t(`Поддержка`)}
+      </h4>
+      <div className="space-y-3 pl-6">
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-900/20 hover:bg-blue-900/30 border border-blue-800/30 hover:border-blue-700/40 transition-colors cursor-pointer">
+          <span className="text-xl">📧</span>
+          <span className="text-gray-300">{t(`support@hypertrade.io`)}</span>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-purple-900/20 hover:bg-purple-900/30 border border-purple-800/30 hover:border-purple-700/40 transition-colors cursor-pointer">
+          <span className="text-xl">💬</span>
+          <span className="text-gray-300">{t(`Discord: discord.gg/hypertrade`)}</span>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-900/20 hover:bg-blue-900/30 border border-blue-800/30 hover:border-blue-700/40 transition-colors cursor-pointer">
+          <span className="text-xl">📱</span>
+          <span className="text-gray-300">{t(`Telegram: @HypertradeSupport`)}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+            <div className="mt-16 pt-10 border-t border-gray-800/50">
+  <div className="mb-8">
+    <p className="text-gray-300 font-medium mb-4 text-center">
+      {t(`Эта статья была полезной?`)}
+    </p>
+    <div className="flex justify-center gap-4">
+      <button className="px-6 py-3 rounded-xl bg-green-900/30 hover:bg-green-900/50 border border-green-800/30 hover:border-green-700/50 transition-all group">
+        <span className="text-2xl">👍</span>
+      </button>
+      
+      <button className="px-6 py-3 rounded-xl bg-red-900/30 hover:bg-red-900/50 border border-red-800/30 hover:border-red-700/50 transition-all group">
+        <span className="text-2xl">👎</span>
+      </button>
+    </div>
+  </div>
+
+  <div className="mb-8">
+    <p className="text-gray-300 font-medium mb-4 text-center">
+      {t(`Поделитесь с друзьями, кто хочет начать торговать на Hyperliquid:`)}
+    </p>
+    <div className="flex justify-center gap-3 flex-wrap">
+      <button className="p-3 rounded-lg bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/30 hover:border-blue-700/50 transition-colors">
+        <span className="text-gray-300">{t(`Twitter`)}</span>
+      </button>
+      
+      <button className="p-3 rounded-lg bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/30 hover:border-blue-700/50 transition-colors">
+        <span className="text-gray-300">{t(`Telegram`)}</span>
+      </button>
+      
+      <button className="p-3 rounded-lg bg-purple-900/30 hover:bg-purple-900/50 border border-purple-800/30 hover:border-purple-700/50 transition-colors">
+        <span className="text-gray-300">{t(`Discord`)}</span>
+      </button>
+      
+      <button className="p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 border border-gray-700/50 hover:border-gray-600/50 transition-colors">
+        <span className="text-gray-300">{t(`Копировать ссылку`)}</span>
+      </button>
+    </div>
+  </div>
+</div>
+
             <hr className="border-gray-700 mb-12" />
 
-            <h2 className="text-2xl font-bold text-white mb-6">
-              {t(`📚 Дополнительные ресурсы`)}
-            </h2>
+          
+<div className="mb-16">
+  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 text-sm mb-8">
+    <div className="flex items-center gap-2 text-gray-400">
+      <Clock size={16} className="text-hyper-accent/70" />
+      <span>{t(`Последнее обновление: 14 декабря 2025`)}</span>
+    </div>
+    
+    <div className="hidden sm:block w-px h-4 bg-gradient-to-b from-gray-700 to-transparent"></div>
+    
+    <div className="flex items-center gap-2 text-gray-400">
+      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center">
+        <span className="text-xs font-bold text-cyan-300">H</span>
+      </div>
+      <span>{t(`Автор: Команда Hypertrade`)}</span>
+    </div>
+  </div>
 
-            <p className="font-bold mb-2">{t(`Официальная документация`)}</p>
+  <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900/40 to-hyper-900/20 p-6 border border-gray-700/50">
+    <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-hyper-accent to-blue-500"></div>
+    <div className="pl-4">
+      <p className="text-sm text-gray-400/90 leading-relaxed">
+        {t(
+          `Отказ от ответственности: Данное руководство носит образовательный характер. Всегда проверяйте официальные источники и будьте осторожны с приватными ключами и seed-фразами.`
+        )}
+      </p>
+    </div>
+  </div>
+</div>
 
-            <ul className="mb-6">
-              <li>{t(`📖 MetaMask Documentation`)}</li>
-              <li>{t(`📖 Hyperliquid Docs`)}</li>
-              <li>{t(`📖 Hypertrade Docs`)}</li>
-            </ul>
-
-            <p className="font-bold mb-2">{t(`Видео-инструкции`)}</p>
-
-            <ul className="mb-6">
-              <li>{t(`📹 YouTube: Настройка MetaMask`)}</li>
-              <li>{t(`📹 YouTube: Первый своп на Hypertrade`)}</li>
-            </ul>
-
-            <p className="font-bold mb-2">{t(`Поддержка`)}</p>
-
-            <ul className="mb-12">
-              <li>{t(`📧 support@hypertrade.io`)}</li>
-              <li>{t(`💬 Discord: discord.gg/hypertrade`)}</li>
-              <li>{t(`📱 Telegram: @HypertradeSupport`)}</li>
-            </ul>
-
-            <hr className="border-gray-700 mb-12" />
-
-            <p className="font-bold mb-4">
-              {t(`Эта статья была полезной? 👍 Да 👎 Нет`)}
-            </p>
-
-            <p className="mb-6">
-              {t(
-                `Поделитесь с друзьями, кто хочет начать торговать на Hyperliquid:`
-              )}
-            </p>
-
-            <p className="mb-12">
-              {t(`Twitter Telegram Discord Копировать ссылку`)}
-            </p>
-
-            <hr className="border-gray-700 mb-12" />
-
-            <p className="mb-2">{t(`Последнее обновление: 14 декабря 2025`)}</p>
-
-            <p className="mb-6">{t(`Автор: Команда Hypertrade`)}</p>
-
-            <p className="text-sm text-gray-400 mb-12">
-              {t(
-                `Отказ от ответственности: Данное руководство носит образовательный характер. Всегда проверяйте официальные источники и будьте осторожны с приватными ключами и seed-фразами.`
-              )}
-            </p>
           </article>
         </article>
       </div>

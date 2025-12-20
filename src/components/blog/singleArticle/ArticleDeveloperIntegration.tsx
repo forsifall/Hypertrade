@@ -1678,24 +1678,194 @@ const handleAmountChange = (newAmount) => {
 </div>
 
 {/* FAQ */}
-<h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`FAQ для разработчиков`)}</h2>
-<div className="space-y-6">
-  {[
-    t(`Бесплатно ли использование API? Да, публичный API бесплатен с ограничением 100 requests/minute. Для увеличенного лимита (1000 req/min) получите бесплатный API key.`),
-    t(`Нужен ли мне backend для интеграции? Нет, SDK работает полностью на frontend (в браузере). Backend нужен только для автоматических ботов или серверных интеграций.`),
-    t(`Какие блокчейны поддерживаются? Только Hyperliquid (HyperEVM, chainId 998). Поддержка других чейнов не планируется.`),
-    t(`Могу ли я кастомизировать UI? Да, SDK даёт полный контроль. Вы можете использовать готовый виджет или создать свой UI с нуля.`),
-    t(`Как работает referral program? Вы получаете 0.05-0.15% от объёма свапов, сделанных через ваш dApp. Минимальный объём: $100k/месяц. Выплаты ежемесячно.`),
-    t(`Есть ли testnet? Да, используйте Hyperliquid testnet для тестирования. API endpoint: https://api.hypertrade.io/v1/testnet`),
-    t(`Могу ли я использовать API без SDK? Да, REST API работает с любым языком (Python, Go, Rust, etc.). SDK — это просто удобная обёртка.`),
-    t(`Как часто обновляется котировка? API обновляет котировки в реальном времени (каждые 1-2 секунды). В SDK есть встроенный polling.`),
-    t(`Что делать, если у меня проблема? Напишите в Discord (#dev-support) или на developers@hypertrade.io. Среднее время ответа: 2-6 часов.`),
-    t(`Есть ли примеры кода? Да, смотрите https://github.com/hypertrade/examples — там 10+ примеров для разных use cases`)
-  ].map((faq, idx) => (
-    <div key={idx} className="bg-hyper-800/30 border border-gray-700 rounded-xl p-4 text-gray-300">
-      {faq}
+<h2 className="text-2xl font-bold text-white mb-6">
+  {t(`💡 FAQ для разработчиков`)}
+</h2>
+
+<div className="space-y-4">
+  {/* Вопрос 1 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Бесплатно ли использование API?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`Да, публичный API бесплатен с ограничением 100 requests/minute. Для увеличенного лимита (1000 req/min) получите бесплатный API key.`)}
+      </p>
     </div>
-  ))}
+  </details>
+
+  {/* Вопрос 2 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Нужен ли мне backend для интеграции?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`Нет, SDK работает полностью на frontend (в браузере). Backend нужен только для автоматических ботов или серверных интеграций.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 3 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Какие блокчейны поддерживаются?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`Только Hyperliquid (HyperEVM, chainId 998). Поддержка других чейнов не планируется.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 4 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Могу ли я кастомизировать UI?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`Да, SDK даёт полный контроль. Вы можете использовать готовый виджет или создать свой UI с нуля.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 5 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Как работает referral program?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`Вы получаете 0.05-0.15% от объёма свапов, сделанных через ваш dApp. Минимальный объём: $100k/месяц. Выплаты ежемесячно.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 6 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Есть ли testnet?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`Да, используйте Hyperliquid testnet для тестирования. API endpoint: https://api.hypertrade.io/v1/testnet`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 7 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Могу ли я использовать API без SDK?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`Да, REST API работает с любым языком (Python, Go, Rust, etc.). SDK — это просто удобная обёртка.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 8 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Как часто обновляется котировка?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`API обновляет котировки в реальном времени (каждые 1-2 секунды). В SDK есть встроенный polling.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 9 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Что делать, если у меня проблема?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`Напишите в Discord (#dev-support) или на developers@hypertrade.io. Среднее время ответа: 2-6 часов.`)}
+      </p>
+    </div>
+  </details>
+
+  {/* Вопрос 10 */}
+  <details className="border border-gray-700 rounded-lg">
+    <summary className="cursor-pointer list-none p-4 flex items-center justify-between font-bold">
+      <span>
+        {t(`Есть ли примеры кода?`)}
+      </span>
+      <svg className="text-cyan-400 w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+      </svg>
+    </summary>
+
+    <div className="p-4 pt-2">
+      <p className="mb-4">
+        {t(`Да, смотрите `)}
+        <a href="https://github.com/hypertrade/examples" className="text-hyper-accent underline" target="_blank" rel="noreferrer">
+          https://github.com/hypertrade/examples
+        </a>
+        {t(` — там 10+ примеров для разных use cases.`)}
+      </p>
+    </div>
+  </details>
 </div>
 
 

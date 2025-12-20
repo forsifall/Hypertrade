@@ -49,7 +49,7 @@ export const ArticleLiquidityAnalysis = ({ lang }: { lang: Language }) => {
     <p>{t(`Представьте две ситуации:`)}</p>
 
     <div className="mt-4 space-y-3">
-      <div className="bg-red-900/10 border border-red-900/30 p-4 rounded-xl">
+      <div className=" p-4 rounded-xl">
         <h4 className="text-red-400 font-bold mb-2">{t(`Трейдер А (не анализирует ликвидность):`)}</h4>
         <ul className="text-sm text-gray-300 list-disc list-inside space-y-1">
           <li>{t(`Делает своп $20,000 в 21:00 UTC (low liquidity)`)}</li>
@@ -59,7 +59,7 @@ export const ArticleLiquidityAnalysis = ({ lang }: { lang: Language }) => {
         </ul>
       </div>
 
-      <div className="bg-green-900/10 border border-green-900/30 p-4 rounded-xl">
+      <div className=" p-4 rounded-xl">
         <h4 className="text-green-400 font-bold mb-2">{t(`Трейдер Б (анализирует ликвидность):`)}</h4>
         <ul className="text-sm text-gray-300 list-disc list-inside space-y-1">
           <li>{t(`Делает тот же своп в 15:00 UTC (peak liquidity)`)}</li>
@@ -168,23 +168,44 @@ Price impact: 2.04%
   <p className="text-gray-300 mb-2">{t(`Что это: Визуализация order book, показывающая кумулятивную ликвидность на разных ценовых уровнях.`)}</p>
   <p className="text-gray-300 mb-4">{t(`Как выглядит:`)}</p>
 
-  <pre className="bg-hyper-800/50 p-4 rounded-xl mb-8 overflow-x-auto text-sm text-gray-300">
-{t(`                  ┌─ Sell wall (большое накопление asks)
-    Cumulative    │
-    Liquidity     │    ╱╲
-    (USDC)        │   ╱  ╲
-                  │  ╱    ╲
-    $150k   ─────┼─╱      ╲─────────────
-                  │╱        ╲
-    $100k   ─────┤          ╲───────────  ← Bid side (buyers)
-                  │           ╲
-    $50k    ─────┤            ╲─────────
-                  │             ╲
-    $0      ─────┴──────────────╲──────
-              $24.50  $25.00  $25.50
-                    ↑
-                Current price`)}
-  </pre>
+  <div className="mb-8">
+  <h3 className="text-xl font-bold text-white mb-4">{t(`Cumulative Liquidity / Orderbook`)}</h3>
+
+  <div className="relative flex items-end gap-2 h-48 border-l border-b border-gray-700 px-4">
+    {/* Bid side (buyers) */}
+    {[
+      { price: "$24.50", liquidity: 50, color: "bg-green-500" },
+      { price: "$25.00", liquidity: 100, color: "bg-green-500" },
+      { price: "$25.50", liquidity: 150, color: "bg-green-500" },
+    ].map((item, i) => (
+      <div key={i} className="flex flex-col items-center">
+        <div
+          className={`${item.color} w-6 rounded-t`}
+          style={{ height: `${(item.liquidity / 150) * 100}px` }}
+        ></div>
+        <span className="text-gray-300 text-xs mt-1">{t(item.price)}</span>
+      </div>
+    ))}
+
+    {/* Ask side (sellers) */}
+    {[
+      { price: "$24.50", liquidity: 150, color: "bg-red-500" },
+      { price: "$25.00", liquidity: 100, color: "bg-red-500" },
+      { price: "$25.50", liquidity: 50, color: "bg-red-500" },
+    ].map((item, i) => (
+      <div key={i} className="flex flex-col items-center">
+        <div
+          className={`${item.color} w-6 rounded-t`}
+          style={{ height: `${(item.liquidity / 150) * 100}px` }}
+        ></div>
+        <span className="text-gray-300 text-xs mt-1">{t(item.price)}</span>
+      </div>
+    ))}
+  </div>
+
+  {/* Current price marker */}
+
+</div>
 
   <h4 className="font-semibold text-white mt-4 mb-2">{t(`Интерпретация:`)}</h4>
   <ul className="text-sm text-gray-300 list-disc list-inside mb-6">
@@ -227,36 +248,76 @@ Price impact: 2.04%
     {t(`На https://app.hyperliquid.xyz/trade → выберите пару (например, HYPE/USDC) → вкладка “Depth”`)}
   </p>
 
-  <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(`Шаг 2: Оцените симметрию`)}</h3>
-  <p className="text-gray-300 mb-4">{t(`Хорошая ликвидность (симметричный график):`)}</p>
-  <pre className="bg-hyper-800/50 p-4 rounded-xl mb-6 text-sm text-gray-300 overflow-x-auto">
-{t(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-      ╱╲
-     ╱  ╲
-    ╱    ╲
-───╱──────╲───  ← Обе стороны примерно равны
-  ╱        ╲
- ╱          ╲
+ <h3 className="text-xl font-bold text-white mt-6 mb-2">
+  {t(`Шаг 2: Оцените симметрию`)}
+</h3>
 
-Bid liquidity: $500k
-Ask liquidity: $480k
-Ratio: 1.04 (близко к 1.0 — идеально)`)}
-  </pre>
+<p className="text-gray-300 mb-4">{t(`Хорошая ликвидность (симметричный график):`)}</p>
 
-  <p className="text-gray-300 mb-4">{t(`Плохая ликвидность (несимметричный):`)}</p>
-  <pre className="bg-hyper-800/50 p-4 rounded-xl mb-6 text-sm text-gray-300 overflow-x-auto">
-{t(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         ╱
-        ╱╲
-       ╱  ╲
-──────╱────╲─  ← Сильный дисбаланс (больше sellers)
-     ╱      ╲
-    ╱        ───────
+<div className="flex items-end gap-4 mb-6 h-28 border-b border-gray-700">
+  {/* Bid */}
+  <div className="flex flex-col items-center">
+    <div
+      className="w-12 bg-green-500 rounded-t"
+      style={{ height: `${(500 / 500) * 70}px` }}
+    ></div>
+    <span className="text-gray-300 text-sm mt-1">
+      {t(`$500k`)}
+    </span>
+    <span className="text-gray-400 text-xs mt-0.5">
+      {t(`Bid`)}
+    </span>
+  </div>
+  {/* Ask */}
+  <div className="flex flex-col items-center">
+    <div
+      className="w-12 bg-blue-500 rounded-t"
+      style={{ height: `${(480 / 500) * 70}px` }}
+    ></div>
+    <span className="text-gray-300 text-sm mt-1">
+      {t(`$480k`)}
+    </span>
+    <span className="text-gray-400 text-xs mt-0.5">
+      {t(`Ask`)}
+    </span>
+  </div>
+</div>
 
-Bid liquidity: $100k
-Ask liquidity: $600k
-Ratio: 0.17 (дисбаланс — давление на снижение цены)`)}
-  </pre>
+<p className="text-gray-300 mb-4">{t(`Плохая ликвидность (несимметричный):`)}</p>
+
+<div className="flex items-end gap-4 mb-6 h-28 border-b border-gray-700">
+  {/* Bid */}
+  <div className="flex flex-col items-center">
+    <div
+      className="w-12 bg-green-500 rounded-t"
+      style={{ height: `${(100 / 600) * 70}px` }}
+    ></div>
+    <span className="text-gray-300 text-sm mt-1">
+      {t(`$100k`)}
+    </span>
+    <span className="text-gray-400 text-xs mt-0.5">
+      {t(`Bid`)}
+    </span>
+  </div>
+  {/* Ask */}
+  <div className="flex flex-col items-center">
+    <div
+      className="w-12 bg-blue-500 rounded-t"
+      style={{ height: `${(600 / 600) * 70}px` }}
+    ></div>
+    <span className="text-gray-300 text-sm mt-1">
+      {t(`$600k`)}
+    </span>
+    <span className="text-gray-400 text-xs mt-0.5">
+      {t(`Ask`)}
+    </span>
+  </div>
+</div>
+
+<p className="text-gray-300 text-sm">
+  {t(`Ratio (Bid / Ask):`)} 1.04 — {t(`близко к 1.0 (идеально)`)} <br />
+  {t(`Ratio (Bid / Ask):`)} 0.17 — {t(`дисбаланс (давление на снижение цены)`)}
+</p>
 
   <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(`Шаг 3: Измерьте глубину`)}</h3>
   <p className="text-gray-300 mb-4">{t(`Критические зоны для разных размеров свопа:`)}</p>
@@ -365,49 +426,79 @@ Safe rule: Своп не должен превышать 2% от TVL пула д
   <p className="text-gray-300 mb-6">{t(`Данные основаны на анализе Hyperliquid + глобальных крипто-рынков:`)}</p>
 
   <p className="text-gray-300 mb-2 font-semibold">{t(`LIQUIDITY HEATMAP (UTC time):`)}</p>
-  <pre className="bg-hyper-800/50 p-4 rounded-xl mb-8 text-sm text-gray-300 overflow-x-auto">
-{t(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<div className="bg-hyper-800/50 p-6 rounded-xl mb-8 text-gray-300 space-y-4">
+  {[
+    {
+      time: "00:00-04:00 UTC (Asia Early Morning)",
+      liquidity: 40,
+      volume: "Low",
+      spread: "+50% wider",
+      status: "🔴 AVOID (unless emergency)",
+      color: "bg-red-500",
+    },
+    {
+      time: "04:00-08:00 UTC (Asia Morning / EU Pre-market)",
+      liquidity: 70,
+      volume: "Medium",
+      spread: "+20% wider",
+      status: "🟡 ACCEPTABLE",
+      color: "bg-yellow-400",
+    },
+    {
+      time: "08:00-12:00 UTC (EU Morning / US Pre-market)",
+      liquidity: 80,
+      volume: "High",
+      spread: "Normal",
+      status: "🟢 GOOD",
+      color: "bg-green-500",
+    },
+    {
+      time: "12:00-16:00 UTC (EU Afternoon / US Morning) ⭐",
+      liquidity: 100,
+      volume: "Very High",
+      spread: "Tightest",
+      status: "🟢 OPTIMAL",
+      color: "bg-green-600",
+    },
+    {
+      time: "16:00-20:00 UTC (US Afternoon / Asia Pre-market)",
+      liquidity: 90,
+      volume: "High",
+      spread: "+10% wider",
+      status: "🟢 GOOD",
+      color: "bg-green-500",
+    },
+    {
+      time: "20:00-24:00 UTC (US Evening / Asia Night)",
+      liquidity: 60,
+      volume: "Medium-Low",
+      spread: "+30% wider",
+      status: "🟡 ACCEPTABLE (caution)",
+      color: "bg-yellow-400",
+    },
+  ].map((item, i) => (
+    <div key={i} className="space-y-1">
+      <div className="flex justify-between items-center text-sm font-semibold">
+        <span>{item.time}</span>
+        <span>{item.status}</span>
+      </div>
+      <div className="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+        <div
+          className={`${item.color} h-4`}
+          style={{ width: `${item.liquidity}%` }}
+        />
+      </div>
+      <div className="flex justify-between text-xs text-gray-400">
+        <span>Volume: {item.volume}</span>
+        <span>Spread: {item.spread}</span>
+      </div>
+    </div>
+  ))}
 
-00:00-04:00 UTC (Asia Early Morning)
-Liquidity: ████░░░░░░ 40% of peak
-Volume: Low
-Spread: +50% wider
-Status: 🔴 AVOID (unless emergency)
-
-04:00-08:00 UTC (Asia Morning / EU Pre-market)
-Liquidity: ███████░░░ 70% of peak
-Volume: Medium
-Spread: +20% wider
-Status: 🟡 ACCEPTABLE
-
-08:00-12:00 UTC (EU Morning / US Pre-market)
-Liquidity: ████████░░ 80% of peak
-Volume: High
-Spread: Normal
-Status: 🟢 GOOD
-
-12:00-16:00 UTC (EU Afternoon / US Morning) ⭐
-Liquidity: ██████████ 100% PEAK
-Volume: Very High
-Spread: Tightest
-Status: 🟢 OPTIMAL
-
-16:00-20:00 UTC (US Afternoon / Asia Pre-market)
-Liquidity: █████████░ 90% of peak
-Volume: High
-Spread: +10% wider
-Status: 🟢 GOOD
-
-20:00-24:00 UTC (US Evening / Asia Night)
-Liquidity: ██████░░░░ 60% of peak
-Volume: Medium-Low
-Spread: +30% wider
-Status: 🟡 ACCEPTABLE (caution)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Вывод: OPTIMAL window = 12:00–16:00 UTC`)}
-  </pre>
-
+  <p className="mt-4 text-sm text-gray-300 font-bold">
+    Вывод: OPTIMAL window = 12:00–16:00 UTC
+  </p>
+</div>
   <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(`Практический тест: ликвидность в разное время`)}</h3>
   <p className="text-gray-300 mb-4">{t(`Эксперимент на HYPE/USDC (HyperCore Spot):`)}</p>
 
@@ -442,22 +533,36 @@ SAVINGS: $820 просто за выбор правильного времени
 
   <h3 className="text-xl font-bold text-white mt-6 mb-2">{t(`Недельный паттерн`)}</h3>
   <p className="text-gray-300 mb-2 font-semibold">{t(`WEEKLY LIQUIDITY PATTERN:`)}</p>
-  <pre className="bg-hyper-800/50 p-4 rounded-xl mb-8 text-sm text-gray-300 overflow-x-auto">
-{t(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  <div className="bg-hyper-800/50 p-6 rounded-xl mb-8 text-gray-300 space-y-4">
+  {[
+    { day: "Monday", value: 80, note: "post-weekend recovery", color: "bg-green-500" },
+    { day: "Tuesday", value: 100, note: "PEAK", color: "bg-green-600" },
+    { day: "Wednesday", value: 100, note: "PEAK", color: "bg-green-600" },
+    { day: "Thursday", value: 95, note: "", color: "bg-green-500" },
+    { day: "Friday", value: 85, note: "начало снижения", color: "bg-yellow-400" },
+    { day: "Saturday", value: 65, note: "", color: "bg-orange-400" },
+    { day: "Sunday", value: 55, note: "LOWEST", color: "bg-red-500" },
+  ].map((item, i) => (
+    <div key={i} className="space-y-1">
+      <div className="flex justify-between items-center text-sm font-semibold">
+        <span>{item.day}</span>
+        <span>
+          {item.value}% {item.note && `(${item.note})`}
+        </span>
+      </div>
+      <div className="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+        <div className={`${item.color} h-4`} style={{ width: `${item.value}%` }} />
+      </div>
+    </div>
+  ))}
 
-Monday:    ████████░░ 80% (post-weekend recovery)
-Tuesday:   ██████████ 100% PEAK
-Wednesday: ██████████ 100% PEAK
-Thursday:  █████████░ 95%
-Friday:    ████████░░ 85% (начало снижения)
-Saturday:  ██████░░░░ 65%
-Sunday:    █████░░░░░ 55% LOWEST
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Optimal days: Tuesday–Thursday
-Avoid: Saturday–Sunday (если не срочно)`)}
-  </pre>
-
+  <p className="mt-4 text-sm text-gray-300 font-bold">
+    Optimal days: Tuesday–Thursday
+  </p>
+  <p className="text-sm text-gray-300 font-bold">
+    Avoid: Saturday–Sunday (если не срочно)
+  </p>
+</div>
 </article>
 
 <article className="prose prose-invert prose-lg max-w-none">
@@ -692,23 +797,76 @@ Liquidity Health Indicators:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`)}
 </pre>
 
-<h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`📊 Сравнение: ручной анализ vs Hypertrade`)}</h2>
+<h2 className="text-2xl font-bold text-white mt-12 mb-6">
+  {t(`📊 Сравнение: ручной анализ vs Hypertrade`)}
+</h2>
 
-<pre className="bg-hyper-800/50 p-6 rounded-xl mb-6 text-sm text-gray-300 overflow-x-auto">
-{t(`Задача	Ручной анализ	Hypertrade	Экономия времени
-Scan all DEX liquidity	5 минут	0.5 секунды	99.8%
-Calculate price impact	3 минуты	0.2 секунды	99.9%
-Optimize routing	5 минут	0.3 секунды	99.9%
-Pre-execution simulation	❌ Невозможно	✅ 1 секунда	N/A
-Execute atomic swap	Multiple TX	1 TX	4–10× fewer clicks
-Accuracy	70–85%	99.5–99.9%	~15–30% better
-Total time	13–15 минут	~2 секунды	99.8%
-Годовая экономия (50 свопов):
-•	Saved time: 11 часов
-•	Accuracy gain: $7,500–$15,000 (лучшие цены)
-•	Error prevention: $2,000–$5,000 (avoid mistakes)
-•	Total: $9,500–$20,000 value/год`)}
-</pre>
+<div className="overflow-x-auto mb-6">
+  <table className="min-w-full text-sm text-gray-300 border-collapse">
+    <thead>
+      <tr className="border-b border-gray-600">
+        <th className="text-left px-4 py-2">Задача</th>
+        <th className="text-left px-4 py-2">Ручной анализ</th>
+        <th className="text-left px-4 py-2">Hypertrade</th>
+        <th className="text-left px-4 py-2">Экономия времени / результат</th>
+      </tr>
+    </thead>
+    <tbody className="divide-y divide-gray-700">
+      <tr>
+        <td className="px-4 py-2">Scan all DEX liquidity</td>
+        <td className="px-4 py-2">5 минут</td>
+        <td className="px-4 py-2">0.5 секунды</td>
+        <td className="px-4 py-2">99.8%</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-2">Calculate price impact</td>
+        <td className="px-4 py-2">3 минуты</td>
+        <td className="px-4 py-2">0.2 секунды</td>
+        <td className="px-4 py-2">99.9%</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-2">Optimize routing</td>
+        <td className="px-4 py-2">5 минут</td>
+        <td className="px-4 py-2">0.3 секунды</td>
+        <td className="px-4 py-2">99.9%</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-2">Pre-execution simulation</td>
+        <td className="px-4 py-2">❌ Невозможно</td>
+        <td className="px-4 py-2">✅ 1 секунда</td>
+        <td className="px-4 py-2">N/A</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-2">Execute atomic swap</td>
+        <td className="px-4 py-2">Multiple TX</td>
+        <td className="px-4 py-2">1 TX</td>
+        <td className="px-4 py-2">4–10× fewer clicks</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-2">Accuracy</td>
+        <td className="px-4 py-2">70–85%</td>
+        <td className="px-4 py-2">99.5–99.9%</td>
+        <td className="px-4 py-2">~15–30% better</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-2">Total time</td>
+        <td className="px-4 py-2">13–15 минут</td>
+        <td className="px-4 py-2">~2 секунды</td>
+        <td className="px-4 py-2">99.8%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="text-sm text-gray-300 space-y-1">
+  <p>Годовая экономия (50 свопов):</p>
+  <ul className="list-disc list-inside ml-4">
+    <li>Saved time: 11 часов</li>
+    <li>Accuracy gain: $7,500–$15,000 (лучшие цены)</li>
+    <li>Error prevention: $2,000–$5,000 (avoid mistakes)</li>
+    <li>Total: $9,500–$20,000 value/год</li>
+  </ul>
+</div>
 
 <h2 className="text-2xl font-bold text-white mt-12 mb-6">{t(`💡 10 практических советов по анализу ликвидности`)}</h2>
 
@@ -1031,15 +1189,17 @@ Learned insights:
     </ul>
   </div>
 
+<Link href="https://ht.xyz/">
   <button className="bg-hyper-accent text-hyper-900 font-bold py-3 px-8 rounded-xl hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20 mt-4">
     {t(`Начать экономить`)}
-  </button>
+  </button></Link>
 </div>
 
 <p className="text-gray-300 mb-8">
   {t(`Понимание ликвидности = 5–15% лучшие цены на каждом свопе.
 На годовом объёме $500,000 это $25,000–$75,000 экономии.
-Начните анализировать. Начните экономить. Используйте Hypertrade.`)}
+Начните анализировать. Начните экономить. Используйте `)}
+{<a style={{color: "rgb(0 229 255 / var(--tw-text-opacity))"}} href={`/${lang}`}>Hypertrade</a>}
 </p>
 
         </article>

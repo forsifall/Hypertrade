@@ -14,9 +14,9 @@ export default function ArticlePriceImpact ({lang}:{lang:Language}) {
 // eslint-disable-next-line
     const post = getBlogPosts(lang).find((curr:any) => curr.id === "price-impact-guide");
 
-  const { t } = useTranslation();
+  const { t,ready } = useTranslation();
 
-
+   if (!ready) return null;
 
   return (
     
@@ -92,19 +92,98 @@ export default function ArticlePriceImpact ({lang}:{lang:Language}) {
 </div>
 
 <h4 className="text-lg font-bold text-white mt-12 mb-2">{t("Визуализация price impact")}</h4>
-<pre className="bg-hyper-800/30 p-6 rounded-xl text-gray-300 text-sm overflow-x-auto">
-{t(`Цена токена
-    ↑
-    │         ╱
-1.20│       ╱  ← Ваш ордер толкает цену вверх
-    │      ╱
-1.10│    ╱
-    │   ╱
-1.00│__╱________________→ Объем ордера
-    │
-    0  10  50  100  500
-       Размер ордера (в % от ликвидности пула)`)}
-</pre>
+<div className="bg-hyper-800/30 p-6 rounded-xl my-6">
+  <div className="text-center mb-4">
+    <h3 className="text-lg font-bold text-white">{t("Влияние размера ордера на цену")}</h3>
+    <p className="text-gray-400 text-sm">{t("Чем больше ордер относительно ликвидности пула, тем сильнее проскальзывание")}</p>
+  </div>
+
+  {/* Обертка для графика с правильным overflow */}
+  <div className="relative w-full overflow-visible">
+    <div className="relative h-64">
+      {/* Оси координат */}
+      <div className="absolute bottom-0 left-10 right-4 top-4 border-l border-b border-gray-600"></div>
+      
+      {/* Линия графика */}
+      <svg 
+        className="absolute bottom-0 left-10 right-4 top-4 w-[calc(100%-3.5rem)] h-[calc(100%-1rem)] overflow-visible"
+        style={{ overflow: 'visible', marginTop: "50px" }}
+      >
+        {/* Кривая спроса */}
+        <path
+          d="M 0 56 Q 25 40 50 28 Q 75 16 100 8 Q 125 0 150 0"
+          fill="none"
+          stroke="#60A5FA"
+          strokeWidth="2"
+          className="opacity-80"
+        />
+        
+        {/* Точки на графике */}
+        <circle cx="0" cy="56" r="3" fill="#60A5FA" />
+        <circle cx="25" cy="40" r="3" fill="#60A5FA" />
+        <circle cx="50" cy="28" r="3" fill="#60A5FA" />
+        <circle cx="75" cy="16" r="3" fill="#60A5FA" />
+        <circle cx="100" cy="8" r="3" fill="#60A5FA" />
+        <circle cx="150" cy="0" r="3" fill="#60A5FA" />
+        
+        {/* Стрелка цены вверх */}
+        <path
+          d="M 125 20 L 120 15 L 130 15 Z"
+          fill="#EF4444"
+        />
+        <text x="128" y="12" className="text-xs fill-red-400 font-bold" style={{ overflow: 'visible' }}>
+          {t("↑ Цена")}
+        </text>
+        
+        {/* Подписи - перенесены внутрь SVG для лучшего контроля */}
+        <g style={{ overflow: 'visible' }}>
+          <text x="155" y="4" className="text-xs fill-gray-400" style={{ overflow: 'visible' }}>
+            {t("Ваш ордер")}
+          </text>
+          <line x1="150" y1="0" x2="165" y2="12" stroke="#6B7280" strokeWidth="1" strokeDasharray="2" />
+        </g>
+      </svg>
+      
+      {/* Метки оси Y (Цена) */}
+      <div className="absolute left-0 top-4 h-56 flex flex-col justify-between text-xs text-gray-400">
+        <span>1.20</span>
+        <span>1.15</span>
+        <span>1.10</span>
+        <span>1.05</span>
+        <span>1.00</span>
+      </div>
+      
+      {/* Метки оси X (Размер ордера) */}
+      <div className="absolute bottom-0 left-10 right-4 flex justify-between text-xs text-gray-400 pt-2">
+        <span>0%</span>
+        <span>10%</span>
+        <span>25%</span>
+        <span>50%</span>
+        <span>75%</span>
+        <span>100%+</span>
+      </div>
+      
+      {/* Легенда */}
+      <div className="absolute top-0 right-4 flex items-center gap-2 text-xs">
+        <div className="w-3 h-0.5 bg-blue-400"></div>
+        <span className="text-gray-400">{t("Кривая ликвидности")}</span>
+      </div>
+    </div>
+  </div>
+  
+  {/* Описание */}
+  <div className="mt-6 p-4 bg-hyper-900/50 rounded-lg">
+    <p className="text-gray-300 text-sm">
+      {t("При размере ордера 10% от ликвидности пула: проскальзывание ~5%")}
+    </p>
+    <p className="text-gray-300 text-sm mt-1">
+      {t("При размере ордера 50% от ликвидности пула: проскальзывание ~20%")}
+    </p>
+    <p className="text-gray-300 text-sm mt-1 font-medium text-cyan-400">
+      {t("Hypertrade решает эту проблему через split-routing: делит крупные ордера на несколько мелких")}
+    </p>
+  </div>
+</div>
 <p>{t("Ключевая идея: Чем больше ваш ордер относительно доступной ликвидности, тем выше price impact.")}</p>
 
 <h4 className="text-lg font-bold text-white mt-12 mb-2">{t("🔍 Почему возникает price impact: механика DEX")}</h4>
@@ -508,9 +587,8 @@ Price impact: (3,500 - 2,892) / 3,500 = 17.4%`)}
       </ul>
     </div>
 
-    </article>
-</div>
-    {/* Стратегия 6 */}
+
+  {/* Стратегия 6 */}
 <div className="bg-hyper-800/50 p-6 rounded-xl border border-gray-700 my-6">
   <h3 className="text-xl font-bold text-white mb-4">{t("Стратегия 6: Избегайте экзотических пар")}</h3>
   <p>{t("Правило: Чем популярнее пара, тем ниже impact.")}</p>
@@ -653,6 +731,22 @@ Price impact: (3,500 - 2,892) / 3,500 = 17.4%`)}
   </ul>
 </div>
 
+
+    </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
@@ -1159,16 +1253,45 @@ if price_impact > 5:
     </div>
 
     {/* Обратная связь */}
-    <div className="bg-hyper-800/50 p-6 rounded-xl border border-gray-700 my-6 text-gray-300">
-      <p>{t(`Эта статья была полезной? 👍 Да 👎 Нет`)}</p>
-      <p>{t(`Поделитесь с друзьями, которые теряют деньги на price impact:`)}</p>
-      <ul className="list-disc list-inside space-y-1 ml-6">
-        <li>{t(`Twitter`)}</li>
-        <li>{t(`Telegram`)}</li>
-        <li>{t(`Discord`)}</li>
-        <li>{t(`Копировать ссылку`)}</li>
-      </ul>
+  <div className="mt-16 pt-10 border-t border-gray-800/50">
+  <div className="mb-8">
+    <p className="text-gray-300 font-medium mb-4 text-center">
+      {t(`Эта статья была полезной?`)}
+    </p>
+    <div className="flex justify-center gap-4">
+      <button className="px-6 py-3 rounded-xl bg-green-900/30 hover:bg-green-900/50 border border-green-800/30 hover:border-green-700/50 transition-all group">
+        <span className="text-2xl">👍</span>
+      </button>
+      
+      <button className="px-6 py-3 rounded-xl bg-red-900/30 hover:bg-red-900/50 border border-red-800/30 hover:border-red-700/50 transition-all group">
+        <span className="text-2xl">👎</span>
+      </button>
     </div>
+  </div>
+
+  <div className="mb-8">
+    <p className="text-gray-300 font-medium mb-4 text-center">
+      {t(`Поделитесь с друзьями, кто хочет начать торговать на Hyperliquid:`)}
+    </p>
+    <div className="flex justify-center gap-3 flex-wrap">
+      <button className="p-3 rounded-lg bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/30 hover:border-blue-700/50 transition-colors">
+        <span className="text-gray-300">{t(`Twitter`)}</span>
+      </button>
+      
+      <button className="p-3 rounded-lg bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/30 hover:border-blue-700/50 transition-colors">
+        <span className="text-gray-300">{t(`Telegram`)}</span>
+      </button>
+      
+      <button className="p-3 rounded-lg bg-purple-900/30 hover:bg-purple-900/50 border border-purple-800/30 hover:border-purple-700/50 transition-colors">
+        <span className="text-gray-300">{t(`Discord`)}</span>
+      </button>
+      
+      <button className="p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 border border-gray-700/50 hover:border-gray-600/50 transition-colors">
+        <span className="text-gray-300">{t(`Копировать ссылку`)}</span>
+      </button>
+    </div>
+  </div>
+</div>
 
   </article>
 </div>
